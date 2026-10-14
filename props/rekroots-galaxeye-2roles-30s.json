@@ -1,0 +1,122 @@
+{
+  "fps": 30,
+  "srcW": 1260,
+  "srcH": 684,
+  "win": {
+    "w": 1440,
+    "h": 860,
+    "bar": 44,
+    "url": "rekroots.com"
+  },
+  "outro": {
+    "sec": 2.2,
+    "title": "Less screening. Better hires.",
+    "sub": "Post your first role today",
+    "url": "rekroots.com"
+  },
+  "brand": {
+    "name": "Rekroots",
+    "logoSrc": "brand/rekroots-mark.svg",
+    "accent": "#DC2626",
+    "ink": "#1A0B0B",
+    "paper": "#F6F1EC"
+  },
+  "musicSrc": "music/pumpupthemind-creative-technology-showreel-241274.mp3",
+  "musicVolume": 0.3,
+  "musicStart": 11,
+  "id": "rekroots-galaxeye-2roles-30s",
+  "src": "",
+  "segs": [
+    {
+      "a": 0,
+      "b": 1
+    }
+  ],
+  "camera": [
+    {
+      "o": 0,
+      "rect": [
+        182,
+        42,
+        1075
+      ]
+    }
+  ],
+  "clicks": [],
+  "spots": [],
+  "captions": [],
+  "intro": {
+    "sec": 1.5,
+    "tag": "Made for GalaxEye Space",
+    "title": "Post your open roles in minutes",
+    "sub": "Satellite Systems Engineer + Full Stack Developer, live on Rekroots"
+  },
+  "app": {
+    "company": "GalaxEye Space",
+    "greeting": "Welcome back",
+    "stats": [
+      ["Active postings", "6", "· 2 in draft"],
+      ["Total applicants", "64", ""],
+      ["Upcoming interviews", "0", ""],
+      ["Drafts", "2", ""],
+      ["Verified", "No", ""]
+    ],
+    "recent": [
+      ["Product QA Engineer (SAR & EO Image Validation)", "0 applicants · 10/12/2026"],
+      ["Opto-Mechanical Engineer", "0 applicants · 10/12/2026"]
+    ],
+    "others": [
+      ["PCB Design Engineer", "Bengaluru · full-time · onsite", "10/12/2026", 0],
+      ["Space Optical Payload AIT Lead", "Bengaluru · full-time · onsite", "10/12/2026", 0],
+      ["Senior Hardware Design Engineer", "Bengaluru · full-time · onsite", "10/12/2026", 0],
+      ["Lead Camera Electronics Engineer (Embedded)", "Bengaluru · full-time · onsite", "10/12/2026", 0]
+    ],
+    "jobs": [
+      {
+        "title": "Satellite Systems Engineer (E&E)",
+        "type": "Full-time",
+        "mode": "Onsite",
+        "location": "Bengaluru, India",
+        "date": "10/14/2026",
+        "description": "Own the electrical and electronics architecture of our SAR + EO satellites. Define power, harness and avionics interfaces, and take subsystems from design reviews through integration, testing and launch.",
+        "requirements": [
+          "4+ years in spacecraft or avionics E&E systems",
+          "Power, harness and interface design (ICDs)",
+          "Hands-on integration and environmental testing",
+          "Familiar with ECSS or NASA standards"
+        ],
+        "skills": [
+          "Systems Engineering",
+          "Power Systems",
+          "Harness Design",
+          "Avionics",
+          "AIT",
+          "ECSS"
+        ]
+      },
+      {
+        "title": "Full Stack Developer",
+        "type": "Full-time",
+        "mode": "Onsite",
+        "location": "Bengaluru, India",
+        "date": "10/14/2026",
+        "description": "Build the platform that delivers our SAR and optical satellite imagery to customers. Ship web apps, APIs and data pipelines for tasking, ordering and viewing Earth observation data.",
+        "requirements": [
+          "3+ years building production web apps",
+          "Strong in React and a modern backend stack",
+          "Experience with cloud services and APIs",
+          "Bonus: geospatial or map-based products"
+        ],
+        "skills": [
+          "React",
+          "TypeScript",
+          "Python",
+          "PostgreSQL",
+          "AWS",
+          "GIS"
+        ]
+      }
+    ],
+    "fit": 26.3
+  }
+}

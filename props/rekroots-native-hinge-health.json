@@ -1,0 +1,313 @@
+{
+  "fps": 30,
+  "srcW": 1260,
+  "srcH": 684,
+  "win": {
+    "w": 1440,
+    "h": 860,
+    "bar": 44,
+    "url": "rekroots.com"
+  },
+  "outro": {
+    "sec": 3.2,
+    "title": "Less screening. Better hires.",
+    "sub": "Post your first role today",
+    "url": "rekroots.com"
+  },
+  "brand": {
+    "name": "Rekroots",
+    "logoSrc": "brand/rekroots-mark.svg",
+    "accent": "#DC2626",
+    "ink": "#1A0B0B",
+    "paper": "#F6F1EC"
+  },
+  "musicSrc": "music/pumpupthemind-creative-technology-showreel-241274.mp3",
+  "musicVolume": 0.3,
+  "musicStart": 11,
+  "id": "rekroots-native-hinge-health",
+  "src": "",
+  "app": {
+    "company": "Hinge Health",
+    "greeting": "Welcome back",
+    "job": {
+      "title": "Staff Software Engineer",
+      "type": "Full-time",
+      "mode": "Remote",
+      "date": "10/9/2026",
+      "description": "Build scalable, secure software for care delivery, including messaging, video visits, scheduling, clinical notes, and care plans. Provide technical leadership and mentor engineers.",
+      "requirements": [
+        "Strong software engineering experience",
+        "Experience designing scalable systems",
+        "Ability to solve complex technical problems",
+        "Experience in technical leadership and mentoring"
+      ],
+      "skills": [
+        "Software Development",
+        "System Design",
+        "Technical Leadership",
+        "Problem-Solving",
+        "System Scalability and Security",
+        "Team Collaboration"
+      ]
+    }
+  },
+  "segs": [
+    {
+      "a": 0,
+      "b": 31.0
+    }
+  ],
+  "camera": [
+    {
+      "o": 0,
+      "rect": [
+        16,
+        42,
+        1075
+      ],
+      "dur": 0.01
+    },
+    {
+      "o": 0.3,
+      "rect": [
+        130,
+        171,
+        860
+      ],
+      "dur": 1.0
+    },
+    {
+      "o": 2.2,
+      "rect": [
+        182,
+        42,
+        1075
+      ],
+      "dur": 0.6
+    },
+    {
+      "o": 3.6,
+      "rect": [
+        640,
+        55,
+        620
+      ],
+      "dur": 0.8
+    },
+    {
+      "o": 5.0,
+      "rect": [
+        190,
+        42,
+        1050
+      ],
+      "dur": 0.6
+    },
+    {
+      "o": 5.6,
+      "rect": [
+        640,
+        170,
+        600
+      ],
+      "dur": 0.6
+    },
+    {
+      "o": 6.6,
+      "rect": [
+        238,
+        110,
+        960
+      ],
+      "dur": 0.7
+    },
+    {
+      "o": 7.1,
+      "rect": [
+        460,
+        180,
+        720
+      ],
+      "dur": 0.7
+    },
+    {
+      "o": 9.7,
+      "rect": [
+        182,
+        42,
+        1075
+      ],
+      "dur": 0.6
+    },
+    {
+      "o": 11.0,
+      "rect": [
+        440,
+        230,
+        760
+      ],
+      "dur": 0.7
+    },
+    {
+      "o": 21.8,
+      "rect": [
+        700,
+        350,
+        560
+      ],
+      "dur": 0.6
+    },
+    {
+      "o": 23.4,
+      "rect": [
+        182,
+        42,
+        1075
+      ],
+      "dur": 0.6
+    },
+    {
+      "o": 28.0,
+      "rect": [
+        196,
+        60,
+        1044
+      ],
+      "dur": 0.9
+    }
+  ],
+  "clicks": [
+    {
+      "o": 1.65,
+      "x": 498,
+      "y": 612
+    },
+    {
+      "o": 4.45,
+      "x": 1172,
+      "y": 222
+    },
+    {
+      "o": 6.05,
+      "x": 958,
+      "y": 362
+    },
+    {
+      "o": 22.85,
+      "x": 1118,
+      "y": 656
+    },
+    {
+      "o": 26.05,
+      "x": 560,
+      "y": 336
+    }
+  ],
+  "spots": [
+    {
+      "o": 2.8,
+      "len": 1.0,
+      "box": [
+        221,
+        292,
+        1004,
+        132
+      ]
+    },
+    {
+      "o": 20.5,
+      "len": 1.2,
+      "box": [
+        538,
+        576,
+        372,
+        30
+      ],
+      "label": "AI first-round interviews"
+    },
+    {
+      "o": 24.0,
+      "len": 2.0,
+      "box": [
+        205,
+        292,
+        1021,
+        90
+      ],
+      "label": "Live now"
+    },
+    {
+      "o": 28.4,
+      "len": 2.6,
+      "box": [
+        213,
+        342,
+        1014,
+        90
+      ],
+      "label": "Your hiring pipeline"
+    }
+  ],
+  "captions": [
+    {
+      "o": 0,
+      "len": 2.2,
+      "n": 1,
+      "text": "Start at rekroots.com"
+    },
+    {
+      "o": 2.2,
+      "len": 2.8,
+      "n": 2,
+      "text": "Hinge Health's hiring dashboard at a glance"
+    },
+    {
+      "o": 5.0,
+      "len": 1.6,
+      "n": 3,
+      "text": "Write the posting yourself, or let AI draft it"
+    },
+    {
+      "o": 6.6,
+      "len": 3.4,
+      "n": 4,
+      "text": "Add the role basics"
+    },
+    {
+      "o": 10.0,
+      "len": 8.4,
+      "n": 5,
+      "text": "Describe the role and what you need"
+    },
+    {
+      "o": 18.4,
+      "len": 3.4,
+      "n": 6,
+      "text": "Add skills. AI interviews are one checkbox away"
+    },
+    {
+      "o": 21.8,
+      "len": 1.6,
+      "n": 7,
+      "text": "Publish in one click"
+    },
+    {
+      "o": 23.4,
+      "len": 3.2,
+      "n": 8,
+      "text": "Staff Software Engineer is live instantly"
+    },
+    {
+      "o": 26.6,
+      "len": 4.4,
+      "n": 9,
+      "text": "Track every applicant through your pipeline"
+    }
+  ],
+  "intro": {
+    "sec": 2.3,
+    "tag": "Made for Hinge Health",
+    "title": "Post a job in under a minute",
+    "sub": "Watch your Staff Software Engineer role go live on Rekroots"
+  }
+}
