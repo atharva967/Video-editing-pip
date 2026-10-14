@@ -6,11 +6,8 @@
 // `t` = seconds into the demo; TL holds the beat times the props JSON keys off.
 import React from "react";
 import { Easing, interpolate } from "remotion";
-import { loadFont as loadGrotesk } from "@remotion/google-fonts/SpaceGrotesk";
-import { loadFont as loadMono } from "@remotion/google-fonts/JetBrainsMono";
+import { GROTESK, MONO } from "./fonts";
 
-const { fontFamily: GROTESK } = loadGrotesk("normal", { weights: ["500", "700"] });
-const { fontFamily: MONO } = loadMono("normal", { weights: ["400", "500", "700"] });
 const SERIF = '"Times New Roman", Times, serif';
 
 export type Job = { title: string; type: string; mode: string; location?: string; description: string; requirements: string[]; skills: string[]; date: string };

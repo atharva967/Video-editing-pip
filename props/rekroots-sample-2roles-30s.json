@@ -1,0 +1,104 @@
+{
+  "fps": 30,
+  "srcW": 1260,
+  "srcH": 684,
+  "win": {
+    "w": 1440,
+    "h": 860,
+    "bar": 44,
+    "url": "rekroots.com"
+  },
+  "outro": {
+    "sec": 2.2,
+    "title": "Less screening. Better hires.",
+    "sub": "Post your first role today",
+    "url": "rekroots.com"
+  },
+  "brand": {
+    "name": "Rekroots",
+    "logoSrc": "brand/rekroots-mark.svg",
+    "accent": "#DC2626",
+    "ink": "#1A0B0B",
+    "paper": "#F6F1EC"
+  },
+  "musicSrc": "music/pumpupthemind-creative-technology-showreel-241274.mp3",
+  "musicVolume": 0.3,
+  "musicStart": 11,
+  "id": "rekroots-sample-2roles-30s",
+  "src": "",
+  "segs": [
+    {
+      "a": 0,
+      "b": 1
+    }
+  ],
+  "camera": [
+    {
+      "o": 0,
+      "rect": [
+        182,
+        42,
+        1075
+      ]
+    }
+  ],
+  "clicks": [],
+  "spots": [],
+  "captions": [],
+  "intro": {
+    "sec": 1.5,
+    "tag": "Made for Acme Labs",
+    "title": "Post your open roles in minutes",
+    "sub": "Backend Engineer + Product Designer, live on Rekroots"
+  },
+  "app": {
+    "company": "Acme Labs",
+    "greeting": "Welcome back",
+    "jobs": [
+      {
+        "title": "Senior Backend Engineer",
+        "type": "Full-time",
+        "mode": "Hybrid",
+        "location": "Bengaluru, India",
+        "date": "10/14/2026",
+        "description": "Design and scale the APIs and services behind our core product. Own features end to end, from data model to production monitoring.",
+        "requirements": [
+          "5+ years building backend systems",
+          "Strong in Python or Go",
+          "Experience with PostgreSQL and cloud infra",
+          "Comfortable owning services in production"
+        ],
+        "skills": [
+          "Python",
+          "Go",
+          "PostgreSQL",
+          "AWS",
+          "Docker",
+          "REST APIs"
+        ]
+      },
+      {
+        "title": "Product Designer",
+        "type": "Full-time",
+        "mode": "Hybrid",
+        "location": "Bengaluru, India",
+        "date": "10/14/2026",
+        "description": "Shape how customers experience our product. Turn research into flows, prototypes and polished UI, working closely with engineering.",
+        "requirements": [
+          "3+ years in product design",
+          "Strong portfolio of shipped work",
+          "Fluent in Figma and prototyping",
+          "Experience running user research"
+        ],
+        "skills": [
+          "Figma",
+          "Prototyping",
+          "UX Research",
+          "Design Systems",
+          "Interaction Design"
+        ]
+      }
+    ],
+    "fit": 26.3
+  }
+}

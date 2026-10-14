@@ -6,15 +6,10 @@
 // timings are in SOURCE seconds and mapped through the speed-ramp segments.
 import React from "react";
 import { AbsoluteFill, Audio, Easing, Freeze, Img, OffthreadVideo, Sequence, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
-import { loadFont as loadInter } from "@remotion/google-fonts/Inter";
 
 import { RekrootsApp, rekrootsScript, type RekrootsData } from "./RekrootsApp";
-import { loadFont as loadGrotesk } from "@remotion/google-fonts/SpaceGrotesk";
-import { loadFont as loadMono } from "@remotion/google-fonts/JetBrainsMono";
+import { GROTESK, INTER, MONO } from "./fonts";
 
-const { fontFamily: INTER } = loadInter("normal", { weights: ["500", "600", "700", "800"] });
-const { fontFamily: GROTESK } = loadGrotesk("normal", { weights: ["700"] });
-const { fontFamily: MONO } = loadMono("normal", { weights: ["500"] });
 
 type Rect = [number, number, number]; // x, y, width in source px (height follows the window aspect)
 type Seg = { a: number; b: number; speed?: number; hold?: number }; // hold = freeze frame at `a` for N seconds
