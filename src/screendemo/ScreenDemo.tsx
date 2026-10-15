@@ -8,7 +8,7 @@ import React from "react";
 import { AbsoluteFill, Audio, Easing, Freeze, Img, OffthreadVideo, Sequence, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 
 import { RekrootsApp, rekrootsScript, type RekrootsData } from "./RekrootsApp";
-import { GROTESK, INTER, MONO } from "./fonts";
+import { GROTESK, INTER, MONO, useFonts } from "./fonts";
 
 
 type Rect = [number, number, number]; // x, y, width in source px (height follows the window aspect)
@@ -84,6 +84,7 @@ const Mark: React.FC<{ brand: ScreenDemoProps["brand"]; size: number }> = ({ bra
 );
 
 export const ScreenDemo: React.FC<ScreenDemoProps> = (raw) => {
+  useFonts();
   const p = withScript(raw);
   const frame = useCurrentFrame();
   const { fps, width, height } = useVideoConfig();

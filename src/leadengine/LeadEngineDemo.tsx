@@ -3,7 +3,7 @@
 // Each scene lasts as long as its voiceover line (plus `pad`) and has its own eased camera.
 import React from "react";
 import { AbsoluteFill, Audio, Easing, Freeze, Img, OffthreadVideo, Sequence, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
-import { INTER } from "../screendemo/fonts";
+import { INTER, useFonts } from "../screendemo/fonts";
 
 type Rect = [number, number, number]; // x, y, width in source px; height = width * 9/16
 type Cam = [number, Rect, number?]; // [seconds into scene, target rect, ease duration]
@@ -90,6 +90,7 @@ const SceneView: React.FC<{ s: Scene; p: LeadEngineProps; t: number }> = ({ s, p
 };
 
 export const LeadEngineDemo: React.FC<LeadEngineProps> = (p) => {
+  useFonts();
   const frame = useCurrentFrame();
   const { fps, width, height } = useVideoConfig();
   const lens = sceneFrames(p);
