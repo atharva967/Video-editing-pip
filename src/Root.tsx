@@ -1,4 +1,5 @@
 import { Composition } from "remotion";
+import { LeadEngineDemo, leadEngineFrames, type LeadEngineProps } from "./leadengine/LeadEngineDemo";
 import { ScreenDemo, totalFrames as screenDemoFrames, type ScreenDemoProps } from "./screendemo/ScreenDemo";
 
 // Defaults only matter in Studio before a props file is picked; renders always pass --props.
@@ -10,6 +11,7 @@ const SCREENDEMO_DEFAULTS: ScreenDemoProps = {
 };
 
 export const RemotionRoot: React.FC = () => (
+  <>
   <Composition
     id="ScreenDemo"
     component={ScreenDemo}
@@ -20,4 +22,15 @@ export const RemotionRoot: React.FC = () => (
     defaultProps={SCREENDEMO_DEFAULTS}
     calculateMetadata={({ props }) => ({ durationInFrames: screenDemoFrames(props), fps: props.fps })}
   />
+  <Composition
+    id="LeadEngineDemo"
+    component={LeadEngineDemo}
+    durationInFrames={300}
+    fps={30}
+    width={1920}
+    height={1080}
+    defaultProps={{ fps: 30, pad: 0.5, video: { src: "", w: 1280, h: 720 }, title: { tag: "", title: "", steps: [] }, outro: { title: "", sub: "" }, scenes: [], musicSrc: null, musicVolume: 0 } as LeadEngineProps}
+    calculateMetadata={({ props }) => ({ durationInFrames: Math.max(1, leadEngineFrames(props)), fps: props.fps })}
+  />
+  </>
 );
