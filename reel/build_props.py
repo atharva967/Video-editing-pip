@@ -61,7 +61,7 @@ props = dict(
         dict(t=out("clipA", 11.68), src="pop", vol=0.6),
         dict(t=end_of(6), src="whoosh", vol=0.5), dict(t=end_of(6) + 0.1, src="impact", vol=0.5),
     ],
-    musicSrc="music/pumpupthemind-creative-technology-showreel-241274.mp3", musicVolume=0.05,
+    musicSrc=None, musicVolume=0,  # music is mixed in afterwards by reel/mix.sh (ducked under the voice)
 )
 json.dump(props, open("props/client-said-what-ep1.json", "w"), indent=1, ensure_ascii=False)
 print("speech s:", end_of(6), "total s:", end_of(6) + props["end"]["sec"])
