@@ -1,4 +1,5 @@
 import { Composition } from "remotion";
+import { ClientSaidWhat, reelFrames, type ReelProps } from "./reel/ClientSaidWhat";
 import { LeadEngineDemo, leadEngineFrames, type LeadEngineProps } from "./leadengine/LeadEngineDemo";
 import { ScreenDemo, totalFrames as screenDemoFrames, type ScreenDemoProps } from "./screendemo/ScreenDemo";
 
@@ -31,6 +32,16 @@ export const RemotionRoot: React.FC = () => (
     height={1080}
     defaultProps={{ fps: 30, pad: 0.5, video: { src: "", w: 1280, h: 720 }, title: { tag: "", title: "", steps: [] }, outro: { title: "", sub: "" }, scenes: [], musicSrc: null, musicVolume: 0 } as LeadEngineProps}
     calculateMetadata={({ props }) => ({ durationInFrames: Math.max(1, leadEngineFrames(props)), fps: props.fps })}
+  />
+  <Composition
+    id="ClientSaidWhat"
+    component={ClientSaidWhat}
+    durationInFrames={300}
+    fps={30}
+    width={1080}
+    height={1920}
+    defaultProps={{} as ReelProps}
+    calculateMetadata={({ props }) => ({ durationInFrames: props.segs ? reelFrames(props) : 1, fps: props.fps ?? 30 })}
   />
   </>
 );

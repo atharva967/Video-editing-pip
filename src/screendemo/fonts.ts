@@ -20,6 +20,7 @@ const load = (family: string, file: string, weight: string) => {
 export const INTER = load("Inter", "Inter-latin.woff2", "500 800");
 export const GROTESK = load("Space Grotesk", "SpaceGrotesk-latin.woff2", "500 700");
 export const MONO = load("JetBrains Mono", "JetBrainsMono-latin.woff2", "400 700");
+export const MONTSERRAT = load("Montserrat", "Montserrat-latin.woff2", "600 900");
 
 // Call once at the top of a composition: holds the frame until the bundled fonts are ready.
 export const useFonts = () => {
