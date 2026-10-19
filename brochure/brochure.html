@@ -1,0 +1,600 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TechnoTribes Company Brochure</title>
+<!-- Print with: brochure/build.sh (headless Chromium, A4, backgrounds on). Text matches the
+     original TechnoTribes_Brochure_final.pdf; only the visual design changed. -->
+<style>
+@font-face { font-family: "Inter"; src: url(assets/Inter-latin.woff2) format("woff2"); font-weight: 300 800; }
+@font-face { font-family: "Space Grotesk"; src: url(assets/SpaceGrotesk-latin.woff2) format("woff2"); font-weight: 400 700; }
+@font-face { font-family: "JetBrains Mono"; src: url(assets/JetBrainsMono-latin.woff2) format("woff2"); font-weight: 400 700; }
+@page { size: A4; margin: 0; }
+:root {
+  --bg: #111318; --s1: #191C23; --s2: #20242D; --s3: #2A2F3A; --line: rgba(255,255,255,0.08); --line2: rgba(255,255,255,0.14);
+  --or: #F26B2A; --or2: #FF8A4C; --orSoft: rgba(242,107,42,0.12); --orLine: rgba(242,107,42,0.45);
+  --tx: #F4F5F7; --mu: #A3A9B6; --mu2: #6E7584; --ok: #34D399;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+svg { fill: none; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+html, body { background: var(--bg); }
+body { font-family: "Inter", sans-serif; color: var(--tx); font-size: 9.6pt; line-height: 1.45; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.page { width: 210mm; height: 297mm; position: relative; overflow: hidden; background: var(--bg); padding: 15mm 15mm 0; page-break-after: always; display: flex; flex-direction: column; }
+.page:last-child { page-break-after: auto; }
+.glow { position: absolute; border-radius: 50%; pointer-events: none; filter: blur(10px); }
+.circuit { position: absolute; pointer-events: none; opacity: 0.55; }
+.content { position: relative; flex: 1; display: flex; flex-direction: column; }
+
+/* header */
+.hd { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 7mm; }
+.eyebrow { font-family: "JetBrains Mono", monospace; font-size: 7.4pt; letter-spacing: 2.4px; color: var(--or); text-transform: uppercase; margin-bottom: 2.4mm; display: flex; align-items: center; gap: 8px; }
+.eyebrow::before { content: ""; width: 18px; height: 2px; background: var(--or); border-radius: 2px; }
+h1 { font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 25pt; line-height: 1.05; letter-spacing: -0.6px; }
+h1 em, .accent { font-style: normal; color: var(--or); }
+.sub { color: var(--mu); font-size: 10pt; margin-top: 2mm; }
+.logo { width: 15mm; height: 15mm; border-radius: 3.5mm; background: #fff; display: flex; align-items: center; justify-content: center; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.35); flex: none; }
+.logo img { width: 100%; height: 100%; object-fit: contain; }
+h2 { font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 13.5pt; letter-spacing: -0.2px; }
+h3 { font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 11pt; }
+.mono { font-family: "JetBrains Mono", monospace; }
+.muted { color: var(--mu); }
+
+/* footer */
+.ft { position: relative; margin: auto -15mm 0; height: 11mm; padding: 0 15mm; display: flex; align-items: center; gap: 7mm; font-size: 7.6pt; color: var(--mu); border-top: 1px solid var(--line); background: linear-gradient(90deg, rgba(242,107,42,0.10), transparent 45%); }
+.ft span { display: flex; align-items: center; gap: 6px; }
+.ft svg { width: 10px; height: 10px; stroke: var(--or); }
+.ft .pg { margin-left: auto; font-family: "Space Grotesk"; font-weight: 700; font-size: 10pt; color: #fff; background: var(--or); width: 8mm; height: 8mm; border-radius: 2mm; display: flex; align-items: center; justify-content: center; }
+
+/* building blocks */
+.card { background: var(--s1); border: 1px solid var(--line); border-radius: 4mm; padding: 5mm; position: relative; }
+.card.hi { background: linear-gradient(160deg, rgba(242,107,42,0.16), rgba(242,107,42,0.03) 60%), var(--s1); border-color: var(--orLine); }
+.ico { width: 9.5mm; height: 9.5mm; border-radius: 2.6mm; background: var(--orSoft); border: 1px solid rgba(242,107,42,0.3); display: flex; align-items: center; justify-content: center; flex: none; }
+.ico svg { width: 5.2mm; height: 5.2mm; stroke: var(--or); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.ico.solid { background: var(--or); border: none; }
+.ico.solid svg { stroke: #fff; }
+.pill { display: inline-flex; align-items: center; gap: 5px; font-size: 7.6pt; font-weight: 600; padding: 1.2mm 3mm; border-radius: 10mm; background: var(--orSoft); color: var(--or2); border: 1px solid rgba(242,107,42,0.3); }
+.grid { display: grid; gap: 4mm; }
+.stat { text-align: left; padding: 5mm; }
+.stat b { display: block; font-family: "Space Grotesk"; font-size: 22pt; font-weight: 700; color: #fff; line-height: 1; letter-spacing: -0.5px; }
+.stat b i { font-style: normal; color: var(--or); }
+.stat span { color: var(--mu); font-size: 8.4pt; display: block; margin-top: 2mm; }
+.statrow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; }
+.statrow .card { display: flex; gap: 4mm; align-items: center; }
+.qr { background: #fff; border-radius: 3mm; padding: 2.5mm; flex: none; }
+.qr img { display: block; width: 100%; height: 100%; }
+.num { font-family: "Space Grotesk"; font-weight: 700; color: var(--or); }
+.check { list-style: none; display: flex; flex-direction: column; gap: 1.6mm; }
+.check li { display: flex; gap: 2.4mm; align-items: flex-start; font-size: 8.6pt; color: #D7DAE0; }
+.check li::before { content: ""; flex: none; width: 3.6mm; height: 3.6mm; margin-top: 0.4mm; border-radius: 50%; background: var(--orSoft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23F26B2A' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center/70% no-repeat; }
+</style>
+</head>
+<body>
+
+<!-- ICON SPRITE (stroke icons, 24x24) -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></symbol>
+    <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M5 15c-1.5 1.5-2 5-2 5s3.5-.5 5-2"/><path d="M9 15l-3-3c1-4 4.5-8 12-9-1 7.5-5 11-9 12z"/><circle cx="14.5" cy="9.5" r="1.6"/></symbol>
+    <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5.5 9.5A1.7 1.7 0 0 0 6 21h12a1.7 1.7 0 0 0 1.5-2.5L14 9V3"/><path d="M7.5 15h9"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></symbol>
+    <symbol id="i-bot" viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 4v4M9 13v1M15 13v1M9 17h6"/><circle cx="12" cy="3.5" r="1"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.5-3.5 3.2-5.5 6.5-5.5s6 2 6.5 5.5"/><circle cx="17" cy="9" r="2.6"/><path d="M17 14.5c2.4 0 4.2 1.6 4.6 4.5"/></symbol>
+    <symbol id="i-bank" viewBox="0 0 24 24"><path d="M3 9l9-5 9 5H3z"/><path d="M5 9v8M9.5 9v8M14.5 9v8M19 9v8M3 20h18"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-9-9.5C2 7 4.4 4.5 7.3 4.5c2 0 3.6 1.2 4.7 3 1.1-1.8 2.7-3 4.7-3C19.6 4.5 22 7 21 10.5 19.5 15.4 12 20 12 20z"/><path d="M7 11h2.5l1.5-2.5 2 5 1.5-2.5H17"/></symbol>
+    <symbol id="i-handshake" viewBox="0 0 24 24"><path d="M2 12l4-4 4 2 3-2 4 1 5 3"/><path d="M6 8v6l5 4c.8.6 1.8.4 2.3-.4L18 12"/><path d="M10 14l2 1.5M12.5 12.5l2.2 1.6"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.8 2.8L16.5 9.5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5L12 13l8.5-6.5"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3z"/></symbol>
+    <symbol id="i-in" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 10.5V17M8 7.2v.1M12 17v-3.8c0-1.6 1-2.7 2.4-2.7s2.1 1 2.1 2.7V17M12 10.5V17"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".8"/></symbol>
+    <symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20l4-1 11-11-3-3L5 16l-1 4z"/><path d="M14 7l3 3"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2.5"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h8l5 5v13H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M9 7h6"/></symbol>
+    <symbol id="i-megaphone" viewBox="0 0 24 24"><path d="M3 10v4l12 5V5L3 10z"/><path d="M15 9a3 3 0 0 1 0 6M6 14.5l1.5 5h3l-1.3-4"/></symbol>
+    <symbol id="i-headset" viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M19 19c0 1.5-2 2.5-5 2.5"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2.5"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></symbol>
+    <symbol id="i-quote" viewBox="0 0 24 24"><path d="M4 18v-5c0-4 2-7 6-8l.6 1.6C8 7.6 7.3 9.4 7.4 11H10v7H4zM14 18v-5c0-4 2-7 6-8l.6 1.6C18 7.6 17.3 9.4 17.4 11H20v7h-6z"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6h12M9 12h12M9 18h12M4 6h.01M4 12h.01M4 18h.01"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c.6-4 4-6.5 8-6.5s7.4 2.5 8 6.5"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.1"/></symbol>
+    <symbol id="i-swap" viewBox="0 0 24 24"><path d="M4 8h14l-4-4M20 16H6l4 4"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24"><path d="M3 4h2.5l2.2 11h10.6l2-8H6.5"/><circle cx="9" cy="19.5" r="1.5"/><circle cx="17" cy="19.5" r="1.5"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5M22 9v5"/></symbol>
+    <symbol id="i-server" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></symbol>
+    <!-- circuit background tile, from the logo's circuit "T" -->
+    <symbol id="circuit" viewBox="0 0 400 400">
+      <g fill="none" stroke="#F26B2A" stroke-width="1.4" stroke-linecap="round">
+        <path d="M0 60h120l30 30h90"/><circle cx="244" cy="90" r="4"/>
+        <path d="M0 120h70l40 40v80"/><circle cx="110" cy="244" r="4"/>
+        <path d="M400 40H300l-30 30v60"/><circle cx="270" cy="134" r="4"/>
+        <path d="M400 200h-80l-40 40h-60"/><circle cx="216" cy="240" r="4"/>
+        <path d="M160 400V330l40-40h90"/><circle cx="294" cy="290" r="4"/>
+        <path d="M0 330h50l30-30"/><circle cx="83" cy="297" r="4"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ============ 01 COVER ============ -->
+<section class="page" style="padding-top:13mm">
+  <div class="glow" style="width:150mm;height:150mm;right:-55mm;top:40mm;background:radial-gradient(circle, rgba(242,107,42,0.30), transparent 65%)"></div>
+  <div class="glow" style="width:120mm;height:120mm;left:-50mm;top:-40mm;background:radial-gradient(circle, rgba(99,102,241,0.16), transparent 65%)"></div>
+  <svg class="circuit" style="left:-10mm;top:0;width:110mm;height:110mm;opacity:.35"><use href="#circuit"/></svg>
+  <div class="content">
+    <div style="display:flex;align-items:center;justify-content:space-between">
+      <div style="display:flex;align-items:center;gap:4mm"><div class="logo" style="width:17mm;height:17mm"><img src="assets/logo.jpg"></div>
+        <div><div style="font-family:'Space Grotesk';font-weight:700;font-size:14pt;letter-spacing:2px">TECHNOTRIBES</div><div class="mono muted" style="font-size:7pt;letter-spacing:2px">COMPANY BROCHURE</div></div></div>
+      <span class="pill"><svg width="9" height="9" viewBox="0 0 10 10"><circle cx="5" cy="5" r="4" fill="#34D399"/></svg>AI-native agency</span>
+    </div>
+
+    <div style="margin-top:16mm">
+      <h1 style="font-size:50pt;line-height:0.98;letter-spacing:-1.8px">Enterprise AI,<br><em>shipped.</em></h1>
+      <p class="sub" style="font-size:12.5pt;max-width:125mm;margin-top:5mm;color:#C9CDD6">We help companies find the AI use cases worth building, prove them in a pilot, and put them into production.</p>
+    </div>
+
+    <!-- hero graphic: idea -> pilot -> production, on the circuit motif -->
+    <div style="position:relative;margin-top:10mm;height:86mm;border-radius:5mm;overflow:hidden;border:1px solid var(--line2);background:linear-gradient(135deg,#1D2029,#14161C)">
+      <svg viewBox="0 0 600 260" style="position:absolute;inset:0;width:100%;height:100%">
+        <defs>
+          <linearGradient id="flow" x1="0" x2="1"><stop offset="0" stop-color="#F26B2A" stop-opacity=".2"/><stop offset=".5" stop-color="#F26B2A"/><stop offset="1" stop-color="#FFB27A"/></linearGradient>
+          <pattern id="dots" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="rgba(255,255,255,0.07)"/></pattern>
+        </defs>
+        <rect width="600" height="260" fill="url(#dots)"/>
+        <g fill="none" stroke="url(#flow)" stroke-width="3" stroke-linecap="round">
+          <path d="M60 175 C140 175 150 95 230 95 S 330 175 400 150 S 500 70 545 70"/>
+        </g>
+        <g fill="none" stroke="rgba(242,107,42,0.35)" stroke-width="1.3">
+          <path d="M60 175v45h120"/><path d="M230 95V40h110l20 20"/><path d="M400 150v70h90"/><path d="M545 70V30"/>
+        </g>
+        <g fill="#F26B2A"><circle cx="180" cy="220" r="3.5"/><circle cx="360" cy="60" r="3.5"/><circle cx="490" cy="220" r="3.5"/><circle cx="545" cy="30" r="3.5"/></g>
+        <g><circle cx="60" cy="175" r="13" fill="#111318" stroke="#F26B2A" stroke-width="2.5"/><circle cx="60" cy="175" r="4.5" fill="#F26B2A"/>
+          <circle cx="230" cy="95" r="13" fill="#111318" stroke="#F26B2A" stroke-width="2.5"/><circle cx="230" cy="95" r="4.5" fill="#F26B2A"/>
+          <circle cx="400" cy="150" r="13" fill="#111318" stroke="#F26B2A" stroke-width="2.5"/><circle cx="400" cy="150" r="4.5" fill="#F26B2A"/>
+          <circle cx="545" cy="70" r="17" fill="#F26B2A"/><path d="M538 70l5 5 9-10" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
+      </svg>
+      <div style="position:absolute;left:4%;top:12%;" class="card" >
+        <div class="mono" style="font-size:6.6pt;color:var(--or);letter-spacing:1.6px">STEP 01</div><div style="font-weight:700;font-size:9.5pt;margin-top:1mm">Find the use case</div></div>
+      <div style="position:absolute;left:33%;top:57%;" class="card">
+        <div class="mono" style="font-size:6.6pt;color:var(--or);letter-spacing:1.6px">STEP 02</div><div style="font-weight:700;font-size:9.5pt;margin-top:1mm">Prove it in a pilot</div></div>
+      <div style="position:absolute;right:4%;bottom:9%;" class="card hi">
+        <div class="mono" style="font-size:6.6pt;color:var(--or);letter-spacing:1.6px">STEP 03</div><div style="font-weight:700;font-size:9.5pt;margin-top:1mm">Run it in production</div></div>
+    </div>
+
+    <div class="statrow" style="margin-top:7mm">
+      <div class="card"><div class="ico"><svg><use href="#i-layers"/></svg></div><div class="stat" style="padding:0"><b>100<i>+</i></b><span>Workflows shipped</span></div></div>
+      <div class="card"><div class="ico"><svg><use href="#i-clock"/></svg></div><div class="stat" style="padding:0"><b>4,000<i>+</i></b><span>Hours saved for clients</span></div></div>
+      <div class="card"><div class="ico"><svg><use href="#i-rocket"/></svg></div><div class="stat" style="padding:0"><b>4–6 <i style="font-size:13pt">weeks</i></b><span>Average time to go live</span></div></div>
+    </div>
+
+    <div class="card hi" style="margin-top:6mm;display:flex;align-items:center;gap:6mm;padding:5mm 6mm">
+      <div class="ico solid" style="width:12mm;height:12mm"><svg><use href="#i-calendar"/></svg></div>
+      <div style="flex:1"><h2>Book a 30-minute AI strategy call</h2><div class="muted" style="margin-top:1mm">Scan the code to find where AI will pay off.</div>
+        <div style="margin-top:1.6mm;color:var(--or2);font-weight:600">technotribes.ai · manjot@technotribes.ai</div></div>
+      <div class="qr" style="width:25mm;height:25mm"><img src="assets/qr-cal.svg"></div>
+    </div>
+  </div>
+  <div class="ft"><span><svg><use href="#i-phone"/></svg>9803432657</span><span><svg><use href="#i-globe"/></svg>https://www.technotribes.ai/</span><span><svg><use href="#i-mail"/></svg>manjot@technotribes.ai</span><div class="pg">01</div></div>
+</section>
+
+<!-- ============ 02 TOC ============ -->
+<section class="page">
+  <div class="glow" style="width:130mm;height:130mm;right:-60mm;bottom:-30mm;background:radial-gradient(circle, rgba(242,107,42,0.18), transparent 65%)"></div>
+  <div class="content">
+    <div class="hd"><div><div class="eyebrow">Inside</div><h1>Table of <em>Contents</em></h1></div><div class="logo"><img src="assets/logo.jpg"></div></div>
+    <div class="grid" style="grid-template-columns:1fr 1fr;gap:4mm;margin-top:4mm">
+      <!-- generated rows -->
+      <div class="card toc"><span class="tn">01</span><div class="ico"><svg><use href="#i-star"/></svg></div><b>Cover</b></div>
+      <div class="card toc"><span class="tn">02</span><div class="ico"><svg><use href="#i-list"/></svg></div><b>Table of Contents</b></div>
+      <div class="card toc"><span class="tn">03</span><div class="ico"><svg><use href="#i-pen"/></svg></div><b>Founder's Note</b></div>
+      <div class="card toc"><span class="tn">04</span><div class="ico"><svg><use href="#i-info"/></svg></div><b>About TechnoTribes</b></div>
+      <div class="card toc"><span class="tn">05</span><div class="ico"><svg><use href="#i-swap"/></svg></div><b>Problem vs Solution</b></div>
+      <div class="card toc"><span class="tn">06</span><div class="ico"><svg><use href="#i-users"/></svg></div><b>Our Team</b></div>
+      <div class="card toc"><span class="tn">07</span><div class="ico"><svg><use href="#i-chart"/></svg></div><b>Case Studies</b></div>
+      <div class="card toc"><span class="tn">08</span><div class="ico"><svg><use href="#i-quote"/></svg></div><b>Client Voices</b></div>
+      <div class="card toc"><span class="tn">09</span><div class="ico"><svg><use href="#i-briefcase"/></svg></div><b>Engagement Options</b></div>
+      <div class="card toc"><span class="tn">10</span><div class="ico"><svg><use href="#i-grid"/></svg></div><b>Our Products</b></div>
+      <div class="card toc"><span class="tn">11</span><div class="ico"><svg><use href="#i-flag"/></svg></div><b>How We Work</b></div>
+      <div class="card toc hi"><span class="tn">12</span><div class="ico solid"><svg><use href="#i-rocket"/></svg></div><b>Let's Start</b></div>
+    </div>
+    <style>
+      .toc { display:flex; align-items:center; gap:4mm; padding:5.6mm 5mm; overflow:hidden; }
+      .toc b { font-family:"Space Grotesk"; font-size:11.5pt; font-weight:700; }
+      .toc .tn { position:absolute; right:4mm; top:50%; transform:translateY(-50%); font-family:"Space Grotesk"; font-weight:700; font-size:30pt; color:rgba(255,255,255,0.06); letter-spacing:-1px; }
+    </style>
+    <div class="card" style="margin-top:auto;margin-bottom:8mm;display:flex;gap:5mm;align-items:center">
+      <svg viewBox="0 0 120 40" style="width:34mm;height:11mm;flex:none"><use href="#circuit" x="-20" y="-60" width="160" height="160"/></svg>
+      <div><h3>Enterprise AI, <span class="accent">shipped.</span></h3><div class="muted" style="font-size:8.6pt">We help companies find the AI use cases worth building, prove them in a pilot, and put them into production.</div></div>
+    </div>
+  </div>
+  <div class="ft"><span><svg><use href="#i-phone"/></svg>9803432657</span><span><svg><use href="#i-globe"/></svg>https://www.technotribes.ai/</span><span><svg><use href="#i-mail"/></svg>manjot@technotribes.ai</span><div class="pg">02</div></div>
+</section>
+
+<!-- ============ 03 FOUNDER ============ -->
+<section class="page">
+  <div class="glow" style="width:140mm;height:140mm;left:-60mm;top:60mm;background:radial-gradient(circle, rgba(242,107,42,0.20), transparent 65%)"></div>
+  <div class="content">
+    <div class="hd"><div><div class="eyebrow">Founder's note</div><h1>From the Founder's <em>Desk</em></h1></div><div class="logo"><img src="assets/logo.jpg"></div></div>
+    <div class="card" style="padding:9mm 9mm 8mm;margin-top:2mm">
+      <svg style="position:absolute;right:7mm;top:-7mm;width:20mm;height:20mm;stroke:none;fill:var(--or)"><use href="#i-quote"/></svg>
+      <p style="font-size:12pt;line-height:1.6;color:#E3E5EA;font-style:italic">Most companies we meet have already tried AI. A demo was built, a pilot was run, and then it stalled. Usually the technology is not the problem: the use case was not chosen carefully, the workflow was not ready, or nobody owned the path to production.</p>
+      <p style="font-size:12pt;line-height:1.6;color:#E3E5EA;font-style:italic;margin-top:4mm">We started TechnoTribes to close that gap. We begin by finding where AI is worth the investment, test it in a focused pilot, and only then build. Our own products show that we ship; our real work is solving your business problem.</p>
+    </div>
+    <div style="display:flex;gap:7mm;align-items:center;margin-top:9mm">
+      <div style="position:relative;width:52mm;height:64mm;flex:none">
+        <div style="position:absolute;inset:0;transform:translate(3.5mm,3.5mm);border-radius:5mm;border:2px solid var(--or)"></div>
+        <img src="assets/founder.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:5mm">
+      </div>
+      <div>
+        <div class="mono" style="color:var(--or);font-size:7.4pt;letter-spacing:2px">FOUNDER</div>
+        <div style="font-family:'Space Grotesk';font-weight:700;font-size:24pt;margin-top:1mm">Manjot Singh</div>
+        <div class="muted" style="font-size:11pt">Chief AI Officer</div>
+        <svg viewBox="0 0 200 40" style="width:46mm;height:9mm;margin-top:5mm"><path d="M5 30c20-25 30-25 35-5s15 10 25-10 15 20 30 5 25-20 40-5 30 0 55-10" fill="none" stroke="#F26B2A" stroke-width="2.2" stroke-linecap="round"/></svg>
+      </div>
+    </div>
+    <div class="statrow" style="margin-top:auto;margin-bottom:9mm">
+      <div class="card"><div class="ico"><svg><use href="#i-layers"/></svg></div><div class="stat" style="padding:0"><b>100<i>+</i></b><span>Workflows shipped</span></div></div>
+      <div class="card"><div class="ico"><svg><use href="#i-clock"/></svg></div><div class="stat" style="padding:0"><b>4,000<i>+</i></b><span>Hours saved for clients</span></div></div>
+      <div class="card"><div class="ico"><svg><use href="#i-rocket"/></svg></div><div class="stat" style="padding:0"><b>4–6 <i style="font-size:13pt">weeks</i></b><span>Average time to go live</span></div></div>
+    </div>
+  </div>
+  <div class="ft"><span><svg><use href="#i-phone"/></svg>9803432657</span><span><svg><use href="#i-globe"/></svg>https://www.technotribes.ai/</span><span><svg><use href="#i-mail"/></svg>manjot@technotribes.ai</span><div class="pg">03</div></div>
+</section>
+
+<!-- ============ 04 ABOUT ============ -->
+<section class="page">
+  <svg class="circuit" style="right:-30mm;top:-20mm;width:110mm;height:110mm;opacity:.25"><use href="#circuit"/></svg>
+  <div class="content">
+    <div class="hd"><div><div class="eyebrow">Who we are</div><h1>About <em>TechnoTribes</em></h1><div class="sub">From AI experiments to working systems</div></div><div class="logo"><img src="assets/logo.jpg"></div></div>
+    <div class="grid" style="grid-template-columns:1fr 1fr">
+      <div class="card"><div style="display:flex;gap:3mm;align-items:center"><div class="ico"><svg><use href="#i-target"/></svg></div><div><div class="mono" style="color:var(--or);font-size:7pt;letter-spacing:1.6px">01</div><h3>MISSION</h3></div></div>
+        <p style="margin-top:3mm;color:#D7DAE0">Help companies turn AI from isolated experiments into dependable, deployed solutions.</p></div>
+      <div class="card"><div style="display:flex;gap:3mm;align-items:center"><div class="ico"><svg><use href="#i-eye"/></svg></div><div><div class="mono" style="color:var(--or);font-size:7pt;letter-spacing:1.6px">02</div><h3>VISION</h3></div></div>
+        <p style="margin-top:3mm;color:#D7DAE0">Businesses where AI is part of how work gets done, not a side project.</p></div>
+    </div>
+    <div class="card" style="margin-top:4mm">
+      <div style="display:flex;gap:3mm;align-items:center"><div class="ico"><svg><use href="#i-flag"/></svg></div><div><div class="mono" style="color:var(--or);font-size:7pt;letter-spacing:1.6px">03</div><h3>STRATEGIC GOALS</h3></div></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;margin-top:4mm;position:relative">
+        <div style="position:absolute;left:6mm;right:6mm;top:4.5mm;height:2px;background:linear-gradient(90deg,var(--or),rgba(242,107,42,0.2))"></div>
+        <div class="goal"><span>1</span><p>Prioritise use cases by business value before building.</p></div>
+        <div class="goal"><span>2</span><p>Prove value in a pilot before full investment.</p></div>
+        <div class="goal"><span>3</span><p>Deploy, measure and improve in real workflows.</p></div>
+      </div>
+      <style>.goal{position:relative;padding-right:4mm}.goal span{display:flex;width:9mm;height:9mm;border-radius:50%;background:var(--or);color:#fff;font-family:"Space Grotesk";font-weight:700;align-items:center;justify-content:center;font-size:11pt;box-shadow:0 0 0 4px var(--s1)}.goal p{margin-top:3mm;color:#D7DAE0;font-size:9pt}</style>
+    </div>
+    <div class="card hi" style="margin-top:4mm;padding:6mm 7mm;display:flex;gap:5mm;align-items:center">
+      <div class="ico solid" style="width:12mm;height:12mm"><svg><use href="#i-bolt"/></svg></div>
+      <div><h2>We don't sell AI tools. We deliver <span class="accent">working AI.</span></h2>
+      <p class="muted" style="margin-top:1.5mm">TechnoTribes is an AI-native agency. We identify valuable AI opportunities, validate them through pilots, and build the products and workflows that run in daily operations.</p></div>
+    </div>
+    <div class="eyebrow" style="margin-top:7mm">What we deploy</div>
+    <div class="grid" style="grid-template-columns:1fr 1fr 1fr;gap:3.5mm">
+      <div class="card svc"><div class="ico"><svg><use href="#i-server"/></svg></div><b>Enterprise AI Implementation</b><span>Production AI workflows shipped in 30–90 days</span></div>
+      <div class="card svc"><div class="ico"><svg><use href="#i-bot"/></svg></div><b>AI Presales Agents</b><span>Qualify leads, research accounts, draft sales responses</span></div>
+      <div class="card svc"><div class="ico"><svg><use href="#i-users"/></svg></div><b>AI Hiring Automation</b><span>Recruiting workflows backed by Rekroots</span></div>
+      <div class="card svc"><div class="ico"><svg><use href="#i-bank"/></svg></div><b>AI for NBFCs</b><span>Borrower intake, document review, lending ops automation</span></div>
+      <div class="card svc"><div class="ico"><svg><use href="#i-heart"/></svg></div><b>Healthcare AI Workflows</b><span>Patient ops, appointment workflows, support copilots</span></div>
+      <div class="card svc"><div class="ico"><svg><use href="#i-handshake"/></svg></div><b>AI Implementation Partner</b><span>White-label AI delivery for agencies and consultants</span></div>
+    </div>
+    <style>.svc{padding:4.5mm;display:flex;flex-direction:column;gap:2mm}.svc b{font-size:9.4pt;margin-top:1mm}.svc span{color:var(--mu);font-size:8.2pt;line-height:1.4}</style>
+  </div>
+  <div class="ft"><span><svg><use href="#i-phone"/></svg>9803432657</span><span><svg><use href="#i-globe"/></svg>https://www.technotribes.ai/</span><span><svg><use href="#i-mail"/></svg>manjot@technotribes.ai</span><div class="pg">04</div></div>
+</section>
+
+<!-- ============ 05 PROBLEM VS SOLUTION ============ -->
+<section class="page">
+  <div class="glow" style="width:140mm;height:140mm;right:-60mm;top:30mm;background:radial-gradient(circle, rgba(242,107,42,0.18), transparent 65%)"></div>
+  <div class="content">
+    <div class="hd"><div><div class="eyebrow">Why teams call us</div><h1>Problem <span class="muted" style="font-weight:500">vs</span> <em>Solution</em></h1><div class="sub">The problem usually isn't AI. It's getting AI to work.</div></div><div class="logo"><img src="assets/logo.jpg"></div></div>
+    <div style="display:grid;grid-template-columns:1fr 12mm 1fr;gap:0;align-items:center;margin-bottom:3mm">
+      <div class="mono" style="font-size:7.4pt;letter-spacing:2px;color:var(--mu)">WHAT WE HEAR</div><div></div><div class="mono" style="font-size:7.4pt;letter-spacing:2px;color:var(--or)">WHAT TECHNOTRIBES DOES</div>
+    </div>
+    <div class="pvs">
+      <div class="card pb"><svg class="pi"><use href="#i-x"/></svg><p>“We've run AI pilots, but nothing has made it into production.”</p></div>
+      <div class="arr"><svg><use href="#i-arrow"/></svg></div>
+      <div class="card hi ps"><svg class="pi"><use href="#i-check"/></svg><p>We find out why it stalled, then scope a pilot with a clear path to deployment.</p></div>
+
+      <div class="card pb"><svg class="pi"><use href="#i-x"/></svg><p>“We don't know which AI use cases are worth investing in.”</p></div>
+      <div class="arr"><svg><use href="#i-arrow"/></svg></div>
+      <div class="card hi ps"><svg class="pi"><use href="#i-check"/></svg><p>A short workshop ranks opportunities by business value and feasibility.</p></div>
+
+      <div class="card pb"><svg class="pi"><use href="#i-x"/></svg><p>“Our team spends too much time on repetitive manual work.”</p></div>
+      <div class="arr"><svg><use href="#i-arrow"/></svg></div>
+      <div class="card hi ps"><svg class="pi"><use href="#i-check"/></svg><p>We automate those workflows and measure the time saved.</p></div>
+
+      <div class="card pb"><svg class="pi"><use href="#i-x"/></svg><p>“We're worried about fitting AI into existing processes.”</p></div>
+      <div class="arr"><svg><use href="#i-arrow"/></svg></div>
+      <div class="card hi ps"><svg class="pi"><use href="#i-check"/></svg><p>We design around your systems and constraints from day one.</p></div>
+    </div>
+    <style>
+      .pvs{display:grid;grid-template-columns:1fr 12mm 1fr;row-gap:5mm;align-items:stretch}
+      .pvs .card{display:flex;gap:3.5mm;align-items:center;padding:6mm 5mm;min-height:27mm}
+      .pvs p{font-size:10pt;line-height:1.45}
+      .pb{background:var(--s2)} .pb p{color:#C9CDD6;font-style:italic}
+      .pi{width:7mm;height:7mm;flex:none;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+      .pb .pi{stroke:#8B92A1} .ps .pi{stroke:var(--or)}
+      .arr{display:flex;align-items:center;justify-content:center}.arr svg{width:7mm;height:7mm;stroke:var(--or);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    </style>
+    <div class="card" style="margin-top:auto;margin-bottom:8mm;padding:6mm">
+      <div style="display:flex;align-items:center;justify-content:space-between"><h3>Our approach</h3><span class="pill"><svg width="10" height="10" style="stroke:var(--or2);fill:none;stroke-width:2.2"><use href="#i-clock"/></svg>Typical delivery: 30–90 days.</span></div>
+      <div style="display:grid;grid-template-columns:1fr 8mm 1fr 8mm 1fr;align-items:center;margin-top:4mm">
+        <div class="ap"><div class="ico"><svg><use href="#i-search"/></svg></div>Identify the right opportunity</div>
+        <svg class="aa"><use href="#i-arrow"/></svg>
+        <div class="ap"><div class="ico"><svg><use href="#i-flask"/></svg></div>Validate it with a pilot</div>
+        <svg class="aa"><use href="#i-arrow"/></svg>
+        <div class="ap"><div class="ico solid"><svg><use href="#i-rocket"/></svg></div>Build and implement the solution</div>
+      </div>
+      <style>.ap{display:flex;align-items:center;gap:3mm;font-weight:600;font-size:9.4pt}.aa{width:6mm;height:6mm;stroke:var(--mu2);fill:none;stroke-width:2;stroke-linecap:round}</style>
+    </div>
+  </div>
+  <div class="ft"><span><svg><use href="#i-phone"/></svg>9803432657</span><span><svg><use href="#i-globe"/></svg>https://www.technotribes.ai/</span><span><svg><use href="#i-mail"/></svg>manjot@technotribes.ai</span><div class="pg">05</div></div>
+</section>
+
+<!-- ============ 06 TEAM ============ -->
+<section class="page">
+  <div class="glow" style="width:150mm;height:150mm;left:-50mm;bottom:-40mm;background:radial-gradient(circle, rgba(242,107,42,0.18), transparent 65%)"></div>
+  <div class="content">
+    <div class="hd"><div><div class="eyebrow">People</div><h1>Our <em>Team</em></h1><div class="sub">The people behind TechnoTribes</div></div><div class="logo"><img src="assets/logo.jpg"></div></div>
+    <div class="grid" style="grid-template-columns:1fr 1fr;gap:5mm;margin-top:2mm">
+      <div class="card tm lead"><div class="ph"><img src="assets/team-manjot.jpg"></div><div><b>Manjot Singh</b><span>Chief AI Officer</span></div></div>
+      <div class="card tm"><div class="ph"><img src="assets/team-shruti.jpg"></div><div><b>Shruti Wagh</b></div></div>
+      <div class="card tm"><div class="ph"><img src="assets/team-atharv.jpg"></div><div><b>Atharv Bhakane</b></div></div>
+      <div class="card tm"><div class="ph"><img src="assets/team-gunjan.jpg"></div><div><b>Gunjan Jindal</b></div></div>
+      <div class="card tm"><div class="ph"><img src="assets/team-aanchal.jpg"></div><div><b>Aanchal Jethliya</b></div></div>
+      <div class="card tm"><div class="ph"><img src="assets/team-nidhi.jpg"></div><div><b>Nidhi Tomar</b></div></div>
+    </div>
+    <style>
+      .tm{display:flex;flex-direction:column;align-items:center;text-align:center;padding:7mm 5mm 6mm;gap:4mm}
+      .tm .ph{width:40mm;height:40mm;border-radius:50%;padding:1.6mm;background:conic-gradient(from 200deg, var(--or), rgba(242,107,42,0.15), var(--or))}
+      .tm .ph img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:1.4mm solid var(--s1);display:block}
+      .tm b{font-family:"Space Grotesk";font-size:13pt;display:block}
+      .tm span{color:var(--or2);font-size:9pt;font-weight:600}
+      .tm.lead{background:linear-gradient(160deg, rgba(242,107,42,0.16), rgba(242,107,42,0.03) 60%), var(--s1);border-color:var(--orLine)}
+    </style>
+  </div>
+  <div class="ft"><span><svg><use href="#i-phone"/></svg>9803432657</span><span><svg><use href="#i-globe"/></svg>https://www.technotribes.ai/</span><span><svg><use href="#i-mail"/></svg>manjot@technotribes.ai</span><div class="pg">06</div></div>
+</section>
+
+<!-- ============ 07 CASE STUDIES ============ -->
+<section class="page">
+  <svg class="circuit" style="right:-35mm;bottom:10mm;width:110mm;height:110mm;opacity:.22"><use href="#circuit"/></svg>
+  <div class="content">
+    <div class="hd"><div><div class="eyebrow">Case studies</div><h1>Proof, not <em>promises</em></h1><div class="sub">Projects we have delivered for clients</div></div><div class="logo"><img src="assets/logo.jpg"></div></div>
+    <div style="display:flex;flex-direction:column;gap:4.5mm">
+      <div class="card cs"><div class="l"><div class="tag">CASE STUDY 01</div><div class="nm"><div class="ico"><svg><use href="#i-cart"/></svg></div>Narawear</div><div class="k">Focus</div><div>Brand and digital experience</div></div>
+        <div class="m"><div class="k">What we built</div><div>A rebuild of the brand's digital experience, so it feels like the brand itself.</div></div>
+        <div class="r"><div class="k">Client-reported result</div><div class="big">Nearly 2x</div><div class="rs">conversion rate, per founder</div>
+          <svg viewBox="0 0 120 34" class="spark"><path d="M2 30 L30 26 L55 24 L80 14 L118 4" fill="none" stroke="#F26B2A" stroke-width="2.5" stroke-linecap="round"/><circle cx="118" cy="4" r="3" fill="#F26B2A"/></svg>
+          <div class="rq">Conversion rate nearly doubled</div></div></div>
+      <div class="card cs"><div class="l"><div class="tag">CASE STUDY 02</div><div class="nm"><div class="ico"><svg><use href="#i-cap"/></svg></div>Omniversity</div><div class="k">Focus</div><div>Education platform</div></div>
+        <div class="m"><div class="k">What we built</div><div>An education platform with real depth, built by a team that thinks in systems.</div></div>
+        <div class="r"><div class="k">Client-reported result</div><div class="big">Ahead of schedule</div><div class="rs">delivery, per founder</div>
+          <svg viewBox="0 0 120 34" class="spark"><rect x="2" y="12" width="116" height="10" rx="5" fill="rgba(255,255,255,0.08)"/><rect x="2" y="12" width="88" height="10" rx="5" fill="#F26B2A"/><path d="M104 6v22" stroke="#A3A9B6" stroke-width="1.5" stroke-dasharray="3 3"/></svg>
+          <div class="rq">Delivered ahead of schedule</div></div></div>
+      <div class="card cs"><div class="l"><div class="tag">CASE STUDY 03</div><div class="nm"><div class="ico"><svg><use href="#i-code"/></svg></div>Liquets It</div><div class="k">Focus</div><div>Engineering partnership</div></div>
+        <div class="m"><div class="k">What we built</div><div>A production-ready platform, shipped fast without breaking things.</div></div>
+        <div class="r"><div class="k">Client-reported result</div><div class="big">Built to scale</div><div class="rs">production-ready platform</div>
+          <svg viewBox="0 0 120 34" class="spark"><g fill="#F26B2A"><rect x="4" y="22" width="18" height="10" rx="2"/><rect x="30" y="16" width="18" height="16" rx="2"/><rect x="56" y="10" width="18" height="22" rx="2"/><rect x="82" y="3" width="18" height="29" rx="2"/></g></svg>
+          <div class="rq">Set up to scale from day one</div></div></div>
+    </div>
+    <style>
+      .cs{display:grid;grid-template-columns:44mm 1fr 52mm;gap:5mm;padding:5.5mm}
+      .cs .tag{font-family:"JetBrains Mono";font-size:6.8pt;letter-spacing:1.6px;color:var(--or)}
+      .cs .nm{display:flex;align-items:center;gap:2.5mm;font-family:"Space Grotesk";font-weight:700;font-size:14pt;margin:2mm 0 3mm}
+      .cs .nm .ico{width:8mm;height:8mm}.cs .nm .ico svg{width:4.4mm;height:4.4mm}
+      .cs .k{font-size:7.2pt;text-transform:uppercase;letter-spacing:1.2px;color:var(--mu2);font-weight:700;margin-bottom:1mm}
+      .cs .l>div:last-child,.cs .m>div:last-child{color:#D7DAE0;font-size:9pt}
+      .cs .m{border-left:1px solid var(--line);padding-left:5mm}
+      .cs .r{background:var(--s2);border-radius:3mm;padding:3.5mm 4mm;border:1px solid var(--orLine)}
+      .cs .big{font-family:"Space Grotesk";font-weight:700;font-size:15pt;color:var(--or);line-height:1.1}
+      .cs .rs{font-size:7.8pt;color:var(--mu)}
+      .cs .rq{font-size:7.6pt;color:#C9CDD6;margin-top:1mm}
+      .spark{width:100%;height:9mm;margin-top:2mm}
+    </style>
+    <div class="card" style="margin-top:auto;margin-bottom:8mm;padding:6mm">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:4mm"><h3>Best-fit teams</h3><div class="muted" style="font-size:8.4pt;text-align:right">One workflow. Real business case. Send us the workflow, target outcome and tool stack.</div></div>
+      <div style="display:flex;flex-wrap:wrap;gap:2.6mm;margin-top:4mm">
+        <span class="fit"><svg><use href="#i-bank"/></svg>Fintech and NBFC operators</span>
+        <span class="fit"><svg><use href="#i-heart"/></svg>Healthcare and healthtech teams</span>
+        <span class="fit"><svg><use href="#i-users"/></svg>Recruitment and staffing companies</span>
+        <span class="fit"><svg><use href="#i-chart"/></svg>B2B sales organizations</span>
+        <span class="fit"><svg><use href="#i-handshake"/></svg>Agencies needing AI capacity</span>
+      </div>
+      <style>.fit{display:inline-flex;align-items:center;gap:2mm;padding:2.4mm 3.6mm;border-radius:3mm;background:var(--s2);border:1px solid var(--line2);font-size:8.6pt;font-weight:600}.fit svg{width:4mm;height:4mm;stroke:var(--or);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}</style>
+    </div>
+  </div>
+  <div class="ft"><span><svg><use href="#i-phone"/></svg>9803432657</span><span><svg><use href="#i-globe"/></svg>https://www.technotribes.ai/</span><span><svg><use href="#i-mail"/></svg>manjot@technotribes.ai</span><div class="pg">07</div></div>
+</section>
+
+<!-- ============ 08 CLIENT VOICES ============ -->
+<section class="page">
+  <div class="glow" style="width:150mm;height:150mm;right:-60mm;top:-30mm;background:radial-gradient(circle, rgba(242,107,42,0.18), transparent 65%)"></div>
+  <div class="content">
+    <div class="hd"><div><div class="eyebrow">Testimonials</div><h1>Client <em>Voices</em></h1><div class="sub">What our clients say</div></div><div class="logo"><img src="assets/logo.jpg"></div></div>
+    <div class="grid" style="grid-template-columns:1fr 1fr;gap:4.5mm">
+      <div class="card tq"><svg class="qm"><use href="#i-quote"/></svg><div class="stars">★★★★★</div><p>Technotribes took our idea from a rough sketch to a live storefront faster than we thought possible. The attention to detail on every flow is what made the launch feel effortless.</p><div class="who"><span>A</span><div><b>Arshdeep</b><i>Founder · Cardora</i></div></div></div>
+      <div class="card tq hi"><svg class="qm"><use href="#i-quote"/></svg><div class="stars">★★★★★</div><p>They understood our brand instantly and translated it into a digital experience that actually feels like us. Our conversion rate nearly doubled after the rebuild.</p><div class="who"><span>I</span><div><b>Ishika</b><i>Founder · Narawear</i></div></div></div>
+      <div class="card tq"><svg class="qm"><use href="#i-quote"/></svg><div class="stars">★★★★★</div><p>Building an education platform with this much depth required a team that could think in systems. Technotribes delivered exactly that and kept us ahead of schedule.</p><div class="who"><span>V</span><div><b>Venkatesh</b><i>Founder · Omniversity</i></div></div></div>
+      <div class="card tq"><svg class="qm"><use href="#i-quote"/></svg><div class="stars">★★★★★</div><p>From product strategy to pixel-level polish, the team treated our launch like it was their own. The result is a platform our customers genuinely love using.</p><div class="who"><span>S</span><div><b>Sagar</b><i>Founder · Kibi Sports</i></div></div></div>
+      <div class="card tq" style="grid-column:1/3"><svg class="qm"><use href="#i-quote"/></svg><div class="stars">★★★★★</div><p>We needed an engineering partner who could move fast without breaking things. Technotribes shipped a production-ready platform and set us up to scale from there.</p><div class="who"><span>B</span><div><b>Bhupinder</b><i>Founder · Liquets It</i></div></div></div>
+    </div>
+    <style>
+      .tq{padding:6mm;display:flex;flex-direction:column}
+      .tq .qm{position:absolute;right:5mm;top:5mm;width:10mm;height:10mm;fill:rgba(242,107,42,0.22);stroke:none}
+      .tq .stars{color:var(--or);font-size:9pt;letter-spacing:1.5px}
+      .tq p{font-size:10pt;line-height:1.55;color:#E3E5EA;margin:3mm 0 5mm;flex:1}
+      .tq .who{display:flex;align-items:center;gap:3mm;border-top:1px solid var(--line);padding-top:4mm}
+      .tq .who span{width:9.5mm;height:9.5mm;border-radius:50%;background:var(--or);color:#fff;display:flex;align-items:center;justify-content:center;font-family:"Space Grotesk";font-weight:700;font-size:11pt}
+      .tq .who b{display:block;font-size:10pt}.tq .who i{font-style:normal;color:var(--mu);font-size:8.4pt}
+    </style>
+  </div>
+  <div class="ft"><span><svg><use href="#i-phone"/></svg>9803432657</span><span><svg><use href="#i-globe"/></svg>https://www.technotribes.ai/</span><span><svg><use href="#i-mail"/></svg>manjot@technotribes.ai</span><div class="pg">08</div></div>
+</section>
+
+<!-- ============ 09 ENGAGEMENT ============ -->
+<section class="page">
+  <div class="content">
+    <div class="hd"><div><div class="eyebrow">Pricing</div><h1>Engagement <em>Options</em></h1><div class="sub">Four ways to work with us. Start small, scale when value is clear</div></div><div class="logo"><img src="assets/logo.jpg"></div></div>
+    <div style="position:relative;height:9mm;margin-bottom:2mm">
+      <svg viewBox="0 0 600 30" preserveAspectRatio="none" style="width:100%;height:100%"><defs><linearGradient id="ramp" x1="0" x2="1"><stop offset="0" stop-color="#F26B2A" stop-opacity=".25"/><stop offset="1" stop-color="#F26B2A"/></linearGradient></defs><path d="M0 22 L585 6" stroke="url(#ramp)" stroke-width="3" fill="none"/><path d="M576 1l12 5-10 8" stroke="#F26B2A" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="mono" style="position:absolute;left:0;top:-1mm;font-size:6.8pt;color:var(--mu);letter-spacing:1.4px">START SMALL</span><span class="mono" style="position:absolute;right:6mm;bottom:-2mm;font-size:6.8pt;color:var(--or);letter-spacing:1.4px">SCALE</span>
+    </div>
+    <div class="grid" style="grid-template-columns:repeat(4,1fr);gap:3.5mm">
+      <div class="card pr"><div class="ico"><svg><use href="#i-search"/></svg></div><h3>AI Opportunity Workshop</h3><div class="pz">$2.5k to $5k</div><div class="tl"><svg><use href="#i-clock"/></svg>Workshop</div><div class="k">Best suited for</div><p>Executives exploring where AI fits</p><div class="k">What you get</div><p>An executive AI opportunity workshop</p></div>
+      <div class="card pr"><div class="ico"><svg><use href="#i-flask"/></svg></div><h3>30-Day AI Workflow Prototype</h3><div class="pz">$15k to $25k</div><div class="tl"><svg><use href="#i-clock"/></svg>30 days</div><div class="k">Best suited for</div><p>Teams with one workflow to prove</p><div class="k">What you get</div><p>A working prototype of one workflow, with a stakeholder demo and production architecture</p></div>
+      <div class="card pr hi"><div class="badge">Production</div><div class="ico solid"><svg><use href="#i-rocket"/></svg></div><h3>90-Day AI Adoption Sprint</h3><div class="pz">$75k to $150k</div><div class="tl"><svg><use href="#i-clock"/></svg>30 to 90 days</div><div class="k">Best suited for</div><p>Teams ready to take AI into production</p><div class="k">What you get</div><p>Production build, integrations, access control, telemetry, training, documentation and handover</p></div>
+      <div class="card pr"><div class="ico"><svg><use href="#i-swap"/></svg></div><h3>AI Adoption Retainer</h3><div class="pz">$10k to $25k <small>/ month</small></div><div class="tl"><svg><use href="#i-clock"/></svg>Monthly</div><div class="k">Best suited for</div><p>Teams with AI live and improving</p><div class="k">What you get</div><p>Ongoing AI adoption support, billed monthly</p></div>
+    </div>
+    <style>
+      .pr{padding:5mm 4.2mm;display:flex;flex-direction:column;gap:1.6mm}
+      .pr h3{font-size:10.4pt;line-height:1.2;margin-top:2mm;min-height:10mm}
+      .pr .pz{font-family:"Space Grotesk";font-weight:700;font-size:13.5pt;color:var(--or);margin-top:1mm}
+      .pr .pz small{font-size:8pt;color:var(--mu)}
+      .pr .tl{display:flex;align-items:center;gap:1.6mm;font-size:8pt;color:#C9CDD6;padding-bottom:2.6mm;border-bottom:1px solid var(--line);margin-bottom:1mm}
+      .pr .tl svg{width:3.6mm;height:3.6mm;stroke:var(--or);fill:none;stroke-width:2;stroke-linecap:round}
+      .pr .k{font-size:6.8pt;text-transform:uppercase;letter-spacing:1.2px;color:var(--mu2);font-weight:700;margin-top:1.4mm}
+      .pr p{font-size:8.4pt;color:#D7DAE0;line-height:1.4}
+      .pr .badge{position:absolute;top:-2.8mm;right:4mm;background:var(--or);color:#fff;font-size:6.8pt;font-weight:700;padding:1mm 2.6mm;border-radius:2mm;letter-spacing:.6px;text-transform:uppercase}
+    </style>
+    <div class="card" style="margin-top:5mm;padding:5mm 5.5mm">
+      <div style="display:flex;align-items:center;gap:3mm"><div class="ico"><svg><use href="#i-handshake"/></svg></div><div><h3>For agencies and consultants</h3><div class="muted" style="font-size:8.4pt">White-label, co-branded or referral delivery. You own the client relationship.</div></div></div>
+      <div class="grid" style="grid-template-columns:repeat(4,1fr);gap:3mm;margin-top:4mm">
+        <div class="ag"><b>$25k</b><span>Prototype</span></div><div class="ag"><b>$75k to $150k</b><span>Implementation</span></div><div class="ag"><b>$10k to $25k</b><span>Monthly retainer</span></div><div class="ag"><b>$30k to $60k</b><span>Dedicated AI product team</span></div>
+      </div>
+      <style>.ag{background:var(--s2);border-radius:3mm;padding:3.2mm;text-align:center;border:1px solid var(--line)}.ag b{display:block;font-family:"Space Grotesk";color:#fff;font-size:10.5pt}.ag span{font-size:7.8pt;color:var(--mu)}</style>
+    </div>
+    <div class="card hi" style="margin-top:auto;margin-bottom:8mm;display:flex;gap:5mm;align-items:center;padding:5.5mm 6mm">
+      <div style="flex:1"><h2>Not sure where to start?</h2><p class="muted" style="margin-top:1.5mm;font-size:9pt">Book a 30-minute AI strategy call. Send us the workflow, target outcome and current tool stack, and we will reply with the cleanest next step: workshop, prototype, implementation sprint or partner model.</p></div>
+      <div class="qr" style="width:26mm;height:26mm"><img src="assets/qr-cal.svg"></div>
+    </div>
+  </div>
+  <div class="ft"><span><svg><use href="#i-phone"/></svg>9803432657</span><span><svg><use href="#i-globe"/></svg>https://www.technotribes.ai/</span><span><svg><use href="#i-mail"/></svg>manjot@technotribes.ai</span><div class="pg">09</div></div>
+</section>
+
+<!-- ============ 10 PRODUCTS ============ -->
+<section class="page">
+  <div class="glow" style="width:150mm;height:150mm;left:-60mm;top:-40mm;background:radial-gradient(circle, rgba(242,107,42,0.16), transparent 65%)"></div>
+  <div class="content">
+    <div class="hd"><div><div class="eyebrow">Built in-house</div><h1>Our <em>Products</em></h1><div class="sub">Built by us. Proof that we ship. Your project starts with your problem.</div></div><div class="logo"><img src="assets/logo.jpg"></div></div>
+    <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:4mm">
+      <div class="card pd" style="--c:#DC2626"><div class="pt">R</div><h2>Rekroots</h2><div class="cat">AI Hiring · Recruitment · SaaS</div><p>Modern hiring platform with a job board, recruiter workflows, candidate profiles and AI-powered interviews.</p><div class="k">Key capabilities</div><ul class="check"><li>Job board</li><li>Recruiter workflows</li><li>Candidate profiles</li><li>AI-powered interviews</li></ul><div class="web"><svg><use href="#i-globe"/></svg>rekroots.com</div></div>
+      <div class="card pd" style="--c:#6366F1"><div class="pt">B</div><h2>Buildify</h2><div class="cat">AI Builder · Dev Infra · SaaS</div><p>AI-powered app builder that plans, designs, builds, tests and launches production-ready apps through natural language.</p><div class="k">Key capabilities</div><ul class="check"><li>Plans and designs the app</li><li>Builds and tests it</li><li>Live preview and deployment flow</li><li>Launches production-ready apps</li></ul><div class="web"><svg><use href="#i-globe"/></svg>buildify.sh</div></div>
+      <div class="card pd" style="--c:#0EA5A4"><div class="pt">P</div><h2>Prism</h2><div class="cat">AI Agents · Content · Distribution</div><p>AI social media assistant with specialist agents for research, drafting, editing and publishing across major networks.</p><div class="k">Key capabilities</div><ul class="check"><li>Research and drafting</li><li>Editing by specialist agents</li><li>Publishing to LinkedIn, X and Threads</li></ul><div class="web"><svg><use href="#i-globe"/></svg>prism.technotribes.ai</div></div>
+    </div>
+    <style>
+      .pd{padding:5.5mm 5mm;display:flex;flex-direction:column;gap:2mm;border-top:3px solid var(--c)}
+      .pd .pt{width:12mm;height:12mm;border-radius:3mm;background:var(--c);color:#fff;font-family:"Space Grotesk";font-weight:700;font-size:16pt;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px color-mix(in srgb, var(--c) 40%, transparent);margin-bottom:1.5mm}
+      .pd .cat{font-size:7.4pt;color:var(--mu);font-weight:600;letter-spacing:.3px}
+      .pd p{font-size:8.8pt;color:#D7DAE0;line-height:1.45;margin-top:1mm;min-height:24mm}
+      .pd .k{font-size:6.8pt;text-transform:uppercase;letter-spacing:1.2px;color:var(--mu2);font-weight:700;margin-top:1mm}
+      .pd .check{flex:1}
+      .pd .web{display:flex;align-items:center;gap:2mm;margin-top:2mm;padding-top:3mm;border-top:1px solid var(--line);font-weight:600;font-size:8.6pt;color:var(--or2)}
+      .pd .web svg{width:4mm;height:4mm;stroke:var(--or);fill:none;stroke-width:1.9}
+    </style>
+    <div class="card" style="margin-top:6mm;margin-bottom:8mm;padding:6mm">
+      <h3>What we deploy for teams</h3><div class="muted" style="font-size:8.6pt">The same engineering approach behind our products, applied to your workflow.</div>
+      <div class="grid" style="grid-template-columns:1fr 1fr;gap:3mm;margin-top:4mm">
+        <div class="dp"><div class="ico"><svg><use href="#i-bot"/></svg></div>AI presales and lead qualification agents</div>
+        <div class="dp"><div class="ico"><svg><use href="#i-users"/></svg></div>AI hiring and interview workflows</div>
+        <div class="dp"><div class="ico"><svg><use href="#i-headset"/></svg></div>AI customer support copilots</div>
+        <div class="dp"><div class="ico"><svg><use href="#i-doc"/></svg></div>AI document processing and summarization</div>
+        <div class="dp"><div class="ico"><svg><use href="#i-book"/></svg></div>AI internal knowledge assistants</div>
+        <div class="dp"><div class="ico"><svg><use href="#i-megaphone"/></svg></div>AI content and distribution agents</div>
+      </div>
+      <style>.dp{display:flex;align-items:center;gap:3mm;background:var(--s2);border-radius:3mm;padding:2.6mm 3mm;font-weight:600;font-size:9pt;border:1px solid var(--line)}.dp .ico{width:8mm;height:8mm}.dp .ico svg{width:4.4mm;height:4.4mm}</style>
+    </div>
+  </div>
+  <div class="ft"><span><svg><use href="#i-phone"/></svg>9803432657</span><span><svg><use href="#i-globe"/></svg>https://www.technotribes.ai/</span><span><svg><use href="#i-mail"/></svg>manjot@technotribes.ai</span><div class="pg">10</div></div>
+</section>
+
+<!-- ============ 11 HOW WE WORK ============ -->
+<section class="page">
+  <svg class="circuit" style="left:-35mm;bottom:20mm;width:100mm;height:100mm;opacity:.2"><use href="#circuit"/></svg>
+  <div class="content">
+    <div class="hd"><div><div class="eyebrow">Process</div><h1>How We <em>Work</em></h1><div class="sub">Our 90-day adoption sprint, from discovery to handover</div></div><div class="logo"><img src="assets/logo.jpg"></div></div>
+    <div class="card" style="padding:6mm">
+      <!-- 12-week gantt -->
+      <div class="gantt">
+        <div></div><div class="wk">${weeks}</div>
+      </div>
+      <div class="ph-row"><div class="ph-l"><span>1</span><div><b>Discover</b><i>Workflow discovery, ROI mapping, data review and executive alignment.</i></div></div><div class="bar-wrap"><div class="bar" style="left:0;width:16.66%">Weeks 1-2</div></div></div>
+      <div class="ph-row"><div class="ph-l"><span>2</span><div><b>Prototype</b><i>Prototype build, stakeholder demo and production architecture.</i></div></div><div class="bar-wrap"><div class="bar" style="left:16.66%;width:16.66%">Weeks 3-4</div></div></div>
+      <div class="ph-row"><div class="ph-l"><span>3</span><div><b>Build</b><i>Production build, integrations, access control and workflow telemetry.</i></div></div><div class="bar-wrap"><div class="bar" style="left:33.33%;width:33.33%">Weeks 5-8</div></div></div>
+      <div class="ph-row"><div class="ph-l"><span>4</span><div><b>Deploy</b><i>Deployment, team training, success metrics, documentation and handover.</i></div></div><div class="bar-wrap"><div class="bar solid" style="left:66.66%;width:33.33%">Weeks 9-12</div></div></div>
+    </div>
+    <style>
+      .gantt{display:grid;grid-template-columns:72mm 1fr;margin-bottom:2mm}
+      .wk{display:grid;grid-template-columns:repeat(12,1fr);font-family:"JetBrains Mono";font-size:6.4pt;color:var(--mu2);text-align:center}
+      .ph-row{display:grid;grid-template-columns:72mm 1fr;align-items:center;padding:3.6mm 0;border-top:1px solid var(--line)}
+      .ph-l{display:flex;gap:3mm;align-items:flex-start;padding-right:4mm}
+      .ph-l span{flex:none;width:8mm;height:8mm;border-radius:50%;border:2px solid var(--or);color:var(--or);display:flex;align-items:center;justify-content:center;font-family:"Space Grotesk";font-weight:700}
+      .ph-l b{display:block;font-family:"Space Grotesk";font-size:11pt}.ph-l i{font-style:normal;color:var(--mu);font-size:8.2pt;line-height:1.35;display:block}
+      .bar-wrap{position:relative;height:9mm;background:repeating-linear-gradient(90deg, transparent 0, transparent calc(100%/12 - 1px), rgba(255,255,255,0.06) calc(100%/12 - 1px), rgba(255,255,255,0.06) calc(100%/12));border-radius:2mm}
+      .bar{position:absolute;top:1mm;bottom:1mm;border-radius:2mm;background:var(--orSoft);border:1px solid var(--orLine);color:var(--or2);font-size:7.4pt;font-weight:700;display:flex;align-items:center;justify-content:center;white-space:nowrap}
+      .bar.solid{background:var(--or);color:#fff;border:none}
+    </style>
+    <div class="card" style="margin-top:6mm;margin-bottom:8mm;padding:6mm">
+      <div style="display:flex;align-items:center;gap:3mm"><div class="ico"><svg><use href="#i-handshake"/></svg></div><h3>Working with agencies and consultants</h3></div>
+      <p class="muted" style="margin-top:2.5mm;font-size:8.8pt">You own the client relationship. We handle AI workflow discovery, prototypes, engineering, integrations and deployment under a referral, white-label or co-branded model.</p>
+      <div style="display:grid;grid-template-columns:1fr 5mm 1fr 5mm 1fr 5mm 1fr;align-items:stretch;margin-top:5mm">
+        <div class="st"><span>1</span><b>Qualify</b><p>We review the client workflow, urgency, budget and fit.</p></div><svg class="sa"><use href="#i-arrow"/></svg>
+        <div class="st"><span>2</span><b>Scope</b><p>You get a clear prototype or deployment scope with commercial options.</p></div><svg class="sa"><use href="#i-arrow"/></svg>
+        <div class="st"><span>3</span><b>Deliver</b><p>We build the AI workflow while you lead the relationship.</p></div><svg class="sa"><use href="#i-arrow"/></svg>
+        <div class="st hi"><span>4</span><b>Expand</b><p>Successful prototypes grow into retainers, sprints or dedicated AI teams.</p></div>
+      </div>
+      <style>.st{background:var(--s2);border:1px solid var(--line);border-radius:3mm;padding:4mm 3.4mm}.st.hi{border-color:var(--orLine);background:linear-gradient(160deg, rgba(242,107,42,0.16), transparent 70%), var(--s2)}.st span{font-family:"Space Grotesk";font-weight:700;font-size:16pt;color:var(--or);line-height:1}.st b{display:block;font-family:"Space Grotesk";font-size:10.5pt;margin-top:1.5mm}.st p{font-size:7.8pt;color:var(--mu);line-height:1.4;margin-top:1mm}.sa{width:4.5mm;height:4.5mm;align-self:center;stroke:var(--mu2);fill:none;stroke-width:2.2;stroke-linecap:round;margin:0 .25mm}</style>
+    </div>
+  </div>
+  <div class="ft"><span><svg><use href="#i-phone"/></svg>9803432657</span><span><svg><use href="#i-globe"/></svg>https://www.technotribes.ai/</span><span><svg><use href="#i-mail"/></svg>manjot@technotribes.ai</span><div class="pg">11</div></div>
+</section>
+
+<!-- ============ 12 LET'S START ============ -->
+<section class="page">
+  <div class="glow" style="width:170mm;height:170mm;left:20mm;top:-60mm;background:radial-gradient(circle, rgba(242,107,42,0.30), transparent 65%)"></div>
+  <svg class="circuit" style="right:-30mm;top:10mm;width:110mm;height:110mm;opacity:.3"><use href="#circuit"/></svg>
+  <svg class="circuit" style="left:-40mm;top:40mm;width:100mm;height:100mm;opacity:.2"><use href="#circuit"/></svg>
+  <div class="content" style="align-items:center;text-align:center">
+    <div class="logo" style="width:20mm;height:20mm;margin-top:4mm"><img src="assets/logo.jpg"></div>
+    <div class="mono" style="font-size:8pt;letter-spacing:2.4px;color:var(--mu);margin-top:3mm">Enterprise AI, shipped.</div>
+    <h1 style="font-size:31pt;margin-top:10mm;line-height:1.08">Stop experimenting with AI.<br><em>Start putting it to work.</em></h1>
+    <p class="muted" style="font-size:10.5pt;max-width:150mm;margin-top:5mm">Send us the workflow, target outcome and current tool stack. We will reply with the cleanest next step. We answer every inquiry within 24 hours on business days.</p>
+    <div class="grid" style="grid-template-columns:1fr 1fr;gap:5mm;width:100%;margin-top:10mm;text-align:left">
+      <div class="card hi cta"><div class="ico solid"><svg><use href="#i-calendar"/></svg></div><h2>Book an AI strategy call</h2><div class="muted">30 minutes. Find where AI will pay off.</div><div class="qr" style="width:34mm;height:34mm;margin-top:5mm"><img src="assets/qr-cal.svg"></div><div class="lnk">cal.com/technotribesai/30min</div></div>
+      <div class="card cta"><div class="ico"><svg><use href="#i-handshake"/></svg></div><h2>Discuss a pilot or implementation</h2><div class="muted">Talk to us about your use case.</div><div class="qr" style="width:34mm;height:34mm;margin-top:5mm"><img src="assets/qr-contact.svg"></div><div class="lnk">technotribes.ai/#contact</div></div>
+    </div>
+    <style>.cta{padding:6mm;display:flex;flex-direction:column;align-items:center;text-align:center;gap:2mm}.cta h2{margin-top:2mm}.cta .lnk{margin-top:3mm;font-weight:700;color:var(--or2);font-size:9pt}</style>
+    <div class="card" style="width:100%;margin-top:auto;margin-bottom:8mm;text-align:left;padding:6mm;display:grid;grid-template-columns:62mm 1fr;gap:6mm;align-items:center">
+      <div style="display:flex;gap:3mm;align-items:center"><div style="width:14mm;height:14mm;border-radius:50%;overflow:hidden;border:2px solid var(--or);flex:none"><img src="assets/team-manjot.jpg" style="width:100%;height:100%;object-fit:cover"></div>
+        <div><div class="mono" style="font-size:6.8pt;color:var(--or);letter-spacing:1.6px">CONTACT</div><b style="font-size:10.5pt">Manjot Singh,</b><div class="muted" style="font-size:8.4pt">Chief AI Officer</div></div></div>
+      <div class="ct">
+        <div><svg><use href="#i-phone"/></svg><span>Phone</span>9803432657</div>
+        <div><svg><use href="#i-mail"/></svg><span>Email</span>manjot@technotribes.ai</div>
+        <div><svg><use href="#i-globe"/></svg><span>Website</span>https://www.technotribes.ai/</div>
+        <div><svg><use href="#i-in"/></svg><span>LinkedIn</span>linkedin.com/company/technotribes</div>
+        <div><svg><use href="#i-ig"/></svg><span>Instagram</span>@technotribes_solutions</div>
+        <div><svg><use href="#i-pen"/></svg><span>Blog</span>blog.technotribes.org</div>
+      </div>
+      <style>.ct{display:grid;grid-template-columns:1fr;gap:2.2mm;font-size:9pt;font-weight:600}.ct div{display:flex;align-items:center;gap:2mm;white-space:nowrap}.ct svg{width:4.2mm;height:4.2mm;stroke:var(--or);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;flex:none}.ct span{color:var(--mu2);font-weight:500;width:18mm;flex:none}</style>
+    </div>
+  </div>
+  <div class="ft"><span><svg><use href="#i-phone"/></svg>9803432657</span><span><svg><use href="#i-globe"/></svg>https://www.technotribes.ai/</span><span><svg><use href="#i-mail"/></svg>manjot@technotribes.ai</span><div class="pg">12</div></div>
+</section>
+
+<script>
+  // week labels for the gantt header
+  document.querySelectorAll(".wk").forEach((el) => { el.innerHTML = Array.from({ length: 12 }, (_, i) => `<span>W${i + 1}</span>`).join(""); });
+</script>
+</body>
+</html>

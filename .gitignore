@@ -4,3 +4,6 @@ renders/
 scrapper/src-frames/
 reel/src/
 public/reel/*.mp4
+brochure/src/
+brochure/out/
+brochure/assets/*.jpg
