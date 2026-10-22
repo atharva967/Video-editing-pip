@@ -1,0 +1,308 @@
+{
+ "duration": 48.4,
+ "handle": "@pardhanholidayz",
+ "talk": [
+  [
+   2.25,
+   3.05
+  ],
+  [
+   10.0,
+   12.4
+  ],
+  [
+   22.2,
+   24.0
+  ],
+  [
+   25.25,
+   28.1
+  ],
+  [
+   40.75,
+   43.6
+  ]
+ ],
+ "pip": [
+  [
+   24.0,
+   25.25
+  ],
+  [
+   28.1,
+   33.3
+  ],
+  [
+   36.75,
+   40.75
+  ],
+  [
+   43.6,
+   48.45
+  ]
+ ],
+ "captions": [
+  {
+   "t": 2.25,
+   "until": 3.05,
+   "text": "Planning Char Dham? 🙏"
+  },
+  {
+   "t": 10.0,
+   "until": 12.4,
+   "text": "Darshan at all 4 Dhams"
+  },
+  {
+   "t": 22.2,
+   "until": 24.0,
+   "text": "Breakfast, lunch & dinner daily"
+  },
+  {
+   "t": 40.75,
+   "until": 43.6,
+   "text": "Message us now 📩"
+  }
+ ],
+ "scenes": {
+  "hook": [
+   0,
+   2.25
+  ],
+  "map": [
+   3.05,
+   10.0
+  ],
+  "heli": [
+   12.4,
+   16.0
+  ],
+  "incl": [
+   16.0,
+   22.2
+  ],
+  "dates": [
+   24.0,
+   27.6
+  ],
+  "price": [
+   28.1,
+   33.3
+  ],
+  "ticket": [
+   33.3,
+   36.4
+  ],
+  "all": [
+   36.4,
+   40.75
+  ],
+  "cta": [
+   43.6,
+   48.45
+  ]
+ },
+ "mapStops": [
+  {
+   "name": "Yamunotri",
+   "at": 4.3,
+   "x": 160,
+   "y": 470
+  },
+  {
+   "name": "Gangotri",
+   "at": 5.7,
+   "x": 350,
+   "y": 330
+  },
+  {
+   "name": "Kedarnath",
+   "at": 7.1,
+   "x": 580,
+   "y": 520
+  },
+  {
+   "name": "Badrinath",
+   "at": 8.5,
+   "x": 810,
+   "y": 360
+  }
+ ],
+ "inclusions": [
+  {
+   "at": 16.0,
+   "icon": "🏨",
+   "title": "Hotel stay",
+   "sub": "Comfortable rooms at every stop"
+  },
+  {
+   "at": 18.0,
+   "icon": "🚗",
+   "title": "Pick & drop",
+   "sub": "Transfers handled for you"
+  },
+  {
+   "at": 20.0,
+   "icon": "🍳",
+   "title": "Breakfast",
+   "sub": "Fresh, every morning"
+  },
+  {
+   "at": 20.75,
+   "icon": "🍛",
+   "title": "Lunch",
+   "sub": "Hot meals on the yatra"
+  },
+  {
+   "at": 21.5,
+   "icon": "🍽️",
+   "title": "Dinner",
+   "sub": "End the day well fed"
+  }
+ ],
+ "priceAt": 30.3,
+ "amount": "₹2,44,000",
+ "allItems": [
+  {
+   "at": 37.0,
+   "text": "Helicopter tickets"
+  },
+  {
+   "at": 37.6,
+   "text": "Hotel stay"
+  },
+  {
+   "at": 38.2,
+   "text": "Pick & drop"
+  },
+  {
+   "at": 38.8,
+   "text": "All meals daily"
+  }
+ ],
+ "numbers": [
+  "81950 73333",
+  "97805 45799"
+ ],
+ "sfx": [
+  {
+   "t": 0.0,
+   "src": "whoosh",
+   "vol": 0.5
+  },
+  {
+   "t": 0.45,
+   "src": "impact",
+   "vol": 0.45
+  },
+  {
+   "t": 3.05,
+   "src": "whoosh",
+   "vol": 0.4
+  },
+  {
+   "t": 4.1,
+   "src": "pop",
+   "vol": 0.4
+  },
+  {
+   "t": 5.5,
+   "src": "pop",
+   "vol": 0.4
+  },
+  {
+   "t": 6.9,
+   "src": "pop",
+   "vol": 0.4
+  },
+  {
+   "t": 8.3,
+   "src": "pop",
+   "vol": 0.4
+  },
+  {
+   "t": 12.4,
+   "src": "whoosh",
+   "vol": 0.5
+  },
+  {
+   "t": 16.0,
+   "src": "pop",
+   "vol": 0.45
+  },
+  {
+   "t": 18.0,
+   "src": "pop",
+   "vol": 0.45
+  },
+  {
+   "t": 20.0,
+   "src": "pop",
+   "vol": 0.45
+  },
+  {
+   "t": 20.75,
+   "src": "pop",
+   "vol": 0.45
+  },
+  {
+   "t": 21.5,
+   "src": "pop",
+   "vol": 0.45
+  },
+  {
+   "t": 24.0,
+   "src": "pop",
+   "vol": 0.45
+  },
+  {
+   "t": 28.1,
+   "src": "whoosh",
+   "vol": 0.45
+  },
+  {
+   "t": 30.3,
+   "src": "impact",
+   "vol": 0.5
+  },
+  {
+   "t": 33.3,
+   "src": "whoosh",
+   "vol": 0.45
+  },
+  {
+   "t": 34.7,
+   "src": "impact",
+   "vol": 0.4
+  },
+  {
+   "t": 37.0,
+   "src": "pop",
+   "vol": 0.4
+  },
+  {
+   "t": 37.6,
+   "src": "pop",
+   "vol": 0.4
+  },
+  {
+   "t": 38.2,
+   "src": "pop",
+   "vol": 0.4
+  },
+  {
+   "t": 38.8,
+   "src": "pop",
+   "vol": 0.4
+  },
+  {
+   "t": 43.6,
+   "src": "whoosh",
+   "vol": 0.45
+  },
+  {
+   "t": 44.2,
+   "src": "ding",
+   "vol": 0.5
+  }
+ ]
+}
