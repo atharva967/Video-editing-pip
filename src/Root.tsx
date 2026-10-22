@@ -1,6 +1,7 @@
 import { Composition } from "remotion";
 import { ClientSaidWhat, reelFrames, type ReelProps } from "./reel/ClientSaidWhat";
 import { DmGif, DM_GIF_FRAMES, type DmGifProps } from "./gifs/DmGif";
+import { TravelReel, type TravelProps } from "./travel/TravelReel";
 import { LeadEngineDemo, leadEngineFrames, type LeadEngineProps } from "./leadengine/LeadEngineDemo";
 import { ScreenDemo, totalFrames as screenDemoFrames, type ScreenDemoProps } from "./screendemo/ScreenDemo";
 
@@ -52,6 +53,16 @@ export const RemotionRoot: React.FC = () => (
     width={540}
     height={540}
     defaultProps={{ bg: ["#111", "#333"], accent: "#FFD60A", ink: "#111", emoji: "📩", bubbles: ["Price?"], line1: "Line one", line2: "Line two", cta: "Check your DMs 📩" } as DmGifProps}
+  />
+  <Composition
+    id="TravelReel"
+    component={TravelReel}
+    durationInFrames={300}
+    fps={30}
+    width={1080}
+    height={1920}
+    defaultProps={{} as TravelProps}
+    calculateMetadata={({ props }) => ({ durationInFrames: Math.round((props.duration ?? 10) * 30) })}
   />
   </>
 );

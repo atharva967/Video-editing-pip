@@ -7,3 +7,6 @@ public/reel/*.mp4
 brochure/src/
 brochure/out/
 brochure/assets/*.jpg
+public/travel/*.mp4
+public/travel/*.m4a
+travel/src/

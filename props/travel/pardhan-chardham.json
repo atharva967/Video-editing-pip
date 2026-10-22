@@ -1,0 +1,26 @@
+{
+ "duration": 48.4,
+ "handle": "@pardhanholidayz",
+ "hook": { "t": 0, "until": 2.9, "kicker": "YATRA SEASON IS HERE", "title": "Char Dham Yatra", "sub": "by Helicopter 🚁", "badges": ["4 Dham", "Hotel", "All meals"] },
+ "captions": [
+  { "t": 10.0, "until": 12.0, "text": "Darshan at all 4 Dhams 🙏" },
+  { "t": 22.0, "until": 24.0, "text": "Breakfast, lunch & dinner daily" },
+  { "t": 41.2, "until": 44.0, "text": "Message us now 📩" }
+ ],
+ "dates": { "t": 24.0, "until": 27.6, "title": "Yatra dates", "months": ["MAY", "JUNE"], "note": "Limited seats each departure" },
+ "price": { "t": 27.6, "until": 33.0, "lead": "Book your Char Dham package", "priceAt": 30.2, "label": "Package cost", "amount": "₹2,44,000", "per": "per person", "note": "All inclusive ✅" },
+ "included": { "t": 36.0, "until": 41.2, "title": "Everything included", "items": [
+   { "at": 36.4, "icon": "🚁", "text": "Helicopter tickets" },
+   { "at": 37.0, "icon": "🏨", "text": "Hotel stay" },
+   { "at": 37.6, "icon": "🚗", "text": "Pick & drop" },
+   { "at": 38.3, "icon": "🍛", "text": "Breakfast · Lunch · Dinner" } ] },
+ "cta": { "t": 43.9, "until": 48.4, "title": "Book your Yatra today", "lines": ["Message us for full details"], "numbers": ["81950 73333", "97805 45799"], "foot": "Seats fill fast for May & June" },
+ "blur": [ { "t": 27.6, "until": 33.0 }, { "t": 36.0, "until": 41.2 }, { "t": 43.9, "until": 49 } ],
+ "sfx": [
+  { "t": 0.05, "src": "whoosh", "vol": 0.45 }, { "t": 0.35, "src": "impact", "vol": 0.4 },
+  { "t": 24.0, "src": "pop", "vol": 0.5 },
+  { "t": 27.5, "src": "whoosh", "vol": 0.45 }, { "t": 30.2, "src": "impact", "vol": 0.5 },
+  { "t": 36.0, "src": "whoosh", "vol": 0.45 }, { "t": 36.4, "src": "pop", "vol": 0.45 }, { "t": 37.0, "src": "pop", "vol": 0.45 }, { "t": 37.6, "src": "pop", "vol": 0.45 }, { "t": 38.3, "src": "pop", "vol": 0.45 },
+  { "t": 43.8, "src": "whoosh", "vol": 0.45 }, { "t": 44.3, "src": "ding", "vol": 0.5 }
+ ]
+}
