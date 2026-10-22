@@ -1,0 +1,20 @@
+{
+ "bg": [
+  "#0F2A4A",
+  "#127A6B"
+ ],
+ "accent": "#7CF0C4",
+ "ink": "#0F2A4A",
+ "emoji": "🏡",
+ "bubbles": [
+  "Price?",
+  "2BHK available?",
+  "Location?",
+  "Site visit kab?",
+  "Rent or sale?",
+  "Floor plan?"
+ ],
+ "line1": "Buyers want listings,",
+ "line2": "not 50 DMs",
+ "cta": "Check your DMs"
+}

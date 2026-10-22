@@ -1,0 +1,20 @@
+{
+ "bg": [
+  "#FFB36B",
+  "#E8457C"
+ ],
+ "accent": "#FFF3D6",
+ "ink": "#5A1E2E",
+ "emoji": "🎂",
+ "bubbles": [
+  "Eggless hai?",
+  "1kg price?",
+  "Kal delivery?",
+  "Menu bhejo",
+  "Custom cake?",
+  "Price? 🙏"
+ ],
+ "line1": "Take cake orders",
+ "line2": "even while you bake",
+ "cta": "Check your DMs"
+}

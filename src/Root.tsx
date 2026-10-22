@@ -1,5 +1,6 @@
 import { Composition } from "remotion";
 import { ClientSaidWhat, reelFrames, type ReelProps } from "./reel/ClientSaidWhat";
+import { DmGif, DM_GIF_FRAMES, type DmGifProps } from "./gifs/DmGif";
 import { LeadEngineDemo, leadEngineFrames, type LeadEngineProps } from "./leadengine/LeadEngineDemo";
 import { ScreenDemo, totalFrames as screenDemoFrames, type ScreenDemoProps } from "./screendemo/ScreenDemo";
 
@@ -42,6 +43,15 @@ export const RemotionRoot: React.FC = () => (
     height={1920}
     defaultProps={{} as ReelProps}
     calculateMetadata={({ props }) => ({ durationInFrames: props.segs ? reelFrames(props) : 1, fps: props.fps ?? 30 })}
+  />
+  <Composition
+    id="DmGif"
+    component={DmGif}
+    durationInFrames={DM_GIF_FRAMES}
+    fps={30}
+    width={540}
+    height={540}
+    defaultProps={{ bg: ["#111", "#333"], accent: "#FFD60A", ink: "#111", emoji: "📩", bubbles: ["Price?"], line1: "Line one", line2: "Line two", cta: "Check your DMs 📩" } as DmGifProps}
   />
   </>
 );

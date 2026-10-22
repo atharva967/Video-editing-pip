@@ -1,0 +1,20 @@
+{
+ "bg": [
+  "#FF4D8D",
+  "#7B2FF7"
+ ],
+ "accent": "#FFE14D",
+ "ink": "#1A0B2E",
+ "emoji": "🛍️",
+ "bubbles": [
+  "Price? 🙏",
+  "Size M hai?",
+  "PP",
+  "COD available?",
+  "Restock kab?",
+  "Price plz"
+ ],
+ "line1": "Tired of replying",
+ "line2": "“Price?” all day?",
+ "cta": "Check your DMs"
+}
