@@ -15,15 +15,18 @@ export type DmGifProps = {
   cta: string;
 };
 
-export const DM_GIF_FRAMES = 120; // 4 s at 30 fps
+// SLOW stretches the timeline (holds, delays) so the text is readable; pops keep their speed
+const SLOW = 1.35;
+export const DM_GIF_FRAMES = Math.round(120 * SLOW); // 5.4 s at 30 fps
 
 const clamp01 = (x: number) => Math.min(1, Math.max(0, x));
 
 export const DmGif: React.FC<DmGifProps> = (p) => {
   useFonts();
-  const f = useCurrentFrame();
+  const raw = useCurrentFrame();
+  const f = raw / SLOW; // timeline position on the original 120-frame plan
   const { fps } = useVideoConfig();
-  const pop = (at: number, cfg = { damping: 12, stiffness: 200 }) => spring({ fps, frame: f - at, config: cfg, durationInFrames: 14 });
+  const pop = (at: number, cfg = { damping: 12, stiffness: 200 }) => spring({ fps, frame: raw - at * SLOW, config: cfg, durationInFrames: 14 });
 
   // phase 1: DMs flood in (0-52), phase 2: punchline (50-88), phase 3: CTA (86-120)
   const flood = 1 - clamp01((f - 48) / 8);
@@ -33,7 +36,7 @@ export const DmGif: React.FC<DmGifProps> = (p) => {
   const plOut = 1 - clamp01((f - 86) / 6);
   const cta = pop(88, { damping: 10, stiffness: 180 });
   const pulse = f > 96 ? 1 + 0.05 * Math.sin((f - 96) * 0.45) : 1;
-  const fadeLoop = clamp01((120 - f) / 5); // soft loop back to the start
+  const fadeLoop = clamp01((120 - f) / 4); // soft loop back to the start
 
   const pos = [[40, 70], [210, 135], [30, 205], [190, 270], [60, 340], [205, 400]];
 
