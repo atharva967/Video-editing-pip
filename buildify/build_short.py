@@ -3,18 +3,18 @@
 import json
 vo = json.load(open("buildify/vo-short-durations.json"))
 text = dict(json.load(open("buildify/vo-short.json")))
-PAD = 0.55
+PAD = 0.8
 plan = [  # key, chapter title, [(src_a, src_b), ...], rect
     ("intro", None, [], None),
-    ("prompt", "Describe your app", [(23.5, 31.0)], [160, 40, 1600]),
-    ("build", "Build & live preview", [(37.0, 45.0), (47.0, 56.0)], [320, 90, 1600]),
-    ("refine", "Refine by chatting", [(63.5, 69.0), (76.0, 81.5)], [320, 90, 1600]),
-    ("export", "Export your code", [(82.0, 88.0)], [320, 0, 1600]),
-    ("studio", "Buildify Studio", [(91.0, 100.0), (101.0, 107.0), (113.0, 118.0)], [160, 40, 1600]),
-    ("publish", "Preview & publish", [(121.5, 127.0), (129.0, 135.0)], [160, 60, 1600]),
-    ("chat", "AI Chat", [(146.0, 157.0)], [0, 40, 1600]),
-    ("access", "Accessibility Tester", [(159.5, 166.0), (171.0, 183.0)], [100, 40, 1600]),
-    ("agents", "AI agents", [(185.0, 197.5)], [0, 20, 1600]),
+    ("prompt", "Describe your app", [(23.5, 31.0)], [0, 0, 1920]),
+    ("build", "Build & live preview", [(37.0, 45.0), (47.0, 56.0)], [0, 0, 1920]),
+    ("refine", "Refine by chatting", [(63.5, 69.0), (76.0, 81.5)], [0, 0, 1920]),
+    ("export", "Export your code", [(82.0, 88.0)], [0, 0, 1920]),
+    ("studio", "Buildify Studio", [(91.0, 100.0), (101.0, 107.0), (113.0, 118.0)], [0, 0, 1920]),
+    ("publish", "Preview & publish", [(121.5, 127.0), (129.0, 135.0)], [0, 0, 1920]),
+    ("chat", "AI Chat", [(146.0, 157.0)], [0, 0, 1920]),
+    ("access", "Accessibility Tester", [(159.5, 166.0), (171.0, 183.0)], [0, 0, 1920]),
+    ("agents", "AI agents", [(185.0, 197.5)], [0, 0, 1920]),
     ("outro", None, [], None),
 ]
 segs, t, n = [], 0.0, 0

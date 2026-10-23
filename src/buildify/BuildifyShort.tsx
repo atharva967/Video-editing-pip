@@ -12,7 +12,7 @@ export type ShortProps = { src: string; duration: number; segs: Seg[] };
 
 const B = { blue: "#3B7EFF", blue2: "#5B9AFF", blue3: "#8BB8FF", sub: "#9AA3B2" };
 const SW = 1920, SH = 1080; // source size
-const WIN = { w: 1600, h: 900, bar: 34, top: 22 };
+const WIN = { w: 1680, h: 945, bar: 32, top: 14 };
 const ease = Easing.bezier(0.45, 0, 0.15, 1);
 const clamp01 = (x: number) => Math.min(1, Math.max(0, x));
 const SWIPE = 0.62; // seconds the chapter swipe takes
@@ -34,8 +34,8 @@ export const BuildifyShort: React.FC<ShortProps> = (p) => {
   const sub = shown.subs.filter((x) => T >= x.at).pop() ?? shown.subs[0];
   const local = Math.max(0, T - sub.at);
   // zoom punch on a jump cut inside a step, slow drift otherwise
-  const punch = sub !== shown.subs[0] ? 0.035 * (1 - ease(clamp01(local / 0.3))) : 0;
-  const drift = 0.018 * clamp01((T - shown.t) / shown.dur);
+  const punch = sub !== shown.subs[0] ? 0.015 * (1 - ease(clamp01(local / 0.25))) : 0;
+  const drift = 0; // full frame always: no crop
   const [rx, ry, rw] = shown.rect!;
   const s = (WIN.w / rw) * (1 + punch + drift);
   const cx = rx + rw / 2, cy = ry + (rw * 9) / 16 / 2;
@@ -94,7 +94,7 @@ export const BuildifyShort: React.FC<ShortProps> = (p) => {
 
       {/* progress */}
       {showWin && (
-        <div style={{ position: "absolute", left, width: WIN.w, top: WIN.top + WIN.h + WIN.bar + 14, display: "flex", gap: 6, opacity: Math.min(1, winIn) * (1 - winOut) }}>
+        <div style={{ position: "absolute", left, width: WIN.w, top: WIN.top + WIN.h + WIN.bar + 10, display: "flex", gap: 6, opacity: Math.min(1, winIn) * (1 - winOut) }}>
           {footSegs.map((c) => {
             const f = clamp01((T - c.t) / c.dur);
             return <div key={c.key} style={{ flex: c.dur, height: 5, borderRadius: 3, background: "rgba(255,255,255,0.12)", overflow: "hidden" }}><div style={{ width: `${f * 100}%`, height: "100%", background: B.blue2 }} /></div>;
@@ -104,8 +104,8 @@ export const BuildifyShort: React.FC<ShortProps> = (p) => {
 
       {/* subtitle: the voiceover line */}
       {showWin && seg.subs.length > 0 && (
-        <div style={{ position: "absolute", left: 0, right: 0, top: WIN.top + WIN.h + WIN.bar + 30, display: "flex", justifyContent: "center", opacity: clamp01((T - seg.t - 0.15) / 0.2) * clamp01((seg.t + seg.dur - T) / 0.15) * (1 - winOut) }}>
-          <div style={{ maxWidth: 1600, textAlign: "center", fontSize: 32, fontWeight: 600, lineHeight: 1.25, color: "#fff", textShadow: "0 2px 12px rgba(0,0,0,0.6)" }}>{seg.text.replace(/A I/g, "AI").replace(/P D F/g, "PDF").replace(/buildify dot s h/g, "buildify.sh")}</div>
+        <div style={{ position: "absolute", left: 0, right: 0, top: WIN.top + WIN.h + WIN.bar + 22, display: "flex", justifyContent: "center", opacity: clamp01((T - seg.t - 0.15) / 0.2) * clamp01((seg.t + seg.dur - T) / 0.15) * (1 - winOut) }}>
+          <div style={{ maxWidth: 1820, textAlign: "center", fontSize: 30, fontWeight: 600, lineHeight: 1.2, whiteSpace: "nowrap", color: "#fff", textShadow: "0 2px 12px rgba(0,0,0,0.6)" }}>{seg.text.replace(/A I/g, "AI").replace(/P D F/g, "PDF").replace(/buildify dot s h/g, "buildify.sh")}</div>
         </div>
       )}
 

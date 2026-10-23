@@ -1,11 +1,11 @@
 {
  "src": "buildify/demo.mp4",
- "duration": 58.65,
+ "duration": 58.48,
  "segs": [
   {
    "key": "intro",
    "t": 0.0,
-   "dur": 4.43,
+   "dur": 4.44,
    "n": null,
    "title": null,
    "rect": null,
@@ -14,222 +14,222 @@
   },
   {
    "key": "prompt",
-   "t": 4.43,
-   "dur": 5.54,
+   "t": 4.44,
+   "dur": 5.41,
    "n": 1,
    "title": "Describe your app",
    "rect": [
-    160,
-    40,
-    1600
+    0,
+    0,
+    1920
    ],
    "subs": [
     {
-     "at": 4.43,
-     "dur": 5.54,
+     "at": 4.44,
+     "dur": 5.41,
      "a": 23.5,
-     "rate": 1.354
+     "rate": 1.386
     }
    ],
    "text": "Describe your app in plain English. Buildify plans it first, then builds it."
   },
   {
    "key": "build",
-   "t": 9.97,
-   "dur": 5.78,
+   "t": 9.85,
+   "dur": 5.64,
    "n": 2,
    "title": "Build & live preview",
    "rect": [
-    320,
-    90,
-    1600
+    0,
+    0,
+    1920
    ],
    "subs": [
     {
-     "at": 9.97,
-     "dur": 2.72,
+     "at": 9.85,
+     "dur": 2.654,
      "a": 37.0,
-     "rate": 2.941
+     "rate": 3.014
     },
     {
-     "at": 12.69,
-     "dur": 3.06,
+     "at": 12.504,
+     "dur": 2.986,
      "a": 47.0,
-     "rate": 2.941
+     "rate": 3.014
     }
    ],
    "text": "Watch it write, build and test the code. Then click through a live preview of your app."
   },
   {
    "key": "refine",
-   "t": 15.75,
-   "dur": 5.12,
+   "t": 15.49,
+   "dur": 5.02,
    "n": 3,
    "title": "Refine by chatting",
    "rect": [
-    320,
-    90,
-    1600
+    0,
+    0,
+    1920
    ],
    "subs": [
     {
-     "at": 15.75,
-     "dur": 2.56,
+     "at": 15.49,
+     "dur": 2.51,
      "a": 63.5,
-     "rate": 2.148
+     "rate": 2.191
     },
     {
-     "at": 18.31,
-     "dur": 2.56,
+     "at": 18.0,
+     "dur": 2.51,
      "a": 76.0,
-     "rate": 2.148
+     "rate": 2.191
     }
    ],
    "text": "Need a change? Just ask. Add dark mode, and version two is ready."
   },
   {
    "key": "export",
-   "t": 20.87,
-   "dur": 3.07,
+   "t": 20.51,
+   "dur": 3.04,
    "n": 4,
    "title": "Export your code",
    "rect": [
-    320,
     0,
-    1600
+    0,
+    1920
    ],
    "subs": [
     {
-     "at": 20.87,
-     "dur": 3.07,
+     "at": 20.51,
+     "dur": 3.04,
      "a": 82.0,
-     "rate": 1.954
+     "rate": 1.974
     }
    ],
    "text": "Push it to GitHub, or download the code."
   },
   {
    "key": "studio",
-   "t": 23.94,
-   "dur": 7.91,
+   "t": 23.55,
+   "dur": 7.88,
    "n": 5,
    "title": "Buildify Studio",
    "rect": [
-    160,
-    40,
-    1600
+    0,
+    0,
+    1920
    ],
    "subs": [
     {
-     "at": 23.94,
-     "dur": 3.559,
+     "at": 23.55,
+     "dur": 3.546,
      "a": 91.0,
-     "rate": 2.528
+     "rate": 2.538
     },
     {
-     "at": 27.5,
-     "dur": 2.373,
+     "at": 27.096,
+     "dur": 2.364,
      "a": 101.0,
-     "rate": 2.528
+     "rate": 2.538
     },
     {
-     "at": 29.873,
-     "dur": 1.977,
+     "at": 29.46,
+     "dur": 1.97,
      "a": 113.0,
-     "rate": 2.528
+     "rate": 2.538
     }
    ],
    "text": "For websites, Buildify Studio is a visual editor. Start from a template, drag in elements, and edit any text."
   },
   {
    "key": "publish",
-   "t": 31.85,
-   "dur": 4.9,
+   "t": 31.43,
+   "dur": 5.07,
    "n": 6,
    "title": "Preview & publish",
    "rect": [
-    160,
-    60,
-    1600
+    0,
+    0,
+    1920
    ],
    "subs": [
     {
-     "at": 31.85,
-     "dur": 2.343,
+     "at": 31.43,
+     "dur": 2.425,
      "a": 121.5,
-     "rate": 2.347
+     "rate": 2.268
     },
     {
-     "at": 34.193,
-     "dur": 2.557,
+     "at": 33.855,
+     "dur": 2.645,
      "a": 129.0,
-     "rate": 2.347
+     "rate": 2.268
     }
    ],
    "text": "Preview it on any device, then publish to a live link in one click."
   },
   {
    "key": "chat",
-   "t": 36.75,
-   "dur": 3.79,
+   "t": 36.5,
+   "dur": 3.72,
    "n": 7,
    "title": "AI Chat",
    "rect": [
     0,
-    40,
-    1600
+    0,
+    1920
    ],
    "subs": [
     {
-     "at": 36.75,
-     "dur": 3.79,
+     "at": 36.5,
+     "dur": 3.72,
      "a": 146.0,
-     "rate": 2.902
+     "rate": 2.957
     }
    ],
    "text": "A I Chat writes complete, working code in seconds."
   },
   {
    "key": "access",
-   "t": 40.54,
-   "dur": 6.84,
+   "t": 40.22,
+   "dur": 7.03,
    "n": 8,
    "title": "Accessibility Tester",
    "rect": [
-    100,
-    40,
-    1600
+    0,
+    0,
+    1920
    ],
    "subs": [
     {
-     "at": 40.54,
-     "dur": 2.403,
+     "at": 40.22,
+     "dur": 2.47,
      "a": 159.5,
-     "rate": 2.705
+     "rate": 2.632
     },
     {
-     "at": 42.943,
-     "dur": 4.437,
+     "at": 42.69,
+     "dur": 4.56,
      "a": 171.0,
-     "rate": 2.705
+     "rate": 2.632
     }
    ],
    "text": "Before you launch, the Accessibility Tester checks your site and gives you a score and a P D F report."
   },
   {
    "key": "agents",
-   "t": 47.38,
+   "t": 47.25,
    "dur": 4.9,
    "n": 9,
    "title": "AI agents",
    "rect": [
     0,
-    20,
-    1600
+    0,
+    1920
    ],
    "subs": [
     {
-     "at": 47.38,
+     "at": 47.25,
      "dur": 4.9,
      "a": 185.0,
      "rate": 2.551
@@ -239,8 +239,8 @@
   },
   {
    "key": "outro",
-   "t": 52.28,
-   "dur": 6.37,
+   "t": 52.15,
+   "dur": 6.33,
    "n": null,
    "title": null,
    "rect": null,

@@ -1,13 +1,13 @@
 {
- "intro": 3.48,
- "prompt": 4.99,
- "build": 5.23,
- "refine": 4.57,
- "export": 2.52,
- "studio": 7.36,
- "publish": 4.35,
- "chat": 3.24,
- "access": 6.29,
- "agents": 4.35,
- "outro": 5.82
+ "intro": 3.24,
+ "prompt": 4.61,
+ "build": 4.84,
+ "refine": 4.22,
+ "export": 2.24,
+ "studio": 7.08,
+ "publish": 4.27,
+ "chat": 2.92,
+ "access": 6.23,
+ "agents": 4.1,
+ "outro": 5.53
 }
