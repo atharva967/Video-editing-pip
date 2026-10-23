@@ -1,6 +1,7 @@
 import { Composition } from "remotion";
 import { ClientSaidWhat, reelFrames, type ReelProps } from "./reel/ClientSaidWhat";
 import { DmGif, DM_GIF_FRAMES, type DmGifProps } from "./gifs/DmGif";
+import { BuildifyWalkthrough, type WalkthroughProps } from "./buildify/BuildifyWalkthrough";
 import { CharDhamV2, type CharDhamProps } from "./travel/CharDhamV2";
 import { TravelReel, type TravelProps } from "./travel/TravelReel";
 import { LeadEngineDemo, leadEngineFrames, type LeadEngineProps } from "./leadengine/LeadEngineDemo";
@@ -73,6 +74,16 @@ export const RemotionRoot: React.FC = () => (
     width={1080}
     height={1920}
     defaultProps={{} as CharDhamProps}
+    calculateMetadata={({ props }) => ({ durationInFrames: Math.round((props.duration ?? 10) * 30) })}
+  />
+  <Composition
+    id="BuildifyWalkthrough"
+    component={BuildifyWalkthrough}
+    durationInFrames={300}
+    fps={30}
+    width={1920}
+    height={1080}
+    defaultProps={{} as WalkthroughProps}
     calculateMetadata={({ props }) => ({ durationInFrames: Math.round((props.duration ?? 10) * 30) })}
   />
   </>

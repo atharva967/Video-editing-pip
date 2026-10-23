@@ -10,3 +10,5 @@ brochure/assets/*.jpg
 public/travel/*.mp4
 public/travel/*.m4a
 travel/src/
+buildify/src/
+public/buildify/*.mp4

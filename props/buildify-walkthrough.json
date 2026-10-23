@@ -1,0 +1,726 @@
+{
+ "src": "buildify/demo.mp4",
+ "duration": 207.9,
+ "intro": [
+  0,
+  7.0
+ ],
+ "outro": [
+  199.6,
+  207.9
+ ],
+ "W": 1920,
+ "H": 1080,
+ "cam": [
+  [
+   0.0,
+   0,
+   0,
+   1920
+  ],
+  [
+   8.1,
+   526,
+   0,
+   1394
+  ],
+  [
+   10.9,
+   0,
+   0,
+   1000
+  ],
+  [
+   13.5,
+   0,
+   17,
+   1000
+  ],
+  [
+   16.3,
+   0,
+   153,
+   1000
+  ],
+  [
+   19.1,
+   0,
+   273,
+   1000
+  ],
+  [
+   21.7,
+   0,
+   437,
+   1000
+  ],
+  [
+   24.3,
+   414,
+   139,
+   1000
+  ],
+  [
+   27.1,
+   454,
+   147,
+   1000
+  ],
+  [
+   29.7,
+   920,
+   213,
+   1000
+  ],
+  [
+   32.3,
+   0,
+   0,
+   1920
+  ],
+  [
+   39.3,
+   0,
+   0,
+   1358
+  ],
+  [
+   41.9,
+   0,
+   0,
+   1920
+  ],
+  [
+   48.5,
+   616,
+   0,
+   1304
+  ],
+  [
+   53.9,
+   0,
+   0,
+   1330
+  ],
+  [
+   56.7,
+   920,
+   0,
+   1000
+  ],
+  [
+   59.3,
+   608,
+   0,
+   1312
+  ],
+  [
+   61.9,
+   555,
+   0,
+   1266
+  ],
+  [
+   64.7,
+   0,
+   518,
+   1000
+  ],
+  [
+   67.5,
+   0,
+   0,
+   1920
+  ],
+  [
+   74.3,
+   620,
+   0,
+   1300
+  ],
+  [
+   77.5,
+   0,
+   0,
+   1920
+  ],
+  [
+   80.1,
+   612,
+   0,
+   1308
+  ],
+  [
+   89.3,
+   0,
+   0,
+   1920
+  ],
+  [
+   91.9,
+   0,
+   121,
+   1000
+  ],
+  [
+   95.1,
+   0,
+   0,
+   1920
+  ],
+  [
+   97.9,
+   0,
+   0,
+   1000
+  ],
+  [
+   100.7,
+   0,
+   0,
+   1920
+  ],
+  [
+   107.5,
+   212,
+   309,
+   1000
+  ],
+  [
+   110.1,
+   0,
+   0,
+   1920
+  ],
+  [
+   116.1,
+   661,
+   18,
+   1259
+  ],
+  [
+   118.9,
+   0,
+   0,
+   1920
+  ],
+  [
+   124.1,
+   374,
+   0,
+   1000
+  ],
+  [
+   126.9,
+   0,
+   0,
+   1920
+  ],
+  [
+   129.5,
+   460,
+   303,
+   1000
+  ],
+  [
+   132.3,
+   920,
+   518,
+   1000
+  ],
+  [
+   136.7,
+   626,
+   391,
+   1000
+  ],
+  [
+   139.5,
+   0,
+   0,
+   1920
+  ],
+  [
+   144.5,
+   0,
+   69,
+   1000
+  ],
+  [
+   147.3,
+   0,
+   0,
+   1920
+  ],
+  [
+   153.9,
+   206,
+   194,
+   1104
+  ],
+  [
+   156.5,
+   0,
+   0,
+   1920
+  ],
+  [
+   159.3,
+   576,
+   0,
+   1344
+  ],
+  [
+   162.1,
+   0,
+   0,
+   1920
+  ],
+  [
+   164.9,
+   596,
+   117,
+   1000
+  ],
+  [
+   167.5,
+   0,
+   0,
+   1920
+  ],
+  [
+   170.3,
+   414,
+   21,
+   1332
+  ],
+  [
+   177.9,
+   590,
+   273,
+   1000
+  ],
+  [
+   180.5,
+   0,
+   0,
+   1920
+  ],
+  [
+   183.3,
+   570,
+   385,
+   1000
+  ],
+  [
+   186.1,
+   0,
+   0,
+   1920
+  ],
+  [
+   197.7,
+   0,
+   0,
+   1000
+  ],
+  [
+   200.5,
+   0,
+   0,
+   1920
+  ],
+  [
+   206.9,
+   318,
+   126,
+   1288
+  ]
+ ],
+ "chapters": [
+  {
+   "t": 7.3,
+   "until": 23.6,
+   "n": 1,
+   "title": "Find your way around"
+  },
+  {
+   "t": 23.6,
+   "until": 38.0,
+   "n": 2,
+   "title": "Builder: describe your app"
+  },
+  {
+   "t": 38.0,
+   "until": 62.8,
+   "n": 3,
+   "title": "Build and live preview"
+  },
+  {
+   "t": 62.8,
+   "until": 81.6,
+   "n": 4,
+   "title": "Refine by chatting"
+  },
+  {
+   "t": 81.6,
+   "until": 89.6,
+   "n": 5,
+   "title": "Export your code"
+  },
+  {
+   "t": 89.6,
+   "until": 100.9,
+   "n": 6,
+   "title": "Studio: pick a template"
+  },
+  {
+   "t": 100.9,
+   "until": 112.2,
+   "n": 7,
+   "title": "Drag in elements"
+  },
+  {
+   "t": 112.2,
+   "until": 120.8,
+   "n": 8,
+   "title": "Edit text and style"
+  },
+  {
+   "t": 120.8,
+   "until": 137.5,
+   "n": 9,
+   "title": "Preview and publish"
+  },
+  {
+   "t": 137.5,
+   "until": 159.6,
+   "n": 10,
+   "title": "AI Chat"
+  },
+  {
+   "t": 159.6,
+   "until": 185.8,
+   "n": 11,
+   "title": "Accessibility Tester"
+  },
+  {
+   "t": 185.8,
+   "until": 199.8,
+   "n": 12,
+   "title": "AI agents"
+  }
+ ],
+ "subs": [
+  {
+   "t": 0.35,
+   "until": 1.63,
+   "text": "This is Buildify,"
+  },
+  {
+   "t": 1.63,
+   "until": 6.52,
+   "text": "an AI platform that takes you from an idea to a launched product."
+  },
+  {
+   "t": 7.52,
+   "until": 9.74,
+   "text": "Everything lives in one sidebar."
+  },
+  {
+   "t": 9.74,
+   "until": 12.86,
+   "text": "The Builder and Studio for creating, AI Chat,"
+  },
+  {
+   "t": 12.86,
+   "until": 15.91,
+   "text": "quality tools for testing and accessibility,"
+  },
+  {
+   "t": 15.91,
+   "until": 18.55,
+   "text": "and a library of ready-made AI agents."
+  },
+  {
+   "t": 18.55,
+   "until": 21.39,
+   "text": "Your credit balance is always at the top."
+  },
+  {
+   "t": 23.88,
+   "until": 25.2,
+   "text": "Start in the Builder."
+  },
+  {
+   "t": 25.2,
+   "until": 29.57,
+   "text": "Describe your app in plain English, like a habit tracker with streaks."
+  },
+  {
+   "t": 29.57,
+   "until": 30.76,
+   "text": "With Plan first on,"
+  },
+  {
+   "t": 30.76,
+   "until": 35.76,
+   "text": "Buildify drafts a plan and asks a few quick questions before it writes any code."
+  },
+  {
+   "t": 38.25,
+   "until": 40.52,
+   "text": "One click, and the agent gets to work."
+  },
+  {
+   "t": 40.52,
+   "until": 44.22,
+   "text": "It sets up a workspace, writes the components, runs the build,"
+  },
+  {
+   "t": 44.22,
+   "until": 46.79,
+   "text": "checks that it passes, and saves a version,"
+  },
+  {
+   "t": 46.79,
+   "until": 50.32,
+   "text": "all while you watch the steps and the credit count tick by."
+  },
+  {
+   "t": 50.32,
+   "until": 51.75,
+   "text": "We've sped this part up."
+  },
+  {
+   "t": 51.75,
+   "until": 54.56,
+   "text": "A few minutes later, the live preview is ready."
+  },
+  {
+   "t": 54.56,
+   "until": 57.67,
+   "text": "A real, working habit tracker you can click through,"
+  },
+  {
+   "t": 57.67,
+   "until": 60.71,
+   "text": "with pages for today, your habits, and an overview."
+  },
+  {
+   "t": 63.22,
+   "until": 64.08,
+   "text": "Want a change?"
+  },
+  {
+   "t": 64.08,
+   "until": 66.74,
+   "text": "Just ask, the way you would ask a teammate."
+  },
+  {
+   "t": 66.74,
+   "until": 67.54,
+   "text": "Here we type:"
+  },
+  {
+   "t": 67.54,
+   "until": 68.41,
+   "text": "add dark mode."
+  },
+  {
+   "t": 68.41,
+   "until": 72.85,
+   "text": "Buildify edits only the files it needs, rebuilds, and saves version two."
+  },
+  {
+   "t": 72.85,
+   "until": 75.94,
+   "text": "Open the app's settings, switch the theme to dark,"
+  },
+  {
+   "t": 75.94,
+   "until": 79.46,
+   "text": "and the whole interface updates right inside the preview."
+  },
+  {
+   "t": 81.95,
+   "until": 83.67,
+   "text": "When you're happy, export it."
+  },
+  {
+   "t": 83.67,
+   "until": 87.4,
+   "text": "Push the code straight to your GitHub, or download it as a zip."
+  },
+  {
+   "t": 89.88,
+   "until": 94.84,
+   "text": "For websites and portfolios, Buildify Studio gives you a visual editor."
+  },
+  {
+   "t": 94.84,
+   "until": 96.58,
+   "text": "Pick a template to start."
+  },
+  {
+   "t": 96.58,
+   "until": 98.95,
+   "text": "This one is a developer portfolio."
+  },
+  {
+   "t": 101.45,
+   "until": 102.71,
+   "text": "Need something extra?"
+  },
+  {
+   "t": 102.71,
+   "until": 106.2,
+   "text": "Drag in any element, like a button, drop it on the canvas,"
+  },
+  {
+   "t": 106.2,
+   "until": 110.11,
+   "text": "and position it precisely from the properties panel on the right."
+  },
+  {
+   "t": 112.62,
+   "until": 116.77,
+   "text": "Click any text to edit it, then fine-tune the typography:"
+  },
+  {
+   "t": 116.77,
+   "until": 118.52,
+   "text": "size, weight, and color."
+  },
+  {
+   "t": 121.22,
+   "until": 125.76,
+   "text": "Hit preview to see exactly what visitors will see, on desktop, tablet,"
+  },
+  {
+   "t": 125.76,
+   "until": 126.47,
+   "text": "and mobile."
+  },
+  {
+   "t": 126.47,
+   "until": 128.75,
+   "text": "When it looks right, click publish,"
+  },
+  {
+   "t": 128.75,
+   "until": 133.03,
+   "text": "give the page a title and a short URL, and it goes live instantly,"
+  },
+  {
+   "t": 133.03,
+   "until": 135.3,
+   "text": "with a link you can share anywhere."
+  },
+  {
+   "t": 137.82,
+   "until": 140.02,
+   "text": "AI Chat is your on-demand assistant."
+  },
+  {
+   "t": 140.02,
+   "until": 143.34,
+   "text": "Pick a model, ask for something like a pomodoro timer,"
+  },
+  {
+   "t": 143.34,
+   "until": 145.24,
+   "text": "and watch the answer stream in."
+  },
+  {
+   "t": 145.24,
+   "until": 148.06,
+   "text": "Seconds later you have complete, working code,"
+  },
+  {
+   "t": 148.06,
+   "until": 151.93,
+   "text": "with focus and break modes, a progress ring, and notifications,"
+  },
+  {
+   "t": 151.93,
+   "until": 154.38,
+   "text": "plus a clear breakdown of every feature."
+  },
+  {
+   "t": 154.38,
+   "until": 157.45,
+   "text": "You can share the whole transcript with one click."
+  },
+  {
+   "t": 159.95,
+   "until": 163.36,
+   "text": "Before you launch, quality tools check your work."
+  },
+  {
+   "t": 163.36,
+   "until": 165.31,
+   "text": "In the Accessibility Tester,"
+  },
+  {
+   "t": 165.31,
+   "until": 169.28,
+   "text": "enter a URL and choose the WCAG standards you care about."
+  },
+  {
+   "t": 169.28,
+   "until": 174.64,
+   "text": "Buildify crawls the site, tests every page, and streams live logs as it goes."
+  },
+  {
+   "t": 174.64,
+   "until": 178.12,
+   "text": "You get an overall score, a breakdown by severity,"
+  },
+  {
+   "t": 178.12,
+   "until": 179.58,
+   "text": "results page by page,"
+  },
+  {
+   "t": 179.58,
+   "until": 183.69,
+   "text": "and a PDF report you can download and share with your team."
+  },
+  {
+   "t": 186.18,
+   "until": 188.9,
+   "text": "And Buildify agents give you ready-made bots,"
+  },
+  {
+   "t": 188.9,
+   "until": 190.47,
+   "text": "like the App Spec Builder,"
+  },
+  {
+   "t": 190.47,
+   "until": 195.36,
+   "text": "which interviews users about their app idea and turns it into a build-ready spec,"
+  },
+  {
+   "t": 195.36,
+   "until": 197.77,
+   "text": "deployed on your website or in Telegram."
+  },
+  {
+   "t": 200.28,
+   "until": 201.1,
+   "text": "Buildify."
+  },
+  {
+   "t": 201.1,
+   "until": 204.44,
+   "text": "Build, test, and launch, all with AI."
+  },
+  {
+   "t": 204.44,
+   "until": 207.24,
+   "text": "Start free at buildify dot s h."
+  }
+ ]
+}
