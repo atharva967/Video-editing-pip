@@ -1,0 +1,117 @@
+{
+ "src": "buildify/demo.mp4",
+ "part": 3,
+ "parts": 4,
+ "title": [
+  "Design & publish",
+  "a website, visually"
+ ],
+ "duration": 26.53,
+ "lines": [
+  {
+   "key": "p3a",
+   "t": 0.3,
+   "dur": 4.99,
+   "text": "Need a website or a portfolio? Buildify Studio makes it visual.",
+   "fx": null,
+   "subs": [
+    {
+     "at": 0.3,
+     "dur": 4.99,
+     "a": 89.5,
+     "rate": 0.501
+    }
+   ]
+  },
+  {
+   "key": "p3b",
+   "t": 5.29,
+   "dur": 1.96,
+   "text": "Start from a template.",
+   "fx": 250,
+   "subs": [
+    {
+     "at": 5.29,
+     "dur": 1.96,
+     "a": 92.0,
+     "rate": 4.082
+    }
+   ]
+  },
+  {
+   "key": "p3c",
+   "t": 7.25,
+   "dur": 4.73,
+   "text": "Drag in any element, like a button, and place it exactly where you want.",
+   "fx": 100,
+   "subs": [
+    {
+     "at": 7.25,
+     "dur": 4.73,
+     "a": 101.0,
+     "rate": 1.903
+    }
+   ]
+  },
+  {
+   "key": "p3d",
+   "t": 11.98,
+   "dur": 3.52,
+   "text": "Click any text to edit it, and fine-tune the style.",
+   "fx": 250,
+   "subs": [
+    {
+     "at": 11.98,
+     "dur": 3.52,
+     "a": 112.5,
+     "rate": 1.847
+    }
+   ]
+  },
+  {
+   "key": "p3e",
+   "t": 15.5,
+   "dur": 3.39,
+   "text": "Preview it on desktop, tablet and mobile.",
+   "fx": 460,
+   "subs": [
+    {
+     "at": 15.5,
+     "dur": 3.39,
+     "a": 121.5,
+     "rate": 1.622
+    }
+   ]
+  },
+  {
+   "key": "p3f",
+   "t": 18.89,
+   "dur": 3.32,
+   "text": "Then publish it to a live link, in one click.",
+   "fx": 700,
+   "subs": [
+    {
+     "at": 18.89,
+     "dur": 3.32,
+     "a": 129.0,
+     "rate": 1.958
+    }
+   ]
+  },
+  {
+   "key": "p3g",
+   "t": 22.21,
+   "dur": 3.92,
+   "text": "Part four: two more tools you should know. Follow for more.",
+   "fx": null,
+   "subs": [
+    {
+     "at": 22.21,
+     "dur": 3.92,
+     "a": 133.0,
+     "rate": 0.638
+    }
+   ]
+  }
+ ]
+}

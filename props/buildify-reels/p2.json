@@ -1,0 +1,93 @@
+{
+ "src": "buildify/demo.mp4",
+ "part": 2,
+ "parts": 4,
+ "title": [
+  "Change your app",
+  "just by chatting"
+ ],
+ "duration": 23.32,
+ "lines": [
+  {
+   "key": "p2a",
+   "t": 0.3,
+   "dur": 4.86,
+   "text": "Built an app on Buildify? Here's how to change it, without touching code.",
+   "fx": null,
+   "subs": [
+    {
+     "at": 0.3,
+     "dur": 4.86,
+     "a": 61.0,
+     "rate": 0.514
+    }
+   ]
+  },
+  {
+   "key": "p2b",
+   "t": 5.16,
+   "dur": 4.09,
+   "text": "Just ask, the way you'd ask a teammate. Add dark mode.",
+   "fx": 0,
+   "subs": [
+    {
+     "at": 5.16,
+     "dur": 4.09,
+     "a": 63.5,
+     "rate": 1.345
+    }
+   ]
+  },
+  {
+   "key": "p2c",
+   "t": 9.25,
+   "dur": 5.48,
+   "text": "Buildify edits only what it needs, and a moment later, version two is ready.",
+   "fx": 920,
+   "subs": [
+    {
+     "at": 9.25,
+     "dur": 2.307,
+     "a": 69.0,
+     "rate": 1.734
+    },
+    {
+     "at": 11.557,
+     "dur": 3.173,
+     "a": 76.0,
+     "rate": 1.734
+    }
+   ]
+  },
+  {
+   "key": "p2d",
+   "t": 14.73,
+   "dur": 3.86,
+   "text": "Happy with it? Push it to GitHub, or download the code.",
+   "fx": 920,
+   "subs": [
+    {
+     "at": 14.73,
+     "dur": 3.86,
+     "a": 82.0,
+     "rate": 1.554
+    }
+   ]
+  },
+  {
+   "key": "p2e",
+   "t": 18.59,
+   "dur": 4.33,
+   "text": "Part three: design and publish a website. Follow for more.",
+   "fx": null,
+   "subs": [
+    {
+     "at": 18.59,
+     "dur": 4.33,
+     "a": 86.0,
+     "rate": 0.5
+    }
+   ]
+  }
+ ]
+}

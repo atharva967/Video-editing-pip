@@ -1,0 +1,93 @@
+{
+ "src": "buildify/demo.mp4",
+ "part": 1,
+ "parts": 4,
+ "title": [
+  "Build an app",
+  "just by describing it"
+ ],
+ "duration": 24.98,
+ "lines": [
+  {
+   "key": "p1a",
+   "t": 0.3,
+   "dur": 5.29,
+   "text": "You can build a working app on Buildify, just by describing it. Here's how.",
+   "fx": null,
+   "subs": [
+    {
+     "at": 0.3,
+     "dur": 5.29,
+     "a": 23.5,
+     "rate": 0.5
+    }
+   ]
+  },
+  {
+   "key": "p1b",
+   "t": 5.59,
+   "dur": 4.9,
+   "text": "Type what you want in plain English. Like, a habit tracker with streaks.",
+   "fx": 440,
+   "subs": [
+    {
+     "at": 5.59,
+     "dur": 4.9,
+     "a": 23.5,
+     "rate": 1.531
+    }
+   ]
+  },
+  {
+   "key": "p1c",
+   "t": 10.49,
+   "dur": 4.95,
+   "text": "Buildify plans it first, then writes, builds and tests the code for you.",
+   "fx": 400,
+   "subs": [
+    {
+     "at": 10.49,
+     "dur": 2.121,
+     "a": 31.0,
+     "rate": 2.828
+    },
+    {
+     "at": 12.611,
+     "dur": 2.829,
+     "a": 37.0,
+     "rate": 2.828
+    }
+   ]
+  },
+  {
+   "key": "p1d",
+   "t": 15.44,
+   "dur": 4.26,
+   "text": "A few minutes later, you can click through a live preview of your app.",
+   "fx": 920,
+   "subs": [
+    {
+     "at": 15.44,
+     "dur": 4.26,
+     "a": 47.0,
+     "rate": 2.582
+    }
+   ]
+  },
+  {
+   "key": "p1e",
+   "t": 19.7,
+   "dur": 4.88,
+   "text": "Part two: change your app just by chatting. Follow, so you don't miss it.",
+   "fx": null,
+   "subs": [
+    {
+     "at": 19.7,
+     "dur": 4.88,
+     "a": 58.0,
+     "rate": 0.615
+    }
+   ]
+  }
+ ]
+}

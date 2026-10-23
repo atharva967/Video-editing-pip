@@ -2,6 +2,7 @@ import { Composition } from "remotion";
 import { ClientSaidWhat, reelFrames, type ReelProps } from "./reel/ClientSaidWhat";
 import { DmImage } from "./gifs/DmImage";
 import { DmGif, DM_GIF_FRAMES, type DmGifProps } from "./gifs/DmGif";
+import { BuildifyReel, type ReelProps as BuildifyReelProps } from "./buildify/BuildifyReel";
 import { BuildifyShort, type ShortProps } from "./buildify/BuildifyShort";
 import { BuildifyWalkthrough, type WalkthroughProps } from "./buildify/BuildifyWalkthrough";
 import { CharDhamV2, type CharDhamProps } from "./travel/CharDhamV2";
@@ -106,6 +107,16 @@ export const RemotionRoot: React.FC = () => (
     width={1080}
     height={1080}
     defaultProps={{ bg: ["#111", "#333"], accent: "#FFD60A", ink: "#111", emoji: "📩", bubbles: ["Price?"], line1: "Line one", line2: "Line two", cta: "Check your DMs" } as DmGifProps}
+  />
+  <Composition
+    id="BuildifyReel"
+    component={BuildifyReel}
+    durationInFrames={300}
+    fps={30}
+    width={1080}
+    height={1920}
+    defaultProps={{} as BuildifyReelProps}
+    calculateMetadata={({ props }) => ({ durationInFrames: Math.round((props.duration ?? 10) * 30) })}
   />
   </>
 );

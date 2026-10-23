@@ -1,0 +1,28 @@
+{
+ "p1": {"title": ["Build an app", "just by describing it"], "lines": [
+   ["a", "You can build a working app on Buildify, just by describing it. Here's how.", [[23.5, 25.5]], null],
+   ["b", "Type what you want in plain English. Like, a habit tracker with streaks.", [[23.5, 31.0]], 440],
+   ["c", "Buildify plans it first, then writes, builds and tests the code for you.", [[31.0, 37.0], [37.0, 45.0]], 400],
+   ["d", "A few minutes later, you can click through a live preview of your app.", [[47.0, 58.0]], 920],
+   ["e", "Part two: change your app just by chatting. Follow, so you don't miss it.", [[58.0, 61.0]], null]]},
+ "p2": {"title": ["Change your app", "just by chatting"], "lines": [
+   ["a", "Built an app on Buildify? Here's how to change it, without touching code.", [[61.0, 63.5]], null],
+   ["b", "Just ask, the way you'd ask a teammate. Add dark mode.", [[63.5, 69.0]], 0],
+   ["c", "Buildify edits only what it needs, and a moment later, version two is ready.", [[69.0, 73.0], [76.0, 81.5]], 920],
+   ["d", "Happy with it? Push it to GitHub, or download the code.", [[82.0, 88.0]], 920],
+   ["e", "Part three: design and publish a website. Follow for more.", [[86.0, 88.0]], null]]},
+ "p3": {"title": ["Design & publish", "a website, visually"], "lines": [
+   ["a", "Need a website or a portfolio? Buildify Studio makes it visual.", [[89.5, 92.0]], null],
+   ["b", "Start from a template.", [[92.0, 100.0]], 250],
+   ["c", "Drag in any element, like a button, and place it exactly where you want.", [[101.0, 110.0]], 100],
+   ["d", "Click any text to edit it, and fine-tune the style.", [[112.5, 119.0]], 250],
+   ["e", "Preview it on desktop, tablet and mobile.", [[121.5, 127.0]], 460],
+   ["f", "Then publish it to a live link, in one click.", [[129.0, 135.5]], 700],
+   ["g", "Part four: two more tools you should know. Follow for more.", [[133.0, 135.5]], null]]},
+ "p4": {"title": ["AI Chat &", "Accessibility Tester"], "lines": [
+   ["a", "Two more Buildify tools you should know.", [[137.5, 141.0]], null],
+   ["b", "AI Chat writes complete, working code in seconds.", [[146.0, 157.0]], 150],
+   ["c", "And the Accessibility Tester checks any website against WCAG standards.", [[159.5, 166.0]], 500],
+   ["d", "You get a score, a breakdown by severity, and a PDF report.", [[171.0, 183.0]], 600],
+   ["e", "Try it free at buildify dot s h.", [[181.0, 183.7]], null]]}
+}

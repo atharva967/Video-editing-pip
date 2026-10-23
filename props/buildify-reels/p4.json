@@ -1,0 +1,87 @@
+{
+ "src": "buildify/demo.mp4",
+ "part": 4,
+ "parts": 4,
+ "title": [
+  "AI Chat &",
+  "Accessibility Tester"
+ ],
+ "duration": 20.09,
+ "lines": [
+  {
+   "key": "p4a",
+   "t": 0.3,
+   "dur": 2.71,
+   "text": "Two more Buildify tools you should know.",
+   "fx": null,
+   "subs": [
+    {
+     "at": 0.3,
+     "dur": 2.71,
+     "a": 137.5,
+     "rate": 1.292
+    }
+   ]
+  },
+  {
+   "key": "p4b",
+   "t": 3.01,
+   "dur": 3.75,
+   "text": "AI Chat writes complete, working code in seconds.",
+   "fx": 150,
+   "subs": [
+    {
+     "at": 3.01,
+     "dur": 3.75,
+     "a": 146.0,
+     "rate": 2.933
+    }
+   ]
+  },
+  {
+   "key": "p4c",
+   "t": 6.76,
+   "dur": 5.39,
+   "text": "And the Accessibility Tester checks any website against WCAG standards.",
+   "fx": 500,
+   "subs": [
+    {
+     "at": 6.76,
+     "dur": 5.39,
+     "a": 159.5,
+     "rate": 1.206
+    }
+   ]
+  },
+  {
+   "key": "p4d",
+   "t": 12.15,
+   "dur": 4.56,
+   "text": "You get a score, a breakdown by severity, and a PDF report.",
+   "fx": 600,
+   "subs": [
+    {
+     "at": 12.15,
+     "dur": 4.56,
+     "a": 171.0,
+     "rate": 2.632
+    }
+   ]
+  },
+  {
+   "key": "p4e",
+   "t": 16.71,
+   "dur": 2.98,
+   "text": "Try it free at buildify.sh.",
+   "fx": null,
+   "subs": [
+    {
+     "at": 16.71,
+     "dur": 2.98,
+     "a": 181.0,
+     "rate": 0.906
+    }
+   ]
+  }
+ ]
+}
