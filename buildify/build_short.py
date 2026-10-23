@@ -3,7 +3,7 @@
 import json
 vo = json.load(open("buildify/vo-short-durations.json"))
 text = dict(json.load(open("buildify/vo-short.json")))
-PAD = 0.8
+PAD = 1.95
 plan = [  # key, chapter title, [(src_a, src_b), ...], rect
     ("intro", None, [], None),
     ("prompt", "Describe your app", [(23.5, 31.0)], [0, 0, 1920]),
