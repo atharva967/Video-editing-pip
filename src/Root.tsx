@@ -1,5 +1,6 @@
 import { Composition } from "remotion";
 import { ClientSaidWhat, reelFrames, type ReelProps } from "./reel/ClientSaidWhat";
+import { DmImage } from "./gifs/DmImage";
 import { DmGif, DM_GIF_FRAMES, type DmGifProps } from "./gifs/DmGif";
 import { BuildifyShort, type ShortProps } from "./buildify/BuildifyShort";
 import { BuildifyWalkthrough, type WalkthroughProps } from "./buildify/BuildifyWalkthrough";
@@ -96,6 +97,15 @@ export const RemotionRoot: React.FC = () => (
     height={1080}
     defaultProps={{} as ShortProps}
     calculateMetadata={({ props }) => ({ durationInFrames: Math.round((props.duration ?? 10) * 30) })}
+  />
+  <Composition
+    id="DmImage"
+    component={DmImage}
+    durationInFrames={1}
+    fps={30}
+    width={1080}
+    height={1080}
+    defaultProps={{ bg: ["#111", "#333"], accent: "#FFD60A", ink: "#111", emoji: "📩", bubbles: ["Price?"], line1: "Line one", line2: "Line two", cta: "Check your DMs" } as DmGifProps}
   />
   </>
 );
