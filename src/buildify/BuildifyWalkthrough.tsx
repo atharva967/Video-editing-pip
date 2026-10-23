@@ -23,7 +23,7 @@ const WIN = { w: 1440, h: 810, bar: 36, top: 44 };
 const ease = Easing.bezier(0.45, 0, 0.15, 1);
 const clamp01 = (x: number) => Math.min(1, Math.max(0, x));
 
-const Wallpaper: React.FC<{ sec: number }> = ({ sec }) => {
+export const Wallpaper: React.FC<{ sec: number }> = ({ sec }) => {
   const d = (k: number, a: number) => Math.sin(sec * 0.2 + k) * a;
   return (
     <AbsoluteFill style={{ background: B.bg, overflow: "hidden" }}>
@@ -34,7 +34,7 @@ const Wallpaper: React.FC<{ sec: number }> = ({ sec }) => {
   );
 };
 
-const Logo: React.FC<{ size: number }> = ({ size }) => (
+export const Logo: React.FC<{ size: number }> = ({ size }) => (
   <div style={{ width: size, height: size, borderRadius: size * 0.24, background: "#121113", border: `1.5px solid ${B.blue}66`, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: `0 18px 50px ${B.blue}40` }}>
     <Img src={staticFile("buildify/logo.svg")} style={{ width: size * 0.6 }} />
   </div>

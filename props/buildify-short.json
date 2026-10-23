@@ -1,0 +1,251 @@
+{
+ "src": "buildify/demo.mp4",
+ "duration": 58.65,
+ "segs": [
+  {
+   "key": "intro",
+   "t": 0.0,
+   "dur": 4.43,
+   "n": null,
+   "title": null,
+   "rect": null,
+   "subs": [],
+   "text": "Meet Buildify. Your A I team, from idea to launch."
+  },
+  {
+   "key": "prompt",
+   "t": 4.43,
+   "dur": 5.54,
+   "n": 1,
+   "title": "Describe your app",
+   "rect": [
+    160,
+    40,
+    1600
+   ],
+   "subs": [
+    {
+     "at": 4.43,
+     "dur": 5.54,
+     "a": 23.5,
+     "rate": 1.354
+    }
+   ],
+   "text": "Describe your app in plain English. Buildify plans it first, then builds it."
+  },
+  {
+   "key": "build",
+   "t": 9.97,
+   "dur": 5.78,
+   "n": 2,
+   "title": "Build & live preview",
+   "rect": [
+    320,
+    90,
+    1600
+   ],
+   "subs": [
+    {
+     "at": 9.97,
+     "dur": 2.72,
+     "a": 37.0,
+     "rate": 2.941
+    },
+    {
+     "at": 12.69,
+     "dur": 3.06,
+     "a": 47.0,
+     "rate": 2.941
+    }
+   ],
+   "text": "Watch it write, build and test the code. Then click through a live preview of your app."
+  },
+  {
+   "key": "refine",
+   "t": 15.75,
+   "dur": 5.12,
+   "n": 3,
+   "title": "Refine by chatting",
+   "rect": [
+    320,
+    90,
+    1600
+   ],
+   "subs": [
+    {
+     "at": 15.75,
+     "dur": 2.56,
+     "a": 63.5,
+     "rate": 2.148
+    },
+    {
+     "at": 18.31,
+     "dur": 2.56,
+     "a": 76.0,
+     "rate": 2.148
+    }
+   ],
+   "text": "Need a change? Just ask. Add dark mode, and version two is ready."
+  },
+  {
+   "key": "export",
+   "t": 20.87,
+   "dur": 3.07,
+   "n": 4,
+   "title": "Export your code",
+   "rect": [
+    320,
+    0,
+    1600
+   ],
+   "subs": [
+    {
+     "at": 20.87,
+     "dur": 3.07,
+     "a": 82.0,
+     "rate": 1.954
+    }
+   ],
+   "text": "Push it to GitHub, or download the code."
+  },
+  {
+   "key": "studio",
+   "t": 23.94,
+   "dur": 7.91,
+   "n": 5,
+   "title": "Buildify Studio",
+   "rect": [
+    160,
+    40,
+    1600
+   ],
+   "subs": [
+    {
+     "at": 23.94,
+     "dur": 3.559,
+     "a": 91.0,
+     "rate": 2.528
+    },
+    {
+     "at": 27.5,
+     "dur": 2.373,
+     "a": 101.0,
+     "rate": 2.528
+    },
+    {
+     "at": 29.873,
+     "dur": 1.977,
+     "a": 113.0,
+     "rate": 2.528
+    }
+   ],
+   "text": "For websites, Buildify Studio is a visual editor. Start from a template, drag in elements, and edit any text."
+  },
+  {
+   "key": "publish",
+   "t": 31.85,
+   "dur": 4.9,
+   "n": 6,
+   "title": "Preview & publish",
+   "rect": [
+    160,
+    60,
+    1600
+   ],
+   "subs": [
+    {
+     "at": 31.85,
+     "dur": 2.343,
+     "a": 121.5,
+     "rate": 2.347
+    },
+    {
+     "at": 34.193,
+     "dur": 2.557,
+     "a": 129.0,
+     "rate": 2.347
+    }
+   ],
+   "text": "Preview it on any device, then publish to a live link in one click."
+  },
+  {
+   "key": "chat",
+   "t": 36.75,
+   "dur": 3.79,
+   "n": 7,
+   "title": "AI Chat",
+   "rect": [
+    0,
+    40,
+    1600
+   ],
+   "subs": [
+    {
+     "at": 36.75,
+     "dur": 3.79,
+     "a": 146.0,
+     "rate": 2.902
+    }
+   ],
+   "text": "A I Chat writes complete, working code in seconds."
+  },
+  {
+   "key": "access",
+   "t": 40.54,
+   "dur": 6.84,
+   "n": 8,
+   "title": "Accessibility Tester",
+   "rect": [
+    100,
+    40,
+    1600
+   ],
+   "subs": [
+    {
+     "at": 40.54,
+     "dur": 2.403,
+     "a": 159.5,
+     "rate": 2.705
+    },
+    {
+     "at": 42.943,
+     "dur": 4.437,
+     "a": 171.0,
+     "rate": 2.705
+    }
+   ],
+   "text": "Before you launch, the Accessibility Tester checks your site and gives you a score and a P D F report."
+  },
+  {
+   "key": "agents",
+   "t": 47.38,
+   "dur": 4.9,
+   "n": 9,
+   "title": "AI agents",
+   "rect": [
+    0,
+    20,
+    1600
+   ],
+   "subs": [
+    {
+     "at": 47.38,
+     "dur": 4.9,
+     "a": 185.0,
+     "rate": 2.551
+    }
+   ],
+   "text": "And ready-made A I agents can run on your website, or in Telegram."
+  },
+  {
+   "key": "outro",
+   "t": 52.28,
+   "dur": 6.37,
+   "n": null,
+   "title": null,
+   "rect": null,
+   "subs": [],
+   "text": "Buildify. Build, test and launch, all with A I. Start free at buildify dot s h."
+  }
+ ]
+}

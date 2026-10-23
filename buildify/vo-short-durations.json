@@ -1,0 +1,13 @@
+{
+ "intro": 3.48,
+ "prompt": 4.99,
+ "build": 5.23,
+ "refine": 4.57,
+ "export": 2.52,
+ "studio": 7.36,
+ "publish": 4.35,
+ "chat": 3.24,
+ "access": 6.29,
+ "agents": 4.35,
+ "outro": 5.82
+}

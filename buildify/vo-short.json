@@ -1,0 +1,13 @@
+[
+ ["intro",   "Meet Buildify. Your A I team, from idea to launch."],
+ ["prompt",  "Describe your app in plain English. Buildify plans it first, then builds it."],
+ ["build",   "Watch it write, build and test the code. Then click through a live preview of your app."],
+ ["refine",  "Need a change? Just ask. Add dark mode, and version two is ready."],
+ ["export",  "Push it to GitHub, or download the code."],
+ ["studio",  "For websites, Buildify Studio is a visual editor. Start from a template, drag in elements, and edit any text."],
+ ["publish", "Preview it on any device, then publish to a live link in one click."],
+ ["chat",    "A I Chat writes complete, working code in seconds."],
+ ["access",  "Before you launch, the Accessibility Tester checks your site and gives you a score and a P D F report."],
+ ["agents",  "And ready-made A I agents can run on your website, or in Telegram."],
+ ["outro",   "Buildify. Build, test and launch, all with A I. Start free at buildify dot s h."]
+]
