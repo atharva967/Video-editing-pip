@@ -1,0 +1,123 @@
+{
+ "src": "buildify/demo.mp4",
+ "voDir": "buildify/features",
+ "duration": 33.79,
+ "segs": [
+  {
+   "key": "f5-accessibility-intro",
+   "t": 0.0,
+   "dur": 6.02,
+   "n": null,
+   "title": null,
+   "rect": null,
+   "subs": [],
+   "text": "Feature five: the Accessibility Tester. Check your site before you launch."
+  },
+  {
+   "key": "f5-accessibility-s1",
+   "t": 6.02,
+   "dur": 5.96,
+   "n": 1,
+   "title": "Enter a URL",
+   "rect": [
+    0,
+    0,
+    1920
+   ],
+   "subs": [
+    {
+     "at": 6.02,
+     "dur": 5.96,
+     "a": 159.5,
+     "rate": 1.091
+    }
+   ],
+   "text": "Enter your website's URL, and choose the WCAG standards you care about."
+  },
+  {
+   "key": "f5-accessibility-s2",
+   "t": 11.98,
+   "dur": 5.98,
+   "n": 2,
+   "title": "Run the test",
+   "rect": [
+    0,
+    0,
+    1920
+   ],
+   "subs": [
+    {
+     "at": 11.98,
+     "dur": 5.98,
+     "a": 166.0,
+     "rate": 0.836
+    }
+   ],
+   "text": "Start the test. Buildify crawls the site and streams live logs as it goes."
+  },
+  {
+   "key": "f5-accessibility-s3",
+   "t": 17.96,
+   "dur": 5.02,
+   "n": 3,
+   "title": "Get your score",
+   "rect": [
+    0,
+    0,
+    1920
+   ],
+   "subs": [
+    {
+     "at": 17.96,
+     "dur": 5.02,
+     "a": 171.0,
+     "rate": 1.394
+    }
+   ],
+   "text": "You get an overall score, and a breakdown of issues by severity."
+  },
+  {
+   "key": "f5-accessibility-s4",
+   "t": 22.98,
+   "dur": 5.77,
+   "n": 4,
+   "title": "Download the report",
+   "rect": [
+    0,
+    0,
+    1920
+   ],
+   "subs": [
+    {
+     "at": 22.98,
+     "dur": 5.77,
+     "a": 178.0,
+     "rate": 1.04
+    }
+   ],
+   "text": "Plus page by page results, and a PDF report you can share with your team."
+  },
+  {
+   "key": "f5-accessibility-outro",
+   "t": 28.75,
+   "dur": 5.04,
+   "n": null,
+   "title": null,
+   "rect": null,
+   "subs": [],
+   "text": "Next up: ready-made AI agents for your business."
+  }
+ ],
+ "kicker": "FEATURE 5 OF 6",
+ "introTitle": "Accessibility Tester",
+ "introSub": "Check your site before you launch",
+ "chips": [
+  "Enter a URL",
+  "Run the test",
+  "Get your score",
+  "Download the report"
+ ],
+ "outroTitle": "Next: AI Agents",
+ "outroSub": "Buildify \u00b7 all with AI",
+ "cta": "Try it free at buildify.sh \u2192"
+}

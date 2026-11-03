@@ -1,0 +1,101 @@
+{
+ "src": "buildify/demo.mp4",
+ "voDir": "buildify/features",
+ "duration": 35.74,
+ "segs": [
+  {
+   "key": "f6-agents-intro",
+   "t": 0.0,
+   "dur": 5.72,
+   "n": null,
+   "title": null,
+   "rect": null,
+   "subs": [],
+   "text": "Feature six: AI agents. Ready-made bots for your business."
+  },
+  {
+   "key": "f6-agents-s1",
+   "t": 5.72,
+   "dur": 8.62,
+   "n": 1,
+   "title": "Browse agents",
+   "rect": [
+    0,
+    0,
+    1920
+   ],
+   "subs": [
+    {
+     "at": 5.72,
+     "dur": 8.62,
+     "a": 185.0,
+     "rate": 0.55
+    }
+   ],
+   "text": "Open Agents in the sidebar to browse ready-made AI bots, like FAQ, lead capture and customer service."
+  },
+  {
+   "key": "f6-agents-s2",
+   "t": 14.34,
+   "dur": 7.05,
+   "n": 2,
+   "title": "App Spec Builder",
+   "rect": [
+    0,
+    0,
+    1920
+   ],
+   "subs": [
+    {
+     "at": 14.34,
+     "dur": 7.05,
+     "a": 188.5,
+     "rate": 0.638
+    }
+   ],
+   "text": "The App Spec Builder interviews visitors about their app idea, and turns it into a build-ready spec."
+  },
+  {
+   "key": "f6-agents-s3",
+   "t": 21.39,
+   "dur": 6.41,
+   "n": 3,
+   "title": "Deploy anywhere",
+   "rect": [
+    0,
+    0,
+    1920
+   ],
+   "subs": [
+    {
+     "at": 21.39,
+     "dur": 6.41,
+     "a": 193.0,
+     "rate": 0.858
+    }
+   ],
+   "text": "Deploy it on your website or in Telegram, and every captured spec shows up right here."
+  },
+  {
+   "key": "f6-agents-outro",
+   "t": 27.8,
+   "dur": 7.94,
+   "n": null,
+   "title": null,
+   "rect": null,
+   "subs": [],
+   "text": "That's Buildify. Build, test and launch, all with AI. Start free at buildify.sh."
+  }
+ ],
+ "kicker": "FEATURE 6 OF 6",
+ "introTitle": "AI Agents",
+ "introSub": "Ready-made bots for your business",
+ "chips": [
+  "Browse agents",
+  "App Spec Builder",
+  "Deploy anywhere"
+ ],
+ "outroTitle": "Build. Test. Launch.",
+ "outroSub": "Buildify \u00b7 all with AI",
+ "cta": "Try it free at buildify.sh \u2192"
+}

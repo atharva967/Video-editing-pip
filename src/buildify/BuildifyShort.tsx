@@ -8,7 +8,9 @@ import { Logo, Wallpaper } from "./BuildifyWalkthrough";
 
 type Sub = { at: number; dur: number; a: number; rate: number };
 type Seg = { key: string; t: number; dur: number; n: number | null; title: string | null; rect: [number, number, number] | null; subs: Sub[]; text: string };
-export type ShortProps = { src: string; duration: number; segs: Seg[] };
+// Optional text for the intro and outro cards (defaults are the all-features walkthrough's).
+type Cards = { voDir?: string; kicker?: string; introTitle?: string; introSub?: string; chips?: string[]; outroTitle?: string; outroSub?: string; cta?: string };
+export type ShortProps = { src: string; duration: number; segs: Seg[] } & Cards;
 
 const B = { blue: "#3B7EFF", blue2: "#5B9AFF", blue3: "#8BB8FF", sub: "#9AA3B2" };
 const SW = 1920, SH = 1080; // source size
@@ -115,10 +117,11 @@ export const BuildifyShort: React.FC<ShortProps> = (p) => {
         return (
           <AbsoluteFill style={{ alignItems: "center", justifyContent: "center", flexDirection: "column", opacity: o, transform: `scale(${1 + (1 - o) * 0.06})` }}>
             <div style={{ transform: `scale(${pop(0.05)}) rotate(${(1 - pop(0.05)) * -20}deg)` }}><Logo size={150} /></div>
-            <div style={{ marginTop: 30, fontSize: 112, fontWeight: 800, letterSpacing: -3, opacity: pop(0.35), transform: `translateY(${(1 - pop(0.35)) * 30}px)` }}>Meet Buildify</div>
-            <div style={{ marginTop: 10, fontSize: 40, color: B.sub, opacity: pop(0.8) }}>Your AI team, from idea to launch</div>
+            {p.kicker && <div style={{ marginTop: 30, fontSize: 30, fontWeight: 700, letterSpacing: 6, color: B.blue3, opacity: pop(0.25) }}>{p.kicker}</div>}
+            <div style={{ marginTop: p.kicker ? 8 : 30, fontSize: 112, fontWeight: 800, letterSpacing: -3, opacity: pop(0.35), transform: `translateY(${(1 - pop(0.35)) * 30}px)` }}>{p.introTitle ?? "Meet Buildify"}</div>
+            <div style={{ marginTop: 10, fontSize: 40, color: B.sub, opacity: pop(0.8) }}>{p.introSub ?? "Your AI team, from idea to launch"}</div>
             <div style={{ display: "flex", gap: 14, marginTop: 40 }}>
-              {["Builder", "Studio", "AI Chat", "Accessibility", "Agents"].map((x, i) => { const k = pop(1.3 + i * 0.18); return <div key={x} style={{ padding: "12px 24px", borderRadius: 30, border: `1.5px solid ${B.blue}88`, background: `${B.blue}22`, fontSize: 26, fontWeight: 700, transform: `scale(${k})`, opacity: k }}>{x}</div>; })}
+              {(p.chips ?? ["Builder", "Studio", "AI Chat", "Accessibility", "Agents"]).map((x, i) => { const k = pop(1.3 + i * 0.18); return <div key={x} style={{ padding: "12px 24px", borderRadius: 30, border: `1.5px solid ${B.blue}88`, background: `${B.blue}22`, fontSize: 26, fontWeight: 700, transform: `scale(${k})`, opacity: k }}>{x}</div>; })}
             </div>
           </AbsoluteFill>
         );
@@ -130,9 +133,9 @@ export const BuildifyShort: React.FC<ShortProps> = (p) => {
         return (
           <AbsoluteFill style={{ alignItems: "center", justifyContent: "center", flexDirection: "column" }}>
             <div style={{ transform: `scale(${pop(t0)})` }}><Logo size={140} /></div>
-            <div style={{ marginTop: 30, fontSize: 100, fontWeight: 800, letterSpacing: -3, opacity: pop(t0 + 0.2), transform: `translateY(${(1 - pop(t0 + 0.2)) * 30}px)` }}>Build. Test. Launch.</div>
-            <div style={{ fontSize: 40, color: B.sub, marginTop: 8, opacity: pop(t0 + 0.6) }}>All with AI.</div>
-            <div style={{ marginTop: 44, background: B.blue, color: "#fff", fontSize: 40, fontWeight: 800, padding: "18px 42px", borderRadius: 50, boxShadow: `0 20px 50px ${B.blue}66`, transform: `scale(${pop(t0 + 1.0)})` }}>Start free at buildify.sh →</div>
+            <div style={{ marginTop: 30, fontSize: 100, fontWeight: 800, letterSpacing: -3, opacity: pop(t0 + 0.2), transform: `translateY(${(1 - pop(t0 + 0.2)) * 30}px)` }}>{p.outroTitle ?? "Build. Test. Launch."}</div>
+            <div style={{ fontSize: 40, color: B.sub, marginTop: 8, opacity: pop(t0 + 0.6) }}>{p.outroSub ?? "All with AI."}</div>
+            <div style={{ marginTop: 44, background: B.blue, color: "#fff", fontSize: 40, fontWeight: 800, padding: "18px 42px", borderRadius: 50, boxShadow: `0 20px 50px ${B.blue}66`, transform: `scale(${pop(t0 + 1.0)})` }}>{p.cta ?? "Start free at buildify.sh →"}</div>
           </AbsoluteFill>
         );
       })()}
@@ -140,7 +143,7 @@ export const BuildifyShort: React.FC<ShortProps> = (p) => {
       {/* voiceover, one line per step; whoosh under each chapter swipe */}
       {p.segs.map((sg) => (
         <Sequence key={sg.key} from={Math.round((sg.t + (sg.subs.length ? 0.2 : 0.15)) * fps)}>
-          <Audio src={staticFile(`buildify/vo/${sg.key}.wav`)} />
+          <Audio src={staticFile(`${p.voDir ?? "buildify/vo"}/${sg.key}.wav`)} />
         </Sequence>
       ))}
       {footSegs.filter((x) => x.title).map((sg) => (

@@ -1,0 +1,123 @@
+{
+ "src": "buildify/demo.mp4",
+ "voDir": "buildify/features",
+ "duration": 32.51,
+ "segs": [
+  {
+   "key": "f4-ai-chat-intro",
+   "t": 0.0,
+   "dur": 5.38,
+   "n": null,
+   "title": null,
+   "rect": null,
+   "subs": [],
+   "text": "Feature four: AI Chat. Your on-demand coding assistant."
+  },
+  {
+   "key": "f4-ai-chat-s1",
+   "t": 5.38,
+   "dur": 4.4,
+   "n": 1,
+   "title": "Open AI Chat",
+   "rect": [
+    0,
+    0,
+    1920
+   ],
+   "subs": [
+    {
+     "at": 5.38,
+     "dur": 4.4,
+     "a": 137.5,
+     "rate": 0.909
+    }
+   ],
+   "text": "Open AI Chat from AI Tools in the sidebar."
+  },
+  {
+   "key": "f4-ai-chat-s2",
+   "t": 9.78,
+   "dur": 5.02,
+   "n": 2,
+   "title": "Ask for anything",
+   "rect": [
+    0,
+    0,
+    1920
+   ],
+   "subs": [
+    {
+     "at": 9.78,
+     "dur": 5.02,
+     "a": 141.5,
+     "rate": 0.896
+    }
+   ],
+   "text": "Pick a model and ask for what you need, like a pomodoro timer."
+  },
+  {
+   "key": "f4-ai-chat-s3",
+   "t": 14.8,
+   "dur": 6.92,
+   "n": 3,
+   "title": "Code streams in",
+   "rect": [
+    0,
+    0,
+    1920
+   ],
+   "subs": [
+    {
+     "at": 14.8,
+     "dur": 6.92,
+     "a": 146.0,
+     "rate": 0.939
+    }
+   ],
+   "text": "The answer streams in: complete, working code, with focus and break modes and a progress ring."
+  },
+  {
+   "key": "f4-ai-chat-s4",
+   "t": 21.72,
+   "dur": 5.85,
+   "n": 4,
+   "title": "Share it",
+   "rect": [
+    0,
+    0,
+    1920
+   ],
+   "subs": [
+    {
+     "at": 21.72,
+     "dur": 5.85,
+     "a": 152.5,
+     "rate": 0.94
+    }
+   ],
+   "text": "Plus a clear breakdown of every feature. Share the whole transcript in one click."
+  },
+  {
+   "key": "f4-ai-chat-outro",
+   "t": 27.57,
+   "dur": 4.94,
+   "n": null,
+   "title": null,
+   "rect": null,
+   "subs": [],
+   "text": "Next up: test your site with the Accessibility Tester."
+  }
+ ],
+ "kicker": "FEATURE 4 OF 6",
+ "introTitle": "AI Chat",
+ "introSub": "Working code, in seconds",
+ "chips": [
+  "Open AI Chat",
+  "Ask for anything",
+  "Code streams in",
+  "Share it"
+ ],
+ "outroTitle": "Next: Accessibility Tester",
+ "outroSub": "Buildify \u00b7 all with AI",
+ "cta": "Try it free at buildify.sh \u2192"
+}

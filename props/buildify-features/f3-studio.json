@@ -1,0 +1,167 @@
+{
+ "src": "buildify/demo.mp4",
+ "voDir": "buildify/features",
+ "duration": 42.84,
+ "segs": [
+  {
+   "key": "f3-studio-intro",
+   "t": 0.0,
+   "dur": 6.34,
+   "n": null,
+   "title": null,
+   "rect": null,
+   "subs": [],
+   "text": "Feature three: Buildify Studio. Design and publish a website, visually."
+  },
+  {
+   "key": "f3-studio-s1",
+   "t": 6.34,
+   "dur": 6.51,
+   "n": 1,
+   "title": "Pick a template",
+   "rect": [
+    0,
+    0,
+    1920
+   ],
+   "subs": [
+    {
+     "at": 6.34,
+     "dur": 6.51,
+     "a": 89.5,
+     "rate": 1.613
+    }
+   ],
+   "text": "Studio is a visual editor for websites and portfolios. Start by picking a template."
+  },
+  {
+   "key": "f3-studio-s2",
+   "t": 12.85,
+   "dur": 4.7,
+   "n": 2,
+   "title": "Drag in elements",
+   "rect": [
+    0,
+    0,
+    1920
+   ],
+   "subs": [
+    {
+     "at": 12.85,
+     "dur": 4.7,
+     "a": 101.0,
+     "rate": 1.064
+    }
+   ],
+   "text": "Drag in any element, like a button, and drop it on the canvas."
+  },
+  {
+   "key": "f3-studio-s3",
+   "t": 17.55,
+   "dur": 4.91,
+   "n": 3,
+   "title": "Position it",
+   "rect": [
+    0,
+    0,
+    1920
+   ],
+   "subs": [
+    {
+     "at": 17.55,
+     "dur": 4.91,
+     "a": 106.0,
+     "rate": 0.916
+    }
+   ],
+   "text": "Then position it exactly from the properties panel on the right."
+  },
+  {
+   "key": "f3-studio-s4",
+   "t": 22.46,
+   "dur": 4.68,
+   "n": 4,
+   "title": "Edit text & style",
+   "rect": [
+    0,
+    0,
+    1920
+   ],
+   "subs": [
+    {
+     "at": 22.46,
+     "dur": 4.68,
+     "a": 112.5,
+     "rate": 1.389
+    }
+   ],
+   "text": "Click any text to edit it, and fine-tune the size and color."
+  },
+  {
+   "key": "f3-studio-s5",
+   "t": 27.14,
+   "dur": 4.85,
+   "n": 5,
+   "title": "Preview",
+   "rect": [
+    0,
+    0,
+    1920
+   ],
+   "subs": [
+    {
+     "at": 27.14,
+     "dur": 4.85,
+     "a": 121.0,
+     "rate": 1.443
+    }
+   ],
+   "text": "Hit preview to see your page on desktop, tablet and mobile."
+  },
+  {
+   "key": "f3-studio-s6",
+   "t": 31.99,
+   "dur": 5.59,
+   "n": 6,
+   "title": "Publish",
+   "rect": [
+    0,
+    0,
+    1920
+   ],
+   "subs": [
+    {
+     "at": 31.99,
+     "dur": 5.59,
+     "a": 128.5,
+     "rate": 1.342
+    }
+   ],
+   "text": "Click publish, give it a title and a short link, and it's live, ready to share."
+  },
+  {
+   "key": "f3-studio-outro",
+   "t": 37.58,
+   "dur": 5.26,
+   "n": null,
+   "title": null,
+   "rect": null,
+   "subs": [],
+   "text": "Next up: AI Chat, your on-demand coding assistant."
+  }
+ ],
+ "kicker": "FEATURE 3 OF 6",
+ "introTitle": "Buildify Studio",
+ "introSub": "Design and publish a website, visually",
+ "chips": [
+  "Pick a template",
+  "Drag in elements",
+  "Position it",
+  "Edit text & style",
+  "Preview",
+  "Publish"
+ ],
+ "outroTitle": "Next: AI Chat",
+ "outroSub": "Buildify \u00b7 all with AI",
+ "cta": "Try it free at buildify.sh \u2192"
+}

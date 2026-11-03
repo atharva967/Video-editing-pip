@@ -1,0 +1,123 @@
+{
+ "src": "buildify/demo.mp4",
+ "voDir": "buildify/features",
+ "duration": 33.86,
+ "segs": [
+  {
+   "key": "f2-refine-export-intro",
+   "t": 0.0,
+   "dur": 5.76,
+   "n": null,
+   "title": null,
+   "rect": null,
+   "subs": [],
+   "text": "Feature two: refine and export. Change your app just by chatting."
+  },
+  {
+   "key": "f2-refine-export-s1",
+   "t": 5.76,
+   "dur": 6.0,
+   "n": 1,
+   "title": "Ask for a change",
+   "rect": [
+    0,
+    0,
+    1920
+   ],
+   "subs": [
+    {
+     "at": 5.76,
+     "dur": 6.0,
+     "a": 63.5,
+     "rate": 0.917
+    }
+   ],
+   "text": "Want a change? Type it in the chat, the way you'd ask a teammate. Add dark mode."
+  },
+  {
+   "key": "f2-refine-export-s2",
+   "t": 11.76,
+   "dur": 5.74,
+   "n": 2,
+   "title": "Version two",
+   "rect": [
+    0,
+    0,
+    1920
+   ],
+   "subs": [
+    {
+     "at": 11.76,
+     "dur": 5.74,
+     "a": 69.0,
+     "rate": 1.22
+    }
+   ],
+   "text": "Buildify edits only the files it needs, rebuilds, and saves version two."
+  },
+  {
+   "key": "f2-refine-export-s3",
+   "t": 17.5,
+   "dur": 4.42,
+   "n": 3,
+   "title": "See it live",
+   "rect": [
+    0,
+    0,
+    1920
+   ],
+   "subs": [
+    {
+     "at": 17.5,
+     "dur": 4.42,
+     "a": 76.0,
+     "rate": 1.244
+    }
+   ],
+   "text": "Switch the theme in the preview, and the whole app goes dark."
+  },
+  {
+   "key": "f2-refine-export-s4",
+   "t": 21.92,
+   "dur": 6.34,
+   "n": 4,
+   "title": "Export the code",
+   "rect": [
+    0,
+    0,
+    1920
+   ],
+   "subs": [
+    {
+     "at": 21.92,
+     "dur": 6.34,
+     "a": 82.0,
+     "rate": 0.946
+    }
+   ],
+   "text": "Happy with it? Open Export. Push the code to your GitHub, or download it as a zip."
+  },
+  {
+   "key": "f2-refine-export-outro",
+   "t": 28.26,
+   "dur": 5.6,
+   "n": null,
+   "title": null,
+   "rect": null,
+   "subs": [],
+   "text": "Next up: design and publish a website in Buildify Studio."
+  }
+ ],
+ "kicker": "FEATURE 2 OF 6",
+ "introTitle": "Refine & Export",
+ "introSub": "Change your app by chatting, then take the code",
+ "chips": [
+  "Ask for a change",
+  "Version two",
+  "See it live",
+  "Export the code"
+ ],
+ "outroTitle": "Next: Buildify Studio",
+ "outroSub": "Buildify \u00b7 all with AI",
+ "cta": "Try it free at buildify.sh \u2192"
+}

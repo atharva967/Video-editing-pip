@@ -1,0 +1,123 @@
+{
+ "src": "buildify/demo.mp4",
+ "voDir": "buildify/features",
+ "duration": 36.12,
+ "segs": [
+  {
+   "key": "f1-builder-intro",
+   "t": 0.0,
+   "dur": 5.74,
+   "n": null,
+   "title": null,
+   "rect": null,
+   "subs": [],
+   "text": "Feature one: the Builder. Build a working app, just by describing it."
+  },
+  {
+   "key": "f1-builder-s1",
+   "t": 5.74,
+   "dur": 6.32,
+   "n": 1,
+   "title": "Describe your app",
+   "rect": [
+    0,
+    0,
+    1920
+   ],
+   "subs": [
+    {
+     "at": 5.74,
+     "dur": 6.32,
+     "a": 23.5,
+     "rate": 1.187
+    }
+   ],
+   "text": "Start in the Builder. Describe your app in plain English, like a habit tracker with streaks."
+  },
+  {
+   "key": "f1-builder-s2",
+   "t": 12.06,
+   "dur": 7.51,
+   "n": 2,
+   "title": "Review the plan",
+   "rect": [
+    0,
+    0,
+    1920
+   ],
+   "subs": [
+    {
+     "at": 12.06,
+     "dur": 7.51,
+     "a": 31.0,
+     "rate": 0.866
+    }
+   ],
+   "text": "With Plan first on, Buildify drafts a plan and asks a few quick questions before it writes any code."
+  },
+  {
+   "key": "f1-builder-s3",
+   "t": 19.57,
+   "dur": 8.05,
+   "n": 3,
+   "title": "Watch it build",
+   "rect": [
+    0,
+    0,
+    1920
+   ],
+   "subs": [
+    {
+     "at": 19.57,
+     "dur": 8.05,
+     "a": 37.5,
+     "rate": 1.056
+    }
+   ],
+   "text": "Click build. The agent writes the components, runs the build and checks that it passes, while you watch every step."
+  },
+  {
+   "key": "f1-builder-s4",
+   "t": 27.62,
+   "dur": 3.95,
+   "n": 4,
+   "title": "Live preview",
+   "rect": [
+    0,
+    0,
+    1920
+   ],
+   "subs": [
+    {
+     "at": 27.62,
+     "dur": 3.95,
+     "a": 47.0,
+     "rate": 2.025
+    }
+   ],
+   "text": "Then click through a live preview of your working app."
+  },
+  {
+   "key": "f1-builder-outro",
+   "t": 31.57,
+   "dur": 4.55,
+   "n": null,
+   "title": null,
+   "rect": null,
+   "subs": [],
+   "text": "Next up: refine your app and export the code."
+  }
+ ],
+ "kicker": "FEATURE 1 OF 6",
+ "introTitle": "Builder",
+ "introSub": "Build an app just by describing it",
+ "chips": [
+  "Describe your app",
+  "Review the plan",
+  "Watch it build",
+  "Live preview"
+ ],
+ "outroTitle": "Next: Refine & Export",
+ "outroSub": "Buildify \u00b7 all with AI",
+ "cta": "Try it free at buildify.sh \u2192"
+}

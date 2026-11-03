@@ -1,0 +1,150 @@
+[
+ [
+  "f1-builder-intro",
+  "Feature one: the Builder. Build a working app, just by describing it."
+ ],
+ [
+  "f1-builder-s1",
+  "Start in the Builder. Describe your app in plain English, like a habit tracker with streaks."
+ ],
+ [
+  "f1-builder-s2",
+  "With Plan first on, Buildify drafts a plan and asks a few quick questions before it writes any code."
+ ],
+ [
+  "f1-builder-s3",
+  "Click build. The agent writes the components, runs the build and checks that it passes, while you watch every step."
+ ],
+ [
+  "f1-builder-s4",
+  "Then click through a live preview of your working app."
+ ],
+ [
+  "f1-builder-outro",
+  "Next up: refine your app and export the code."
+ ],
+ [
+  "f2-refine-export-intro",
+  "Feature two: refine and export. Change your app just by chatting."
+ ],
+ [
+  "f2-refine-export-s1",
+  "Want a change? Type it in the chat, the way you'd ask a teammate. Add dark mode."
+ ],
+ [
+  "f2-refine-export-s2",
+  "Buildify edits only the files it needs, rebuilds, and saves version two."
+ ],
+ [
+  "f2-refine-export-s3",
+  "Switch the theme in the preview, and the whole app goes dark."
+ ],
+ [
+  "f2-refine-export-s4",
+  "Happy with it? Open Export. Push the code to your GitHub, or download it as a zip."
+ ],
+ [
+  "f2-refine-export-outro",
+  "Next up: design and publish a website in Buildify Studio."
+ ],
+ [
+  "f3-studio-intro",
+  "Feature three: Buildify Studio. Design and publish a website, visually."
+ ],
+ [
+  "f3-studio-s1",
+  "Studio is a visual editor for websites and portfolios. Start by picking a template."
+ ],
+ [
+  "f3-studio-s2",
+  "Drag in any element, like a button, and drop it on the canvas."
+ ],
+ [
+  "f3-studio-s3",
+  "Then position it exactly from the properties panel on the right."
+ ],
+ [
+  "f3-studio-s4",
+  "Click any text to edit it, and fine-tune the size and color."
+ ],
+ [
+  "f3-studio-s5",
+  "Hit preview to see your page on desktop, tablet and mobile."
+ ],
+ [
+  "f3-studio-s6",
+  "Click publish, give it a title and a short link, and it's live, ready to share."
+ ],
+ [
+  "f3-studio-outro",
+  "Next up: AI Chat, your on-demand coding assistant."
+ ],
+ [
+  "f4-ai-chat-intro",
+  "Feature four: AI Chat. Your on-demand coding assistant."
+ ],
+ [
+  "f4-ai-chat-s1",
+  "Open AI Chat from AI Tools in the sidebar."
+ ],
+ [
+  "f4-ai-chat-s2",
+  "Pick a model and ask for what you need, like a pomodoro timer."
+ ],
+ [
+  "f4-ai-chat-s3",
+  "The answer streams in: complete, working code, with focus and break modes and a progress ring."
+ ],
+ [
+  "f4-ai-chat-s4",
+  "Plus a clear breakdown of every feature. Share the whole transcript in one click."
+ ],
+ [
+  "f4-ai-chat-outro",
+  "Next up: test your site with the Accessibility Tester."
+ ],
+ [
+  "f5-accessibility-intro",
+  "Feature five: the Accessibility Tester. Check your site before you launch."
+ ],
+ [
+  "f5-accessibility-s1",
+  "Enter your website's URL, and choose the WCAG standards you care about."
+ ],
+ [
+  "f5-accessibility-s2",
+  "Start the test. Buildify crawls the site and streams live logs as it goes."
+ ],
+ [
+  "f5-accessibility-s3",
+  "You get an overall score, and a breakdown of issues by severity."
+ ],
+ [
+  "f5-accessibility-s4",
+  "Plus page by page results, and a PDF report you can share with your team."
+ ],
+ [
+  "f5-accessibility-outro",
+  "Next up: ready-made AI agents for your business."
+ ],
+ [
+  "f6-agents-intro",
+  "Feature six: AI agents. Ready-made bots for your business."
+ ],
+ [
+  "f6-agents-s1",
+  "Open Agents in the sidebar to browse ready-made AI bots, like FAQ, lead capture and customer service."
+ ],
+ [
+  "f6-agents-s2",
+  "The App Spec Builder interviews visitors about their app idea, and turns it into a build-ready spec."
+ ],
+ [
+  "f6-agents-s3",
+  "Deploy it on your website or in Telegram, and every captured spec shows up right here."
+ ],
+ [
+  "f6-agents-outro",
+  "That's Buildify. Build, test and launch, all with AI. Start free at buildify dot s h."
+ ]
+]
