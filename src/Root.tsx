@@ -2,6 +2,7 @@ import { Composition } from "remotion";
 import { ClientSaidWhat, reelFrames, type ReelProps } from "./reel/ClientSaidWhat";
 import { DmImage } from "./gifs/DmImage";
 import { DmGif, DM_GIF_FRAMES, type DmGifProps } from "./gifs/DmGif";
+import { LeadFinderDemo, type LeadFinderProps } from "./leadfinder/LeadFinderDemo";
 import { BuildifyReel, type ReelProps as BuildifyReelProps } from "./buildify/BuildifyReel";
 import { BuildifyShort, type ShortProps } from "./buildify/BuildifyShort";
 import { BuildifyWalkthrough, type WalkthroughProps } from "./buildify/BuildifyWalkthrough";
@@ -116,6 +117,16 @@ export const RemotionRoot: React.FC = () => (
     width={1080}
     height={1920}
     defaultProps={{} as BuildifyReelProps}
+    calculateMetadata={({ props }) => ({ durationInFrames: Math.round((props.duration ?? 10) * 30) })}
+  />
+  <Composition
+    id="LeadFinderDemo"
+    component={LeadFinderDemo}
+    durationInFrames={300}
+    fps={30}
+    width={1920}
+    height={1080}
+    defaultProps={{} as LeadFinderProps}
     calculateMetadata={({ props }) => ({ durationInFrames: Math.round((props.duration ?? 10) * 30) })}
   />
   </>

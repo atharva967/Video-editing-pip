@@ -12,3 +12,5 @@ public/travel/*.m4a
 travel/src/
 buildify/src/
 public/buildify/*.mp4
+leadfinder/src/
+public/leadfinder/recording.mp4

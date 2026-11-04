@@ -1,0 +1,150 @@
+[
+ [
+  "intro1",
+  "Most local businesses still don't have a proper website. Some have none at all, some have one that's slow or broken, and some are simply invisible online."
+ ],
+ [
+  "intro2",
+  "Every one of them is a potential client. The hard part is finding them. So at TechnoTribes, we built Lead Finder."
+ ],
+ [
+  "intro3",
+  "In the next few minutes, I'll show you how it finds these businesses automatically, ranks them, and gives your team everything it needs to reach out."
+ ],
+ [
+  "signin1",
+  "Lead Finder is a private dashboard for your team. Everyone signs in with their Google account, and only approved team members can get in."
+ ],
+ [
+  "signin2",
+  "One click, and you're in."
+ ],
+ [
+  "overview1",
+  "The first thing you see is the Overview: a live summary of every lead found so far, matching the Google Sheet that the system keeps up to date."
+ ],
+ [
+  "overview2",
+  "Right now there are one hundred and sixty six leads, all found in the last seven days."
+ ],
+ [
+  "overview3",
+  "Every lead falls into one of three types. Ninety six businesses have no website at all. Twenty nine have a website that's broken, slow or outdated. And forty one have a decent site, but almost no reach online."
+ ],
+ [
+  "overview4",
+  "So you know not just who to contact, but what to offer each one: a new website, a redesign, or help growing their reach."
+ ],
+ [
+  "overview5",
+  "Twenty nine leads already come with an email address. And all of this scraping has cost just two dollars and eighty nine cents this month."
+ ],
+ [
+  "overview6",
+  "The charts break your leads down by country, and show how many new ones arrive each week."
+ ],
+ [
+  "overview7",
+  "Scroll down, and you'll see which kinds of business produce the most leads. Beauty salons, electricians and handymen are at the top."
+ ],
+ [
+  "overview8",
+  "The lead status chart tracks your pipeline: new, contacted, interested, won, or lost."
+ ],
+ [
+  "overview9",
+  "And at the bottom, a map shows exactly where your leads are, region by region."
+ ],
+ [
+  "leads1",
+  "Now let's open the Leads page. This is where the real work happens."
+ ],
+ [
+  "leads2",
+  "Each row is a real local business, with its category, its location, its Google rating and number of reviews, and its phone number and email when they're available."
+ ],
+ [
+  "leads3",
+  "The lead type shows the opportunity at a glance, and the next column explains exactly why it's a lead. For example, a free Square page and no website of its own. Or only a booking page."
+ ],
+ [
+  "leads4",
+  "Further down are the other types. Bad websites that aren't mobile friendly, have no contact form, or are down completely."
+ ],
+ [
+  "leads5",
+  "And low reach businesses: a good website, but only a handful of reviews and no social media."
+ ],
+ [
+  "leads6",
+  "At the top, filters narrow the list by country, region, city, category, lead type, rating, status or owner. You can show only leads with an email, and export everything to a CSV file in one click."
+ ],
+ [
+  "lead1",
+  "Click any lead to open its details. Here's Douglasdale Barber Shop in Calgary. A four point eight star rating from over five hundred reviews, but no website of its own, only a free Square page."
+ ],
+ [
+  "lead2",
+  "Every business gets a priority score out of one hundred, so your team always knows who to call first. This one scores ninety two."
+ ],
+ [
+  "lead3",
+  "Lead Finder also checks the website itself. It measures page speed and lists the problems it finds, like slow loading, no way to contact the business, or missing SEO. Each problem adds to a need score."
+ ],
+ [
+  "lead4",
+  "So when you call, you already know what's wrong with their site, and how you can fix it."
+ ],
+ [
+  "lead5",
+  "Contacts found online are listed with the page they came from. And at the bottom, the follow up section lets you set a status, assign an owner, and keep notes."
+ ],
+ [
+  "lead6",
+  "Here's a low reach lead: Handyman Pros Calgary. A good website, but only one review and no social media. Its priority is ninety seven."
+ ],
+ [
+  "lead7",
+  "You can jump straight to the business's website, to see what they have today, and what you could build for them."
+ ],
+ [
+  "lead8",
+  "Then come back to the list, and move on to the next one."
+ ],
+ [
+  "search1",
+  "New leads come from searches. On the Run a search page, you pick a country, a city and a type of business, like dentists in Pune, or plumbers in Austin."
+ ],
+ [
+  "search2",
+  "Each search looks at up to twenty places on Google Maps, and costs about twelve cents. Built in limits keep spending under control, with a daily run limit and a monthly budget."
+ ],
+ [
+  "search3",
+  "Results land in Leads and the Google Sheet within about three to ten minutes. Recent runs shows every search, how many places it found, how many were new, and what it cost."
+ ],
+ [
+  "search4",
+  "And you don't have to run searches by hand. The nightly queue runs one saved search every night, oldest first, until the monthly budget is reached. So fresh leads keep arriving while you sleep."
+ ],
+ [
+  "team1",
+  "Finally, the Team page. Admins decide exactly who can sign in. Add a Google email, choose a role, and that person gets access."
+ ],
+ [
+  "team2",
+  "Remove an email, and their access ends right away. There's also a suppressed list, for businesses you never want to see again."
+ ],
+ [
+  "wrap1",
+  "So that's Lead Finder. It finds local businesses that need a better online presence, explains why each one is a lead, ranks them, and keeps your pipeline full, automatically."
+ ],
+ [
+  "wrap2",
+  "Your team spends its time talking to the right businesses, instead of searching for them."
+ ],
+ [
+  "wrap3",
+  "Want a lead engine like this for your business? Talk to TechnoTribes."
+ ]
+]
