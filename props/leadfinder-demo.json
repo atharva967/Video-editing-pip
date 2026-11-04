@@ -1,5 +1,6 @@
 {
  "src": "leadfinder/recording.mp4",
+ "voDir": "leadfinder/vo",
  "duration": 354.67,
  "lines": [
   {
@@ -1186,6 +1187,12 @@
    "title": "Team access",
    "t": 308.839,
    "n": 6
+  },
+  {
+   "id": "wrap",
+   "title": null,
+   "t": 328.616,
+   "n": 0
   }
  ],
  "subs": [

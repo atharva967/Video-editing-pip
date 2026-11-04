@@ -1,15 +1,19 @@
 # Build props/leadfinder-demo.json from leadfinder/script.py + voiceover lengths.
 import json, re, subprocess, sys
 sys.path.insert(0, "leadfinder")
-from script import CHAPTERS
-GAP, LEAD_IN = 1.0, 1.5
+import importlib, os
+MOD = os.environ.get("LF_SCRIPT", "script"); VODIR = os.environ.get("LF_VODIR", "leadfinder/vo"); OUT = os.environ.get("LF_OUT", "props/leadfinder-demo.json")
+CHAPTERS = importlib.import_module(MOD).CHAPTERS
+GAP, LEAD_IN = float(os.environ.get("LF_GAP", "1.0")), 1.5
 VO_DELAY = 0.15
-dur = lambda k: float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", f"public/leadfinder/vo/{k}.wav"], capture_output=True, text=True).stdout)
+dur = lambda k: float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", f"public/{VODIR}/{k}.wav"], capture_output=True, text=True).stdout)
 SIZES = {"ss-overview": [1887, 967], "ss-overview2": [1877, 965], "ss-leads": [1582, 956], "ss-leads2": [1585, 970], "ss-runs": [1576, 957]}
 t = 0.0; lines, shots, chapters, subs = [], [], [], []
 for cid, title, ls in CHAPTERS:
     if title:
-        chapters.append(dict(id=cid, title=title, t=round(t, 3), n=len([c for c in chapters]) + 1)); t += LEAD_IN
+        chapters.append(dict(id=cid, title=title, t=round(t, 3), n=len([c for c in chapters if c["title"]]) + 1)); t += LEAD_IN
+    elif chapters:  # untitled section after the chapters (wrap-up): marks where the last chapter ends
+        chapters.append(dict(id=cid, title=None, t=round(t, 3), n=0))
     for i, (text, sh) in enumerate(ls):
         key = f"{cid}{i + 1}"; vo = dur(key)
         extra = 1.2 if (cid == "intro" and i == 0) else 2.5 if (cid == "wrap" and i == len(ls) - 1) else 0
@@ -35,6 +39,6 @@ for cid, title, ls in CHAPTERS:
                 o.update(kind="card", card=s["card"])
             shots.append(o); u += sd
         t += d
-props = dict(src="leadfinder/recording.mp4", duration=round(t + 0.5, 2), lines=lines, shots=shots, chapters=chapters, subs=subs)
-json.dump(props, open("props/leadfinder-demo.json", "w"), indent=1)
+props = dict(src="leadfinder/recording.mp4", voDir=VODIR, duration=round(t + 0.5, 2), lines=lines, shots=shots, chapters=chapters, subs=subs)
+json.dump(props, open(OUT, "w"), indent=1)
 print(f"{props['duration']:.1f} s = {props['duration']/60:.2f} min; {len(shots)} shots; {len(chapters)} chapters")

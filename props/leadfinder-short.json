@@ -1,0 +1,956 @@
+{
+ "src": "leadfinder/recording.mp4",
+ "voDir": "leadfinder/vo-short",
+ "duration": 172.67,
+ "lines": [
+  {
+   "key": "intro1",
+   "t": 0.15
+  },
+  {
+   "key": "intro2",
+   "t": 10.394
+  },
+  {
+   "key": "intro3",
+   "t": 18.329
+  },
+  {
+   "key": "overview1",
+   "t": 22.323
+  },
+  {
+   "key": "overview2",
+   "t": 30.301
+  },
+  {
+   "key": "overview3",
+   "t": 40.113
+  },
+  {
+   "key": "overview4",
+   "t": 46.703
+  },
+  {
+   "key": "leads1",
+   "t": 54.901
+  },
+  {
+   "key": "leads2",
+   "t": 63.155
+  },
+  {
+   "key": "leads3",
+   "t": 73.65
+  },
+  {
+   "key": "lead1",
+   "t": 82.743
+  },
+  {
+   "key": "lead2",
+   "t": 92.022
+  },
+  {
+   "key": "lead3",
+   "t": 101.983
+  },
+  {
+   "key": "lead4",
+   "t": 112.414
+  },
+  {
+   "key": "search1",
+   "t": 118.841
+  },
+  {
+   "key": "search2",
+   "t": 127.394
+  },
+  {
+   "key": "search3",
+   "t": 134.625
+  },
+  {
+   "key": "team1",
+   "t": 144.977
+  },
+  {
+   "key": "team2",
+   "t": 150.799
+  },
+  {
+   "key": "wrap1",
+   "t": 156.43
+  },
+  {
+   "key": "wrap2",
+   "t": 164.429
+  }
+ ],
+ "shots": [
+  {
+   "t": 0.0,
+   "dur": 10.244,
+   "cam": null,
+   "spots": [],
+   "kind": "card",
+   "card": "types"
+  },
+  {
+   "t": 10.244,
+   "dur": 7.935,
+   "cam": null,
+   "spots": [],
+   "kind": "card",
+   "card": "title"
+  },
+  {
+   "t": 18.179,
+   "dur": 2.495,
+   "cam": null,
+   "spots": [],
+   "kind": "card",
+   "card": "chapters"
+  },
+  {
+   "t": 20.673,
+   "dur": 4.292,
+   "cam": [
+    [
+     290,
+     140,
+     700
+    ],
+    [
+     0,
+     0,
+     1280
+    ]
+   ],
+   "spots": [],
+   "kind": "video",
+   "a": 5.4,
+   "b": 9.6,
+   "rate": 0.979
+  },
+  {
+   "t": 24.965,
+   "dur": 5.185,
+   "cam": [
+    [
+     0,
+     0,
+     1280
+    ],
+    [
+     0,
+     0,
+     1280
+    ]
+   ],
+   "spots": [],
+   "kind": "video",
+   "a": 9.6,
+   "b": 13.0,
+   "rate": 0.656
+  },
+  {
+   "t": 30.151,
+   "dur": 9.812,
+   "cam": [
+    [
+     0,
+     0,
+     1887
+    ],
+    [
+     300,
+     60,
+     1060
+    ]
+   ],
+   "spots": [
+    [
+     337,
+     130,
+     235,
+     155,
+     "Total leads",
+     0.05
+    ],
+    [
+     594,
+     130,
+     235,
+     155,
+     "No website",
+     0.3
+    ],
+    [
+     851,
+     130,
+     235,
+     155,
+     "Bad website",
+     0.55
+    ],
+    [
+     1107,
+     130,
+     235,
+     155,
+     "Low reach",
+     0.78
+    ]
+   ],
+   "kind": "image",
+   "src": "leadfinder/ss-overview.png",
+   "size": [
+    1887,
+    967
+   ]
+  },
+  {
+   "t": 39.963,
+   "dur": 6.591,
+   "cam": [
+    [
+     300,
+     60,
+     1060
+    ],
+    [
+     860,
+     60,
+     1027
+    ]
+   ],
+   "spots": [
+    [
+     1364,
+     130,
+     235,
+     155,
+     "With email",
+     0.05
+    ],
+    [
+     1621,
+     130,
+     235,
+     155,
+     "Spend this month",
+     0.5
+    ]
+   ],
+   "kind": "image",
+   "src": "leadfinder/ss-overview.png",
+   "size": [
+    1887,
+    967
+   ]
+  },
+  {
+   "t": 46.553,
+   "dur": 3.349,
+   "cam": [
+    [
+     0,
+     0,
+     1280
+    ],
+    [
+     140,
+     120,
+     1100
+    ]
+   ],
+   "spots": [],
+   "kind": "video",
+   "a": 13.0,
+   "b": 21.5,
+   "rate": 2.538
+  },
+  {
+   "t": 49.902,
+   "dur": 3.349,
+   "cam": [
+    [
+     0,
+     120,
+     1050
+    ],
+    [
+     190,
+     191,
+     900
+    ]
+   ],
+   "spots": [],
+   "kind": "video",
+   "a": 38.0,
+   "b": 46.0,
+   "rate": 2.389
+  },
+  {
+   "t": 53.251,
+   "dur": 9.755,
+   "cam": [
+    [
+     0,
+     0,
+     1582
+    ],
+    [
+     0,
+     300,
+     1250
+    ]
+   ],
+   "spots": [
+    [
+     35,
+     365,
+     320,
+     580,
+     "Business",
+     0.1
+    ],
+    [
+     890,
+     365,
+     290,
+     580,
+     "Place & rating",
+     0.4
+    ],
+    [
+     1195,
+     365,
+     265,
+     580,
+     "Contact",
+     0.7
+    ]
+   ],
+   "kind": "image",
+   "src": "leadfinder/ss-leads.png",
+   "size": [
+    1582,
+    956
+   ]
+  },
+  {
+   "t": 63.005,
+   "dur": 4.723,
+   "cam": [
+    [
+     0,
+     300,
+     1250
+    ],
+    [
+     250,
+     330,
+     1100
+    ]
+   ],
+   "spots": [
+    [
+     520,
+     365,
+     370,
+     580,
+     "Why it's a lead",
+     0.05
+    ]
+   ],
+   "kind": "image",
+   "src": "leadfinder/ss-leads.png",
+   "size": [
+    1582,
+    956
+   ]
+  },
+  {
+   "t": 67.728,
+   "dur": 5.772,
+   "cam": [
+    [
+     0,
+     0,
+     1060
+    ],
+    [
+     0,
+     265,
+     1100
+    ]
+   ],
+   "spots": [
+    [
+     30,
+     0,
+     1060,
+     265,
+     "Bad website",
+     0.05
+    ],
+    [
+     30,
+     270,
+     1060,
+     560,
+     "Low reach",
+     0.55
+    ]
+   ],
+   "kind": "image",
+   "src": "leadfinder/ss-leads2.png",
+   "size": [
+    1585,
+    970
+   ]
+  },
+  {
+   "t": 73.5,
+   "dur": 7.593,
+   "cam": [
+    [
+     0,
+     0,
+     1582
+    ],
+    [
+     0,
+     0,
+     1582
+    ]
+   ],
+   "spots": [
+    [
+     35,
+     125,
+     1520,
+     165,
+     "Filters",
+     0.05
+    ],
+    [
+     1405,
+     55,
+     150,
+     40,
+     "Export CSV",
+     0.6
+    ]
+   ],
+   "kind": "image",
+   "src": "leadfinder/ss-leads.png",
+   "size": [
+    1582,
+    956
+   ]
+  },
+  {
+   "t": 81.093,
+   "dur": 10.779,
+   "cam": [
+    [
+     0,
+     0,
+     1280
+    ],
+    [
+     380,
+     0,
+     900
+    ]
+   ],
+   "spots": [],
+   "kind": "video",
+   "a": 62.5,
+   "b": 66.0,
+   "rate": 0.5
+  },
+  {
+   "t": 91.872,
+   "dur": 9.961,
+   "cam": [
+    [
+     380,
+     0,
+     900
+    ],
+    [
+     380,
+     191,
+     900
+    ]
+   ],
+   "spots": [],
+   "kind": "video",
+   "a": 66.0,
+   "b": 73.0,
+   "rate": 0.703
+  },
+  {
+   "t": 101.833,
+   "dur": 10.431,
+   "cam": [
+    [
+     0,
+     0,
+     1280
+    ],
+    [
+     380,
+     0,
+     900
+    ]
+   ],
+   "spots": [],
+   "kind": "video",
+   "a": 111.0,
+   "b": 118.0,
+   "rate": 0.671
+  },
+  {
+   "t": 112.264,
+   "dur": 4.927,
+   "cam": [
+    [
+     380,
+     191,
+     900
+    ],
+    [
+     380,
+     191,
+     900
+    ]
+   ],
+   "spots": [],
+   "kind": "video",
+   "a": 73.0,
+   "b": 80.0,
+   "rate": 1.421
+  },
+  {
+   "t": 117.191,
+   "dur": 6.204,
+   "cam": [
+    [
+     0,
+     0,
+     1280
+    ],
+    [
+     0,
+     60,
+     900
+    ]
+   ],
+   "spots": [],
+   "kind": "video",
+   "a": 140.0,
+   "b": 151.0,
+   "rate": 1.773
+  },
+  {
+   "t": 123.395,
+   "dur": 3.849,
+   "cam": [
+    [
+     0,
+     300,
+     1000
+    ],
+    [
+     0,
+     300,
+     1000
+    ]
+   ],
+   "spots": [
+    [
+     60,
+     625,
+     425,
+     112,
+     "Cost & limits",
+     0.1
+    ]
+   ],
+   "kind": "image",
+   "src": "leadfinder/ss-runs.png",
+   "size": [
+    1576,
+    957
+   ]
+  },
+  {
+   "t": 127.244,
+   "dur": 7.231,
+   "cam": [
+    [
+     0,
+     300,
+     1000
+    ],
+    [
+     530,
+     120,
+     1046
+    ]
+   ],
+   "spots": [
+    [
+     1062,
+     205,
+     120,
+     750,
+     "Found / new",
+     0.3
+    ],
+    [
+     1212,
+     205,
+     75,
+     750,
+     "Cost",
+     0.6
+    ]
+   ],
+   "kind": "image",
+   "src": "leadfinder/ss-runs.png",
+   "size": [
+    1576,
+    957
+   ]
+  },
+  {
+   "t": 134.475,
+   "dur": 8.852,
+   "cam": [
+    [
+     0,
+     0,
+     1280
+    ],
+    [
+     380,
+     191,
+     900
+    ]
+   ],
+   "spots": [],
+   "kind": "video",
+   "a": 151.5,
+   "b": 157.5,
+   "rate": 0.678
+  },
+  {
+   "t": 143.327,
+   "dur": 7.323,
+   "cam": [
+    [
+     0,
+     0,
+     1280
+    ],
+    [
+     380,
+     40,
+     900
+    ]
+   ],
+   "spots": [],
+   "kind": "video",
+   "a": 170.5,
+   "b": 182.0,
+   "rate": 1.57
+  },
+  {
+   "t": 150.649,
+   "dur": 5.631,
+   "cam": [
+    [
+     380,
+     40,
+     900
+    ],
+    [
+     0,
+     0,
+     1280
+    ]
+   ],
+   "spots": [],
+   "kind": "video",
+   "a": 182.0,
+   "b": 186.0,
+   "rate": 0.71
+  },
+  {
+   "t": 156.28,
+   "dur": 7.999,
+   "cam": [
+    [
+     0,
+     0,
+     1280
+    ],
+    [
+     140,
+     0,
+     1100
+    ]
+   ],
+   "spots": [],
+   "kind": "video",
+   "a": 186.0,
+   "b": 193.3,
+   "rate": 0.913
+  },
+  {
+   "t": 164.279,
+   "dur": 7.896,
+   "cam": null,
+   "spots": [],
+   "kind": "card",
+   "card": "outro"
+  }
+ ],
+ "chapters": [
+  {
+   "id": "overview",
+   "title": "The Overview",
+   "t": 20.673,
+   "n": 1
+  },
+  {
+   "id": "leads",
+   "title": "The leads list",
+   "t": 53.251,
+   "n": 2
+  },
+  {
+   "id": "lead",
+   "title": "Inside a lead",
+   "t": 81.093,
+   "n": 3
+  },
+  {
+   "id": "search",
+   "title": "Running searches",
+   "t": 117.191,
+   "n": 4
+  },
+  {
+   "id": "team",
+   "title": "Team access",
+   "t": 143.327,
+   "n": 5
+  },
+  {
+   "id": "wrap",
+   "title": null,
+   "t": 156.28,
+   "n": 0
+  }
+ ],
+ "subs": [
+  {
+   "t": 0.15,
+   "until": 3.627,
+   "text": "Most local businesses don't have a proper website."
+  },
+  {
+   "t": 3.377,
+   "until": 8.144,
+   "text": "Some have none, some have a broken one, and some are invisible online."
+  },
+  {
+   "t": 10.394,
+   "until": 12.701,
+   "text": "Each one is a potential client."
+  },
+  {
+   "t": 12.451,
+   "until": 17.279,
+   "text": "So at TechnoTribes, we built Lead Finder, to find them automatically."
+  },
+  {
+   "t": 18.329,
+   "until": 19.773,
+   "text": "Here's a quick tour."
+  },
+  {
+   "t": 22.323,
+   "until": 26.446,
+   "text": "Your team signs in with Google, and lands on the Overview:"
+  },
+  {
+   "t": 26.196,
+   "until": 29.251,
+   "text": "a live summary of every lead found so far."
+  },
+  {
+   "t": 30.301,
+   "until": 33.366,
+   "text": "One hundred and sixty six leads this week."
+  },
+  {
+   "t": 33.116,
+   "until": 39.063,
+   "text": "Ninety six with no website, twenty nine with a bad one, and forty one with low reach."
+  },
+  {
+   "t": 40.113,
+   "until": 45.653,
+   "text": "Twenty nine already have an email, and the whole month of searching cost under three dollars."
+  },
+  {
+   "t": 46.703,
+   "until": 52.351,
+   "text": "Charts show where the leads are, which kinds of business they are, and how your pipeline is moving."
+  },
+  {
+   "t": 54.901,
+   "until": 62.105,
+   "text": "On the Leads page, every row is a real local business, with its rating, location and contact details."
+  },
+  {
+   "t": 63.155,
+   "until": 66.198,
+   "text": "And it tells you exactly why it's a lead."
+  },
+  {
+   "t": 65.948,
+   "until": 68.854,
+   "text": "A free Square page and no real website."
+  },
+  {
+   "t": 68.604,
+   "until": 70.148,
+   "text": "A site that's down."
+  },
+  {
+   "t": 69.898,
+   "until": 72.6,
+   "text": "Or a good site with only one review."
+  },
+  {
+   "t": 73.65,
+   "until": 80.193,
+   "text": "Filter by country, city, category, rating or status, and export to CSV in one click."
+  },
+  {
+   "t": 82.743,
+   "until": 85.21,
+   "text": "Open any lead for the full picture."
+  },
+  {
+   "t": 84.96,
+   "until": 90.972,
+   "text": "This barber shop has four point eight stars from over five hundred reviews, but no website."
+  },
+  {
+   "t": 92.022,
+   "until": 95.737,
+   "text": "It gets a priority score, so you know who to call first."
+  },
+  {
+   "t": 95.487,
+   "until": 100.933,
+   "text": "Lead Finder also checks the website's speed and problems, so you know what to pitch."
+  },
+  {
+   "t": 101.983,
+   "until": 104.127,
+   "text": "Here's another kind of lead:"
+  },
+  {
+   "t": 103.877,
+   "until": 108.997,
+   "text": "a handyman with a good website, but only one review and no social media."
+  },
+  {
+   "t": 108.747,
+   "until": 111.364,
+   "text": "A perfect fit for a growth package."
+  },
+  {
+   "t": 112.414,
+   "until": 113.525,
+   "text": "Then track it:"
+  },
+  {
+   "t": 113.275,
+   "until": 116.291,
+   "text": "set a status, assign an owner, and add notes."
+  },
+  {
+   "t": 118.841,
+   "until": 120.969,
+   "text": "New leads come from searches."
+  },
+  {
+   "t": 120.719,
+   "until": 123.948,
+   "text": "Pick a country, a city and a type of business."
+  },
+  {
+   "t": 123.698,
+   "until": 126.344,
+   "text": "Each search costs about twelve cents."
+  },
+  {
+   "t": 127.394,
+   "until": 128.83,
+   "text": "Every run is logged:"
+  },
+  {
+   "t": 128.58,
+   "until": 133.575,
+   "text": "what it searched, how many places it found, how many were new, and what it cost."
+  },
+  {
+   "t": 134.625,
+   "until": 140.035,
+   "text": "And a nightly queue runs saved searches automatically, within your monthly budget."
+  },
+  {
+   "t": 139.785,
+   "until": 142.427,
+   "text": "So fresh leads arrive while you sleep."
+  },
+  {
+   "t": 144.977,
+   "until": 149.749,
+   "text": "Admins control exactly who can sign in, with a role for each person."
+  },
+  {
+   "t": 150.799,
+   "until": 155.38,
+   "text": "And a suppressed list keeps businesses you never want to see out of your results."
+  },
+  {
+   "t": 156.43,
+   "until": 163.379,
+   "text": "Lead Finder finds the businesses that need you, explains why, and keeps your pipeline full, automatically."
+  },
+  {
+   "t": 164.429,
+   "until": 167.51,
+   "text": "Want a lead engine like this for your business?"
+  },
+  {
+   "t": 167.26,
+   "until": 168.775,
+   "text": "Talk to TechnoTribes."
+  }
+ ]
+}

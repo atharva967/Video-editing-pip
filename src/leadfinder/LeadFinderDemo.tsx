@@ -2,17 +2,17 @@
 // (browser bar cropped) and sharper screenshots: eased camera per shot, highlight boxes, crossfades,
 // chapter swipes, subtitles, and graphic cards for the intro and outro. Timeline: leadfinder/build.py.
 import React from "react";
-import { AbsoluteFill, Audio, Easing, Freeze, Img, OffthreadVideo, Sequence, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
+import { AbsoluteFill, Audio, Easing, Img, OffthreadVideo, Sequence, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { INTER, useFonts } from "../screendemo/fonts";
 
 type Rect = [number, number, number];
 type Spot = [number, number, number, number, string, number];
 type Shot = { t: number; dur: number; kind: "video" | "image" | "card"; a?: number; b?: number; rate?: number; src?: string; size?: [number, number]; card?: string; cam: [Rect, Rect] | null; spots: Spot[] };
 export type LeadFinderProps = {
-  src: string; duration: number;
+  src: string; duration: number; voDir?: string;
   lines: { key: string; t: number }[];
   shots: Shot[];
-  chapters: { id: string; title: string; t: number; n: number }[];
+  chapters: { id: string; title: string | null; t: number; n: number }[];
   subs: { t: number; until: number; text: string }[];
 };
 
@@ -77,7 +77,7 @@ const Card: React.FC<{ name: string; lt: number; dur: number; pop: (t: number) =
     );
   }
   // chapters
-  const ch = ["The Overview", "The leads list", "Inside a lead", "Running searches", "Team access"];
+  const ch = ["The Overview", "The leads list", "Inside a lead", "Running searches", "Team access"]; // chapters card (long cut only)
   return (
     <div style={bg}>
       <div style={{ position: "absolute", top: 120, left: 0, right: 0, textAlign: "center", opacity: at(0.02) }}>
@@ -108,9 +108,10 @@ const ShotView: React.FC<{ s: Shot; lt: number; srcVideo: string; pop: (t: numbe
     <div style={{ position: "absolute", left: 0, top: 0, width: W, height: H, transformOrigin: "0 0", transform: `translate(${-r[0] * sc}px, ${-r[1] * sc}px) scale(${sc})`, overflow: "hidden", background: "#F6F7FB" }}>
       {s.kind === "video" ? (
         <div style={{ position: "absolute", left: 0, top: -CROP_Y, width: 1280, height: 720 }}>
-          <Freeze frame={Math.round((s.a! + Math.min(lt * s.rate!, s.b! - s.a!)) * fps)}>
-            <OffthreadVideo src={staticFile(srcVideo)} muted style={{ width: 1280, height: 720 }} />
-          </Freeze>
+          {/* seek with trimBefore: a Freeze frame past the composition's length gets clamped */}
+          <Sequence from={Math.round(s.t * fps)} durationInFrames={Math.round((s.dur + 1) * fps)} layout="none">
+            <OffthreadVideo src={staticFile(srcVideo)} trimBefore={Math.round(s.a! * fps)} playbackRate={s.rate} muted style={{ width: 1280, height: 720 }} />
+          </Sequence>
         </div>
       ) : (
         <Img src={staticFile(s.src!)} style={{ width: W, height: H, display: "block" }} />
@@ -142,7 +143,7 @@ export const LeadFinderDemo: React.FC<LeadFinderProps> = (p) => {
   const lt = T - shot.t;
   const xf = prev ? clamp01(lt / XF) : 1;
   const chap = [...p.chapters].reverse().find((c) => T >= c.t);
-  const swipe = p.chapters.find((c) => T >= c.t - 0.1 && T < c.t + 1.3);
+  const swipe = p.chapters.find((c) => c.title && T >= c.t - 0.1 && T < c.t + 1.3);
   const sub = p.subs.find((s) => T >= s.t && T < s.until);
   const winIn = pop(0);
   const end = clamp01((p.duration - T) / 0.8);
@@ -161,7 +162,7 @@ export const LeadFinderDemo: React.FC<LeadFinderProps> = (p) => {
           <AbsoluteFill style={{ opacity: xf }}><ShotView s={shot} lt={lt} srcVideo={p.src} pop={pop} /></AbsoluteFill>
 
           {/* chapter chip */}
-          {chap && !swipe && shot.kind !== "card" && (
+          {chap && chap.title && !swipe && shot.kind !== "card" && (
             <div style={{ position: "absolute", left: 22, bottom: 22, display: "flex", alignItems: "center", gap: 12, background: "rgba(14,11,42,0.88)", borderRadius: 14, padding: "9px 18px 9px 9px", boxShadow: "0 10px 30px rgba(0,0,0,0.3)", opacity: pop(chap.t + 1.2) }}>
               <span style={{ minWidth: 38, height: 38, borderRadius: 10, background: C.indigo, color: "#fff", fontWeight: 800, fontSize: 19, display: "flex", alignItems: "center", justifyContent: "center" }}>{chap.n}</span>
               <span style={{ fontWeight: 700, fontSize: 23, color: "#fff" }}>{chap.title}</span>
@@ -187,6 +188,7 @@ export const LeadFinderDemo: React.FC<LeadFinderProps> = (p) => {
       {/* chapter progress */}
       <div style={{ position: "absolute", left: LEFT, width: VW, top: TOP + VH + BAR + 12, display: "flex", gap: 6, opacity: winIn * end }}>
         {p.chapters.map((c, i) => {
+          if (!c.title) return null;
           const until = p.chapters[i + 1]?.t ?? p.duration;
           return <div key={c.id} style={{ flex: until - c.t, height: 5, borderRadius: 3, background: "rgba(255,255,255,0.14)", overflow: "hidden" }}><div style={{ width: `${clamp01((T - c.t) / (until - c.t)) * 100}%`, height: "100%", background: "#A5B4FC" }} /></div>;
         })}
@@ -199,8 +201,8 @@ export const LeadFinderDemo: React.FC<LeadFinderProps> = (p) => {
         </div>
       )}
 
-      {p.lines.map((l) => <Sequence key={l.key} from={Math.round(l.t * fps)}><Audio src={staticFile(`leadfinder/vo/${l.key}.wav`)} /></Sequence>)}
-      {p.chapters.map((c) => <Sequence key={`w${c.id}`} from={Math.max(0, Math.round((c.t - 0.1) * fps))}><Audio src={staticFile("travel/whoosh.wav")} volume={0.25} /></Sequence>)}
+      {p.lines.map((l) => <Sequence key={l.key} from={Math.round(l.t * fps)}><Audio src={staticFile(`${p.voDir ?? "leadfinder/vo"}/${l.key}.wav`)} /></Sequence>)}
+      {p.chapters.filter((c) => c.title).map((c) => <Sequence key={`w${c.id}`} from={Math.max(0, Math.round((c.t - 0.1) * fps))}><Audio src={staticFile("travel/whoosh.wav")} volume={0.25} /></Sequence>)}
     </AbsoluteFill>
   );
 };
