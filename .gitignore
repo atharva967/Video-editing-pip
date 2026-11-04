@@ -14,3 +14,4 @@ buildify/src/
 public/buildify/*.mp4
 leadfinder/src/
 public/leadfinder/recording.mp4
+__pycache__/
