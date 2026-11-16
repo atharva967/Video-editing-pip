@@ -130,25 +130,38 @@ export const SeatViewReel: React.FC<SeatViewReelProps> = (p) => {
           })()}
 
           {inScene("seats") && (() => {
-            const [a] = sc("seats");
-            const tView = wt("that's", a), tBest = wt("Can't", a), tSend = wt("So", tBest);
-            // SeatView desktop screenshot (1920 x 1080) regions
-            const MAP: [number, number, number] = [1040, 150, 520], VIEW: [number, number, number] = [374, 170, 674], BEST: [number, number, number] = [1180, 160, 380], BOOK: [number, number, number] = [1050, 560, 500], STATS: [number, number, number] = [374, 380, 674];
-            const steps: [number, [number, number, number]][] = [[a, MAP], [tView - 0.15, VIEW], [tBest - 0.1, BEST], [tBest + 1.0, MAP], [tSend, STATS], [tSend + 1.8, BOOK]];
-            let r = steps[0][1];
-            for (const [t, target] of steps) if (T >= t) r = lerpR(r, target, ease(clamp01((T - t) / 0.55)));
-            const ring = (x: number, y: number, w: number, h: number, t: number, label: string) => T >= t && (
-              <div style={{ position: "absolute", left: x, top: y, width: w, height: h, borderRadius: 10, border: `4px solid ${Y}`, boxShadow: `0 0 0 4000px rgba(0,0,0,${0.35 * clamp01((T - t) / 0.4)})`, opacity: pop(t) }}>
-                <div style={{ position: "absolute", left: "50%", top: -40, transform: "translateX(-50%)", whiteSpace: "nowrap", background: Y, color: INK, fontFamily: INTER, fontWeight: 800, fontSize: 18, padding: "4px 12px", borderRadius: 8 }}>{label}</div>
-              </div>
-            );
+            // Real SeatView screen recording (1920x1200): live 3D view on top, seat map below.
+            const [a, b] = sc("seats");
+            const tBest = wt("Can't", a), tSend = wt("So", tBest);
+            // [out start, out end, source start, source end]
+            const ranges: [number, number, number, number][] = [[a, tBest - 0.1, 2.5, 8.5], [tBest - 0.1, tSend, 38.6, 41.6], [tSend, b + 0.2, 48.0, 56.0]];
+            const ri = Math.max(0, ranges.filter((r) => T >= r[0]).length - 1);
+            const [os, oe, sa, sb] = ranges[ri];
+            const rate = (sb - sa) / (oe - os);
+            const HALF = BG_H / 2;
+            const vid = (cx: number, cy: number, cw: number, ch: number) => {
+              const k = Math.min(1080 / cw, HALF / ch);
+              const w = cw * k, h = ch * k;
+              return (
+                <div style={{ position: "absolute", left: (1080 - w) / 2, top: (HALF - h) / 2, width: w, height: h, overflow: "hidden", borderRadius: 18 }}>
+                  <div style={{ position: "absolute", left: -cx * k, top: -cy * k, width: 1920 * k, height: 1200 * k }}>
+                    <Sequence key={ri} from={Math.round(os * fps)} durationInFrames={Math.round((oe - os + 0.5) * fps)} layout="none">
+                      <OffthreadVideo src={staticFile("seatview/rec.mp4")} trimBefore={Math.round(sa * fps)} playbackRate={rate} muted style={{ width: 1920 * k, height: 1200 * k }} />
+                    </Sequence>
+                  </div>
+                </div>
+              );
+            };
+            const labels = ["Tap any seat → see your real view", "Show view quality: green = best", "Live demo: the view follows every seat"];
+            const kl = pop(os + 0.1);
             return (
-              <Crop src="seatview/desktop.png" W={1080} H={BG_H} r={r}>
-                {T < tView - 0.15 && ring(1312, 468, 26, 26, a + 0.5, "Your seat: H8")}
-                {T >= tView - 0.15 && T < tBest - 0.1 && ring(396, 190, 284, 34, tView + 0.2, "Your real view · 100")}
-                {T >= tBest - 0.1 && T < tBest + 1.0 && ring(1404, 196, 114, 34, tBest + 0.15, "Best available")}
-                {T >= tSend + 1.8 && ring(1083, 816, 432, 46, tSend + 2.1, "Book")}
-              </Crop>
+              <AbsoluteFill style={{ background: "#0B0B12" }}>
+                <div style={{ position: "absolute", left: 0, top: 0, width: 1080, height: HALF }}>{vid(232, 322, 812, 456)}</div>
+                <div style={{ position: "absolute", left: 0, top: HALF, width: 1080, height: HALF }}>{vid(1066, 330, 620, 490)}</div>
+                <div style={{ position: "absolute", top: HALF - 34, left: 0, right: 0, display: "flex", justifyContent: "center", transform: `scale(${kl})` }}>
+                  <div style={{ background: Y, color: INK, fontFamily: INTER, fontWeight: 800, fontSize: 34, padding: "10px 24px", borderRadius: 16, boxShadow: "0 10px 30px rgba(0,0,0,0.5)" }}>{labels[ri]}</div>
+                </div>
+              </AbsoluteFill>
             );
           })()}
         </div>
