@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TechnoTribes Brand Kit</title>
+<!-- Printed to A4 by brandkit/pdf/build.sh. Values from the live site technotribes.ai (19 Nov 2026). -->
+<style>
+@font-face { font-family: "Syne"; src: url(fonts/Syne.woff2) format("woff2"); font-weight: 400 800; }
+@font-face { font-family: "Plus Jakarta Sans"; src: url(fonts/PlusJakartaSans.woff2) format("woff2"); font-weight: 300 800; }
+@font-face { font-family: "JetBrains Mono"; src: url(fonts/JetBrainsMono.woff2) format("woff2"); font-weight: 400 700; }
+@page { size: A4; margin: 0; }
+:root {
+  --surface: #0C0C0C; --maroon: #1D0E0E; --cta: #250F0F; --ink: #E8E8E8; --muted: #999999; --subtle: #777777;
+  --orange: #DD6710; --red: #EF4444; --red-deep: #DC2626; --line-maroon: #5F1616; --hairline: #242424;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--surface); }
+body { font-family: "Plus Jakarta Sans", sans-serif; color: var(--ink); font-size: 10pt; line-height: 1.55; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.page { width: 210mm; height: 297mm; position: relative; overflow: hidden; padding: 18mm 18mm 0; page-break-after: always; display: flex; flex-direction: column; background: var(--surface); }
+.page:last-child { page-break-after: auto; }
+.glow { position: absolute; border-radius: 50%; pointer-events: none; }
+.top { display: flex; justify-content: space-between; align-items: center; font-size: 7.5pt; letter-spacing: .25em; text-transform: uppercase; color: var(--muted); }
+.top b { font-family: "Syne"; font-weight: 600; color: var(--ink); letter-spacing: .25em; }
+.eyebrow { font-family: "JetBrains Mono"; font-size: 7.5pt; letter-spacing: .25em; text-transform: uppercase; color: var(--red); margin-bottom: 4mm; }
+h1 { font-family: "Syne"; font-weight: 700; letter-spacing: -.02em; line-height: 1; }
+h2 { font-family: "Syne"; font-weight: 700; font-size: 30pt; letter-spacing: -.02em; line-height: 1.05; margin-bottom: 4mm; }
+h3 { font-family: "Syne"; font-weight: 700; font-size: 12pt; margin-bottom: 2mm; }
+p { color: var(--muted); max-width: 150mm; }
+.foot { margin: auto -18mm 0; padding: 0 18mm; height: 12mm; border-top: 1px solid var(--hairline); display: flex; align-items: center; justify-content: space-between; font-size: 7pt; letter-spacing: .2em; text-transform: uppercase; color: var(--subtle); }
+.foot span:last-child { color: var(--red); }
+.rule { height: 1px; background: var(--red-deep); width: 40mm; margin: 6mm 0; }
+.grid { display: grid; gap: 4mm; }
+.box { border: 1px solid var(--hairline); padding: 5mm; }
+code, .mono { font-family: "JetBrains Mono"; font-size: 8pt; }
+.pill { display: inline-flex; align-items: center; justify-content: center; border-radius: 9999px; font-size: 7.5pt; letter-spacing: .2em; text-transform: uppercase; padding: 3mm 6mm; font-weight: 500; }
+.pill.primary { background: var(--cta); border: 1px solid var(--line-maroon); color: var(--red); }
+.pill.secondary { border: 1px solid var(--hairline); color: var(--muted); }
+.sw { display: flex; flex-direction: column; border: 1px solid var(--hairline); }
+.sw .chip { height: 24mm; }
+.sw .meta { padding: 3mm 3.5mm; }
+.sw .meta b { display: block; font-family: "Syne"; font-size: 10pt; }
+.sw .meta code { color: var(--muted); }
+.sw .meta small { display: block; color: var(--muted); font-size: 7.5pt; line-height: 1.4; margin-top: 1.5mm; }
+.mark-slot { border: 1px dashed var(--line-maroon); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: var(--muted); font-size: 8pt; gap: 2mm; }
+.mark-slot .t { font-family: "Syne"; font-weight: 800; font-size: 44pt; line-height: 1; background: linear-gradient(180deg, var(--orange), #8A1C1C); -webkit-background-clip: text; background-clip: text; color: transparent; opacity: .35; }
+table { width: 100%; border-collapse: collapse; font-size: 8.5pt; }
+td, th { text-align: left; padding: 2.4mm 2mm; border-bottom: 1px solid var(--hairline); vertical-align: top; }
+th { font-family: "JetBrains Mono"; font-size: 7pt; letter-spacing: .2em; text-transform: uppercase; color: var(--subtle); font-weight: 500; }
+td.s { font-size: 8.5pt; color: var(--muted); }
+ul.rules { list-style: none; display: flex; flex-direction: column; gap: 2.5mm; }
+ul.rules li { display: flex; gap: 3mm; color: var(--muted); font-size: 9pt; }
+ul.rules li::before { content: ""; flex: none; width: 2.2mm; height: 2.2mm; margin-top: 1.6mm; background: var(--red); border-radius: 50%; }
+ul.rules.no li::before { background: transparent; border: 1px solid var(--subtle); }
+</style>
+</head>
+<body>
+
+<!-- 1. Cover -->
+<section class="page">
+  <div class="glow" style="width:180mm;height:180mm;right:-70mm;top:-50mm;background:radial-gradient(circle, rgba(239,68,68,0.20), transparent 62%)"></div>
+  <div class="glow" style="width:160mm;height:160mm;left:-70mm;bottom:-40mm;background:radial-gradient(circle, rgba(221,103,16,0.16), transparent 62%)"></div>
+  <div class="top" style="position:relative"><b>TechnoTribes</b><span>Brand kit · v1 · Nov 2026</span></div>
+  <div style="position:relative;margin-top:60mm">
+    <div class="eyebrow">Brand guidelines</div>
+    <h1 style="font-size:64pt">Techno<br>Tribes</h1>
+    <div class="rule"></div>
+    <p style="font-size:11pt;color:var(--ink);max-width:120mm">Enterprise AI. Workflows shipped in 30–90 days.</p>
+    <p style="margin-top:3mm;max-width:120mm">Logo, colour, typography and voice for everything we make: decks, documents, social posts, videos and product UI.</p>
+  </div>
+  <div style="position:relative;margin-top:auto;margin-bottom:12mm;display:flex;height:22mm">
+    <div style="flex:5;background:var(--orange)"></div><div style="flex:2;background:var(--line-maroon)"></div><div style="flex:1;background:var(--red)"></div><div style="flex:.7;background:var(--ink)"></div>
+  </div>
+  <div class="foot"><span>Source: technotribes.ai</span><span>01</span></div>
+</section>
+
+<!-- 2. Logo + voice -->
+<section class="page">
+  <div class="top"><b>TechnoTribes</b><span>Logo & voice</span></div>
+  <div style="margin-top:12mm">
+    <div class="eyebrow">01 · Logo</div>
+    <h2>The circuit T</h2>
+    <p>The logo is a capital T drawn from circuit traces, in orange shading into deep red, set beside the wordmark TECHNOTRIBES. It stands for what we do: engineering that turns AI into working systems.</p>
+  </div>
+  <div class="grid" style="grid-template-columns:1.1fr 1fr;margin-top:7mm">
+    <div class="mark-slot" style="height:58mm">
+      <div class="t">T</div>
+      <div><b style="color:var(--ink)">Official logo file goes here</b><br>Use only the file at <code>technotribes.ai/logo.svg</code>.<br>Never trace, redraw or recolour the mark.</div>
+    </div>
+    <div class="box" style="display:flex;flex-direction:column;gap:3mm">
+      <h3>Lockup</h3>
+      <div style="display:flex;align-items:center;gap:10px;background:#000;padding:4mm;border:1px solid var(--hairline)">
+        <div style="width:30px;height:30px;border:1px dashed var(--line-maroon)"></div>
+        <span style="font-family:'Syne';font-weight:600;font-size:13px;letter-spacing:.25em">TECHNOTRIBES</span>
+      </div>
+      <ul class="rules" style="font-size:8.5pt">
+        <li>Mark at 30px, 10px gap, then the wordmark.</li>
+        <li>Wordmark: Syne semibold, uppercase, 0.25em tracking, white on #0C0C0C.</li>
+        <li>Clear space on all sides: at least the height of the mark.</li>
+      </ul>
+    </div>
+  </div>
+  <div style="margin-top:12mm">
+    <div class="eyebrow">02 · Voice</div>
+    <h2>Direct. Confident. Enterprise.</h2>
+    <p>Lead with the outcome and the timeline, not the technology. Name real teams and real work.</p>
+  </div>
+  <div class="grid" style="grid-template-columns:1fr 1fr;margin-top:6mm">
+    <div class="box"><h3 style="color:var(--red)">We say</h3><ul class="rules"><li>"Enterprise AI. Workflows shipped in 30–90 days."</li><li>"From AI experiments to production workflows across sales, hiring, support and operations."</li><li>"Book AI strategy call"</li></ul></div>
+    <div class="box"><h3 style="color:var(--muted)">We avoid</h3><ul class="rules no"><li>Buzzwords: "revolutionary", "next-gen", "synergy".</li><li>Vague promises with no timeline or outcome.</li><li>Generic CTAs like "Learn more" or "Click here".</li></ul></div>
+  </div>
+  <p style="margin-top:6mm;font-size:8.5pt">Write <b style="color:var(--ink)">TechnoTribes</b> in running text. The wordmark itself is uppercase.</p>
+  <div class="foot"><span>Source: technotribes.ai</span><span>02</span></div>
+</section>
+
+<!-- 3. Colour -->
+<section class="page">
+  <div class="top"><b>TechnoTribes</b><span>Colour</span></div>
+  <div style="margin-top:12mm">
+    <div class="eyebrow">03 · Colour</div>
+    <h2>Dark, with one brand colour and one action colour</h2>
+    <p>Most of every page is near-black and light grey. Orange is the brand. Red is where someone should click.</p>
+  </div>
+  <div class="grid" style="grid-template-columns:repeat(3,1fr);margin-top:7mm">
+    <div class="sw"><div class="chip" style="background:var(--orange)"></div><div class="meta"><b>Brand orange</b><code>#DD6710</code><small>The logo mark and brand highlights. Not for links or long text.</small></div></div>
+    <div class="sw"><div class="chip" style="background:var(--red)"></div><div class="meta"><b>Action red</b><code>#EF4444</code><small>Links, hovers, primary button text, small eyebrow labels.</small></div></div>
+    <div class="sw"><div class="chip" style="background:var(--surface);border-bottom:1px solid var(--hairline)"></div><div class="meta"><b>Surface</b><code>#0C0C0C</code><small>Every background. The brand is dark only.</small></div></div>
+    <div class="sw"><div class="chip" style="background:var(--ink)"></div><div class="meta"><b>Ink</b><code>#E8E8E8</code><small>Headlines and body text.</small></div></div>
+    <div class="sw"><div class="chip" style="background:var(--muted)"></div><div class="meta"><b>Muted</b><code>#999999</code><small>Supporting copy, secondary buttons.</small></div></div>
+    <div class="sw"><div class="chip" style="background:var(--red-deep)"></div><div class="meta"><b>Deep red</b><code>#DC2626</code><small>Thin progress and divider lines.</small></div></div>
+  </div>
+  <table style="margin-top:7mm">
+    <tr><th>Support colour</th><th>Hex</th><th>Use</th></tr>
+    <tr><td><span style="display:inline-block;width:3mm;height:3mm;background:#1D0E0E;border:1px solid var(--hairline);margin-right:2mm"></span>Maroon surface</td><td class="mono">#1D0E0E</td><td class="s">Warm dark panels behind red accents</td></tr>
+    <tr><td><span style="display:inline-block;width:3mm;height:3mm;background:#250F0F;border:1px solid var(--hairline);margin-right:2mm"></span>Button fill</td><td class="mono">#250F0F</td><td class="s">Primary pill button background</td></tr>
+    <tr><td><span style="display:inline-block;width:3mm;height:3mm;background:#5F1616;margin-right:2mm"></span>Button border</td><td class="mono">#5F1616</td><td class="s">Primary pill button outline</td></tr>
+    <tr><td><span style="display:inline-block;width:3mm;height:3mm;background:#777777;margin-right:2mm"></span>Subtle</td><td class="mono">#777777</td><td class="s">Nav links only (4.3:1 contrast, too low for body text)</td></tr>
+    <tr><td><span style="display:inline-block;width:3mm;height:3mm;background:#242424;margin-right:2mm"></span>Hairline</td><td class="mono">#242424</td><td class="s">Secondary button borders, dividers</td></tr>
+  </table>
+  <div class="foot"><span>Source: technotribes.ai</span><span>03</span></div>
+</section>
+
+<!-- 4. Typography + UI -->
+<section class="page">
+  <div class="top"><b>TechnoTribes</b><span>Typography & UI</span></div>
+  <div style="margin-top:12mm">
+    <div class="eyebrow">04 · Typography</div>
+    <h2>Big Syne, small tracked caps</h2>
+    <p>Three free Google Fonts. The signature is contrast of scale: a huge Syne headline over a small, widely tracked line.</p>
+  </div>
+  <div class="box" style="margin-top:6mm;padding:7mm 6mm">
+    <div style="font-family:'Syne';font-weight:700;font-size:54pt;letter-spacing:-.02em;line-height:1">Enterprise AI</div>
+    <div style="margin-top:4mm;font-size:11pt;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)">Workflows shipped in 30–90 days</div>
+  </div>
+  <div class="grid" style="grid-template-columns:repeat(3,1fr);margin-top:4mm">
+    <div class="box"><div class="mono" style="color:var(--red);letter-spacing:.2em">HEADINGS</div><div style="font-family:'Syne';font-weight:700;font-size:22pt;margin:2mm 0">Syne</div><small class="s" style="color:var(--muted);font-size:8pt">Hero, section headings, the wordmark. Bold, tight tracking.</small></div>
+    <div class="box"><div class="mono" style="color:var(--red);letter-spacing:.2em">BODY</div><div style="font-weight:500;font-size:20pt;margin:2mm 0">Plus Jakarta Sans</div><small style="color:var(--muted);font-size:8pt">Paragraphs, navigation, buttons, eyebrows.</small></div>
+    <div class="box"><div class="mono" style="color:var(--red);letter-spacing:.2em">LABELS</div><div style="font-family:'JetBrains Mono';font-size:17pt;margin:2mm 0">JetBrains Mono</div><small style="color:var(--muted);font-size:8pt">Small technical labels and numbers.</small></div>
+  </div>
+  <table style="margin-top:5mm">
+    <tr><th>Style</th><th>Font</th><th>Size (web)</th><th>Setting</th></tr>
+    <tr><td>Hero</td><td>Syne Bold</td><td class="mono">153.6px</td><td class="s">Line height 1, tracking −0.02em</td></tr>
+    <tr><td>Section heading</td><td>Syne Bold</td><td class="mono">60px</td><td class="s">Line height 1.05</td></tr>
+    <tr><td>Eyebrow</td><td>Plus Jakarta Sans</td><td class="mono">~26px*</td><td class="s">Uppercase, tracking 0.3em, muted</td></tr>
+    <tr><td>Body</td><td>Plus Jakarta Sans</td><td class="mono">~17px*</td><td class="s">Muted on surface</td></tr>
+    <tr><td>Nav · wordmark</td><td>Plus Jakarta · Syne</td><td class="mono">13px</td><td class="s">Wordmark: semibold, uppercase, 0.25em</td></tr>
+  </table>
+  <p style="margin-top:2mm;font-size:7pt">* Measured from a 1920px-wide screenshot of the site.</p>
+  <div style="margin-top:8mm">
+    <div class="eyebrow">05 · Shape</div>
+    <div style="display:flex;gap:4mm;align-items:center;flex-wrap:wrap">
+      <span class="pill primary">Book AI strategy call</span><span class="pill secondary">View enterprise sprint</span>
+      <span style="color:var(--muted);font-size:8.5pt;margin-left:2mm">Buttons are pills. Everything else is square. 8px spacing grid.</span>
+    </div>
+  </div>
+  <div class="foot"><span>Source: technotribes.ai</span><span>04</span></div>
+</section>
+</body>
+</html>
