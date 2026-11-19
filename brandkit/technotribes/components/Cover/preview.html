@@ -1,0 +1,57 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TechnoTribes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700&family=Plus+Jakarta+Sans:wght@400&display=swap">
+<style>
+  html, body { margin:0; height:100%; }
+  body { background:var(--surface); color:var(--ink); font-family:var(--font-sans); overflow:hidden; }
+  .cover { position:relative; height:288px; overflow:hidden; }
+  /* top-band skeleton: "TechnoTribes" is too wide for the 440px zone at 64px, so the blocks run across the top */
+  .band { position:absolute; top:0; left:0; width:960px; height:112px; overflow:hidden; }
+  .band svg { display:block; width:960px; height:112px; }
+  .brand { fill:var(--orange); }
+  .act { fill:var(--red); }
+  .deep { fill:var(--line-maroon); }
+  .ink { fill:var(--ink); }
+  .dot { fill:var(--surface); }
+  .pill { rx:var(--space-1); }
+  .words { position:absolute; left:var(--space-4); right:var(--space-4); bottom:var(--space-4); }
+  .name { margin:0; font-family:var(--font-display); font-size:64px; line-height:.95; font-weight:700; letter-spacing:-.02em; color:var(--ink); }
+  .tag { margin:var(--space-1) 0 0 2px; font-size:14px; line-height:20px; color:var(--ink-muted); }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="band" aria-hidden="true">
+<svg viewBox="0 0 960 112" width="960" height="112">
+<!--
+  blocks      orange 560 wide (the brand colour, largest) · line-maroon 176 · red 96 (the action colour, smaller) · ink 64 at the end (tint for relief), all bleeding off the top, square (radius-none) like the site
+  arrangement a strip of unequal bands, flush, space-2 gutters, bottoms on one line
+  pattern     dot grid, from "precise, technical": the circuit-T is built from circuit traces, so circuit nodes cut out of the orange slab in surface at a space-4 pitch, plus three space-2-tall pills (the brand's only rounded shape: the pill button) in red on the maroon band
+  scales      sides in space-2 multiples; pitch space-4; corners radius-none; pill rx space-1 (half of space-2)
+-->
+<rect class="brand" x="0" y="-8" width="560" height="104"/>
+<rect class="deep" x="576" y="-8" width="176" height="104"/>
+<rect class="act" x="768" y="-8" width="96" height="104"/>
+<rect class="ink" x="880" y="-8" width="80" height="104"/>
+<g class="dot">
+  <circle cx="368" cy="24" r="4"/><circle cx="400" cy="24" r="4"/><circle cx="432" cy="24" r="4"/><circle cx="464" cy="24" r="4"/><circle cx="496" cy="24" r="4"/><circle cx="528" cy="24" r="4"/>
+  <circle cx="400" cy="56" r="4"/><circle cx="432" cy="56" r="4"/><circle cx="464" cy="56" r="4"/><circle cx="496" cy="56" r="4"/><circle cx="528" cy="56" r="4"/>
+  <circle cx="464" cy="80" r="4"/><circle cx="496" cy="80" r="4"/><circle cx="528" cy="80" r="4"/>
+</g>
+<rect class="act pill" x="592" y="16" width="96" height="16"/>
+<rect class="act pill" x="592" y="48" width="144" height="16"/>
+<rect class="act pill" x="592" y="80" width="64" height="16"/>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">TechnoTribes</h1>
+<p class="tag">Enterprise AI. Workflows shipped in 30–90 days.</p>
+</div>
+</div>
+</body>
+</html>
