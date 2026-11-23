@@ -1,0 +1,100 @@
+{
+ "id": "bwm-02",
+ "fps": 30,
+ "musicSrc": "music/pumpupthemind-creative-technology-showreel-241274.mp3",
+ "musicStart": 11,
+ "musicVolume": 0.32,
+ "sfxSrc": "sfx/pop.wav",
+ "scenes": [
+  {
+   "src": "flow/bwm-02/bwm-02-s1.mp4",
+   "sec": 6.5,
+   "volume": 0.5
+  },
+  {
+   "src": "flow/bwm-02/bwm-02-s2.mp4",
+   "sec": 6.5
+  },
+  {
+   "src": "flow/bwm-02/bwm-02-s3.mp4",
+   "sec": 6.5,
+   "volume": 0.5
+  },
+  {
+   "src": "flow/bwm-02/bwm-02-s4.mp4",
+   "sec": 7.8,
+   "volume": 0.6
+  }
+ ],
+ "captions": [
+  {
+   "t": 0.2,
+   "end": 3.3,
+   "text": "Chai banne mein 4 minute lagte hain.",
+   "kind": "hook",
+   "hl": [
+    "4 minute"
+   ]
+  },
+  {
+   "t": 3.4,
+   "end": 6.4,
+   "text": "Maine utne mein ek app bana diya.",
+   "kind": "hook",
+   "hl": [
+    "ek app"
+   ]
+  },
+  {
+   "t": 6.7,
+   "end": 12.9,
+   "text": "Prompt likha. Plan approve kiya. App live.",
+   "kind": "cap",
+   "hl": [
+    "live"
+   ]
+  },
+  {
+   "t": 13.1,
+   "end": 16.2,
+   "text": "Ye hai Buildify.",
+   "kind": "cap",
+   "hl": [
+    "Buildify"
+   ]
+  },
+  {
+   "t": 16.3,
+   "end": 19.4,
+   "text": "Coding seekhna band mat karo.",
+   "kind": "cap",
+   "hl": [
+    "band"
+   ]
+  },
+  {
+   "t": 19.6,
+   "end": 22.9,
+   "text": "Bas ab shuruaat yahin se karo.",
+   "kind": "cap",
+   "hl": [
+    "yahin"
+   ]
+  },
+  {
+   "t": 23.0,
+   "end": 27.2,
+   "text": "Agar 10 minute mein app ban sakta, tum kya banate?",
+   "kind": "q",
+   "hl": [
+    "kya banate"
+   ]
+  }
+ ],
+ "end": {
+  "sec": 4,
+  "keyword": "BUILD",
+  "line": "and I'll send you the prompt I used.",
+  "tag": "#BuildWithManjot"
+ }
+}

@@ -1,0 +1,98 @@
+{
+ "id": "bwm-03",
+ "fps": 30,
+ "musicSrc": "music/pumpupthemind-creative-technology-showreel-241274.mp3",
+ "musicStart": 11,
+ "musicVolume": 0.32,
+ "sfxSrc": "sfx/pop.wav",
+ "scenes": [
+  {
+   "src": "flow/bwm-03/bwm-03-s1.mp4",
+   "sec": 6.5
+  },
+  {
+   "src": "flow/bwm-03/bwm-03-s2.mp4",
+   "sec": 6.5,
+   "zoom": 1.1,
+   "origin": "50% 0%"
+  },
+  {
+   "src": "flow/bwm-03/bwm-03-s3.mp4",
+   "sec": 6.5,
+   "volume": 0.6
+  },
+  {
+   "src": "flow/bwm-03/bwm-03-s4.mp4",
+   "sec": 7.8,
+   "blur": {
+    "x": 0,
+    "y": 150,
+    "w": 230,
+    "h": 240
+   }
+  }
+ ],
+ "captions": [
+  {
+   "t": 0.2,
+   "end": 3.3,
+   "text": "Har company ko 90 din mein AI agent chahiye.",
+   "kind": "hook",
+   "hl": [
+    "AI agent"
+   ]
+  },
+  {
+   "t": 3.4,
+   "end": 6.4,
+   "text": "Zyada tar fail honge. Kyun?",
+   "kind": "hook",
+   "hl": [
+    "fail"
+   ]
+  },
+  {
+   "t": 6.7,
+   "end": 12.9,
+   "text": "Wo AI se shuru karte hain.",
+   "kind": "cap",
+   "hl": [
+    "AI se"
+   ]
+  },
+  {
+   "t": 13.1,
+   "end": 19.4,
+   "text": "Shuru karna chahiye ek workflow se.",
+   "kind": "cap",
+   "hl": [
+    "workflow"
+   ]
+  },
+  {
+   "t": 19.6,
+   "end": 22.9,
+   "text": "Ek kaam chuno. 30 din mein pilot. Phir scale. Bas.",
+   "kind": "cap",
+   "hl": [
+    "pilot",
+    "scale"
+   ]
+  },
+  {
+   "t": 23.0,
+   "end": 27.2,
+   "text": "Tumhari company ne AI try kiya? Chala ya ruk gaya?",
+   "kind": "q",
+   "hl": [
+    "ruk gaya"
+   ]
+  }
+ ],
+ "end": {
+  "sec": 4,
+  "keyword": "PILOT",
+  "line": "and I'll send you our 30-day pilot plan.",
+  "tag": "#BuildWithManjot"
+ }
+}
