@@ -1,7 +1,7 @@
 {
  "id": "bwm-03",
  "fps": 30,
- "musicSrc": "music/pumpupthemind-creative-technology-showreel-241274.mp3",
+ "musicSrc": null,
  "musicStart": 11,
  "musicVolume": 0.32,
  "sfxSrc": "sfx/pop.wav",
@@ -94,5 +94,7 @@
   "keyword": "PILOT",
   "line": "and I'll send you our 30-day pilot plan.",
   "tag": "#BuildWithManjot"
- }
+ },
+ "voSrc": null,
+ "voVolume": 1
 }

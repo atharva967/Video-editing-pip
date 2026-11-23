@@ -1,7 +1,7 @@
 {
  "id": "bwm-01",
  "fps": 30,
- "musicSrc": "music/pumpupthemind-creative-technology-showreel-241274.mp3",
+ "musicSrc": null,
  "musicStart": 11,
  "musicVolume": 0.32,
  "sfxSrc": "sfx/pop.wav",
@@ -85,5 +85,7 @@
   "keyword": "WORKFLOW",
   "line": "and I'll send you the checklist we use to pick what to automate.",
   "tag": "#BuildWithManjot"
- }
+ },
+ "voSrc": null,
+ "voVolume": 1
 }

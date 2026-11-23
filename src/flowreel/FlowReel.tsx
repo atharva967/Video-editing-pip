@@ -38,8 +38,10 @@ export type FlowReelProps = {
   scenes: Scene[];
   captions: Caption[];
   end: { sec: number; keyword: string; line: string; tag: string };
-  musicSrc: string | null;
+  musicSrc: string | null; // null = no music (add a track in Instagram instead)
   musicStart: number;
+  voSrc?: string | null; // voiceover, one file per reel, starts at 0 s
+  voVolume?: number;
   musicVolume: number;
   sfxSrc: string | null;
 };
@@ -281,6 +283,7 @@ export const FlowReel: React.FC<FlowReelProps> = (p) => {
         <EndCard end={p.end} />
         {p.sfxSrc ? <Audio src={staticFile(p.sfxSrc)} volume={0.5} /> : null}
       </Sequence>
+      {p.voSrc ? <Audio src={staticFile(p.voSrc)} volume={p.voVolume ?? 1} /> : null}
       {p.musicSrc ? (
         <Audio src={staticFile(p.musicSrc)} startFrom={Math.round(p.musicStart * fps)} volume={musicVol} />
       ) : null}

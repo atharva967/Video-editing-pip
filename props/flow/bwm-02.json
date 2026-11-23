@@ -1,7 +1,7 @@
 {
  "id": "bwm-02",
  "fps": 30,
- "musicSrc": "music/pumpupthemind-creative-technology-showreel-241274.mp3",
+ "musicSrc": null,
  "musicStart": 11,
  "musicVolume": 0.32,
  "sfxSrc": "sfx/pop.wav",
@@ -96,5 +96,7 @@
   "keyword": "BUILD",
   "line": "and I'll send you the prompt I used.",
   "tag": "#BuildWithManjot"
- }
+ },
+ "voSrc": null,
+ "voVolume": 1
 }
