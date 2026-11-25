@@ -26,10 +26,15 @@ body { font-family: "Geist", sans-serif; color: var(--ink); }
 .claim span { font-weight: 800; font-size: 50px; line-height: 1.05; letter-spacing: -.02em; text-transform: uppercase; }
 .lose .claim span { color: var(--muted); text-decoration: line-through; text-decoration-color: rgba(239,68,68,.85); text-decoration-thickness: 5px; }
 .win .claim span { color: var(--ink); }
-.hand { margin-top: 58px; width: 420px; height: 420px; border-radius: 48px; display: flex; align-items: center; justify-content: center; font-family: "Noto Color Emoji"; font-size: 250px; line-height: 1; position: relative; }
-.lose .hand { background: var(--panel); border: 2px solid var(--line); filter: grayscale(.85) brightness(.75); }
+.hand { margin-top: 58px; width: 420px; height: 420px; border-radius: 48px; display: flex; align-items: center; justify-content: center; position: relative; }
+.clip { position: absolute; inset: 0; overflow: hidden; border-radius: 46px; }
+.hand .ph { position: absolute; width: 86%; bottom: -6px; filter: drop-shadow(0 18px 30px rgba(0,0,0,.45)); }
+.l .hand .ph, .cover-hands .hand:first-child .ph { left: -6px; }
+.r .hand .ph, .cover-hands .hand:last-child .ph { right: -6px; transform: scaleX(-1); }
+.credit { position: absolute; bottom: 22px; left: 0; right: 0; text-align: center; font-family: "Geist Mono"; font-size: 13px; color: rgba(138,147,163,.55); letter-spacing: .04em; }
+.hand .tag { z-index: 2; }
+.lose .hand { background: var(--panel); border: 2px solid var(--line); filter: grayscale(.75) brightness(.62); }
 .win .hand { background: radial-gradient(circle at 50% 40%, rgba(59,126,255,.35), rgba(59,126,255,.08) 70%), var(--panel); border: 3px solid var(--blue); box-shadow: 0 0 80px rgba(59,126,255,.45); }
-.flip { display: inline-block; transform: scaleX(-1); }
 .tag { position: absolute; top: -26px; left: 50%; transform: translateX(-50%); font-family: "Geist Mono"; font-weight: 700; font-size: 24px; letter-spacing: .16em; padding: 10px 22px; border-radius: 30px; white-space: nowrap; }
 .win .tag { background: var(--blue); color: #fff; }
 .lose .tag { background: var(--line); color: var(--muted); }
@@ -41,7 +46,7 @@ body { font-family: "Geist", sans-serif; color: var(--ink); }
 .cover-title { position: absolute; top: 230px; left: 64px; right: 64px; font-weight: 900; font-size: 118px; line-height: .95; letter-spacing: -.04em; text-transform: uppercase; }
 .cover-title em { font-style: normal; color: var(--blue2); }
 .cover-hands { position: absolute; top: 650px; left: 0; right: 0; display: flex; justify-content: center; gap: 60px; }
-.cover-hands .hand { margin: 0; width: 380px; height: 380px; font-size: 220px; background: var(--panel); border: 2px solid var(--line); }
+.cover-hands .hand { margin: 0; width: 380px; height: 380px; background: var(--panel); border: 2px solid var(--line); }
 .play { position: absolute; top: 1110px; left: 64px; display: inline-flex; align-items: center; gap: 18px; background: var(--blue); color: #fff; font-weight: 800; font-size: 44px; padding: 22px 40px; border-radius: 60px; box-shadow: 0 20px 60px rgba(59,126,255,.45); }
 /* pop-up window */
 .win-dialog { position: absolute; left: 90px; right: 90px; top: 300px; height: 760px; background: #F4F5F8; border-radius: 22px; box-shadow: 0 50px 120px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.1); overflow: hidden; color: #121318; }
@@ -76,14 +81,14 @@ body { font-family: "Geist", sans-serif; color: var(--ink); }
 <!-- 1 cover -->
 <section class="slide" data-pg="01 / 05" data-hint="swipe →">
   <div class="cover-title">Think you<br>know <em>prototyping?</em></div>
-  <div class="cover-hands"><div class="hand">✊</div><div class="hand"><span class="flip">✌️</span></div></div>
+  <div class="cover-hands"><div class="hand" data-k="rock"></div><div class="hand" data-k="scissors" data-flip="1"></div></div>
   <div class="play">Let’s play →</div>
 </section>
 
 <!-- 2..4 rounds (filled by script) -->
-<section class="slide round" data-pg="02 / 05" data-n="1" data-t="Speed" data-hint="swipe →" data-l="✊|Rock|A prototype takes 3 months of dev" data-r="✋|Paper|A prototype takes one afternoon"></section>
-<section class="slide round" data-pg="03 / 05" data-n="2" data-t="Money" data-hint="swipe →" data-l="✋|Paper|Build first, validate later" data-r="✌️|Scissors|Validate before you spend lakhs"></section>
-<section class="slide round" data-pg="04 / 05" data-n="3" data-t="Funding" data-hint="swipe →" data-l="✌️|Scissors|We just need a better pitch deck" data-r="✊|Rock|Investors want to see it working"></section>
+<section class="slide round" data-pg="02 / 05" data-n="1" data-t="Speed" data-hint="swipe →" data-l="rock|Rock|A prototype takes 3 months of dev" data-r="paper|Paper|A prototype takes one afternoon"></section>
+<section class="slide round" data-pg="03 / 05" data-n="2" data-t="Money" data-hint="swipe →" data-l="paper|Paper|Build first, validate later" data-r="scissors|Scissors|Validate before you spend lakhs"></section>
+<section class="slide round" data-pg="04 / 05" data-n="3" data-t="Funding" data-hint="swipe →" data-l="scissors|Scissors|We just need a better pitch deck" data-r="rock|Rock|Investors want to see it working"></section>
 
 <!-- 5 pop-up -->
 <section class="slide" data-pg="05 / 05" data-hint="link in bio">
@@ -106,16 +111,18 @@ body { font-family: "Geist", sans-serif; color: var(--ink); }
   const tpl = document.getElementById("chrome").innerHTML;
   document.querySelectorAll(".round").forEach((el) => {
     const side = (spec, cls, win) => {
-      const [emoji, move, claim] = spec.split("|");
-      const h = cls === "r" ? `<span class="flip">${emoji}</span>` : emoji;
-      return `<div class="side ${cls} ${win ? "win" : "lose"}"><div class="claim"><span>${claim}</span></div><div class="hand"><div class="tag">${win ? "WINS" : "LOSES"}</div>${h}</div><div class="move">${move}</div></div>`;
+      const [kind, move, claim] = spec.split("|");
+      const h = `<img class="ph" src="hands/${kind}.png" alt="${move}">`;
+      return `<div class="side ${cls} ${win ? "win" : "lose"}"><div class="claim"><span>${claim}</span></div><div class="hand"><div class="tag">${win ? "WINS" : "LOSES"}</div><div class="clip">${h}</div></div><div class="move">${move}</div></div>`;
     };
     el.innerHTML = `<div class="round-lbl">ROUND ${el.dataset.n}<b>${el.dataset.t}</b></div>` + side(el.dataset.l, "l", false) + `<div class="vs">VS</div>` + side(el.dataset.r, "r", true);
   });
+  document.querySelectorAll(".cover-hands .hand").forEach((h) => (h.innerHTML = `<div class="clip"><img class="ph" src="hands/${h.dataset.k}.png" alt=""></div>`));
   document.querySelectorAll(".slide").forEach((el, i) => {
     el.insertAdjacentHTML("afterbegin", tpl);
     el.querySelector(".pg").textContent = el.dataset.pg;
     el.querySelector(".hint").textContent = el.dataset.hint;
+    if (i < 4) el.insertAdjacentHTML("beforeend", `<div class="credit">Hand photos: Fluff / Sertion, CC BY-SA 3.0, Wikimedia Commons</div>`);
     if (i === s - 1) el.classList.add("on");
   });
 </script>
