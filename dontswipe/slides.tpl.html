@@ -34,11 +34,11 @@ body { font-family: "Geist", sans-serif; color: var(--blue); }
 
 <!-- 1 -->
 <section class="slide">
-  <div class="txt" style="top:300px; left:420px; width:600px">
+  <div class="txt" style="top:220px; left:440px; width:600px">
     <span class="script">hey, founder...</span>
     <span class="heavy" style="margin-top:14px">Stop<br>scrolling.</span>
   </div>
-  {{peep:founder-resting:left=90:h=880}}
+  <div class="m" data-pose="stop" data-face="stern" data-left="110" data-h="660"></div>
 </section>
 
 <!-- 2 -->
@@ -47,7 +47,7 @@ body { font-family: "Geist", sans-serif; color: var(--blue); }
     <span class="script">okay, but...</span>
     <span class="heavy" style="margin-top:14px">please don’t<br>swipe.</span>
   </div>
-  {{peep:founder-crossarm:center=540:h=660}}
+  <div class="m" data-pose="plead" data-face="plead" data-center="540" data-h="590"></div>
 </section>
 
 <!-- 3 -->
@@ -56,7 +56,7 @@ body { font-family: "Geist", sans-serif; color: var(--blue); }
     <span class="script">still swiping?</span>
     <span class="heavy" style="margin-top:14px">Persistent.<br>Very <i>founder</i><br>of you.</span>
   </div>
-  {{peep:founder-sitting:right=90:h=640}}
+  <div class="m" data-pose="sit" data-face="wow" data-right="100" data-h="520"></div>
 </section>
 
 <!-- 4 -->
@@ -65,9 +65,10 @@ body { font-family: "Geist", sans-serif; color: var(--blue); }
     <span class="script">alright, last thing</span>
     <span class="heavy" style="margin-top:14px; font-size:88px">Whatever you do, don’t read the <i>caption...</i></span>
   </div>
-  {{peep:founder-walking:right=70:h=860}}
+  <div class="m" data-pose="walk" data-face="cheeky" data-right="90" data-h="620"></div>
 </section>
 
+<script src="mascot.js"></script>
 <script>
   const s = +(new URLSearchParams(location.search).get("s") || 1);
   const logo = `<svg viewBox="0 0 20 18"><g fill="none" stroke-width="1.6"><rect x="0.8" y="8.8" width="10.4" height="8.4" rx="2" stroke="#3B7EFF" fill="rgba(59,126,255,.12)"/><rect x="4.8" y="5.8" width="10.4" height="8.4" rx="2" stroke="#5B9AFF" fill="rgba(91,154,255,.08)"/><rect x="8.8" y="2.8" width="10.4" height="8.4" rx="2" stroke="#8BB8FF" fill="rgba(139,184,255,.05)"/></g></svg>`;
@@ -84,6 +85,10 @@ body { font-family: "Geist", sans-serif; color: var(--blue); }
     el.insertAdjacentHTML("afterbegin", ground(7 + i * 13));
     el.insertAdjacentHTML("beforeend", `<div class="brand">${logo}buildify</div><div class="handle">@buildify</div>` + (el.dataset.tr ? `<div class="tr">${el.dataset.tr}</div>` : ""));
     if (i === s - 1) el.classList.add("on");
+  });
+  document.querySelectorAll(".m").forEach((m) => {
+    m.insertAdjacentHTML("afterend", mascot({ pose: m.dataset.pose, face: m.dataset.face }).replace('class="mascot"', 'class="peep mascot"'));
+    const svg = m.nextElementSibling; Object.assign(svg.dataset, m.dataset); m.remove();
   });
   // tight-fit each inline peep to its drawn bounds, then stand it on the ground line
   const G = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--ground")) + 22;
