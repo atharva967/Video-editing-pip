@@ -27,6 +27,9 @@ body { font-family: "Geist", sans-serif; color: var(--blue); }
 .ground { position: absolute; left: 0; right: 0; top: var(--ground); height: 140px; }
 .peep { position: absolute; overflow: visible; }
 .shadow { position: absolute; height: 26px; border-radius: 50%; background: rgba(18,17,19,.10); filter: blur(3px); }
+.cta { position: absolute; display: inline-flex; align-items: center; gap: 16px; background: var(--blue2); color: #fff; font-weight: 800; font-size: 46px; padding: 24px 44px; border-radius: 70px; box-shadow: 0 16px 40px rgba(59,126,255,.35); border: 5px solid var(--ink); }
+.save { position: absolute; font-family: "Caveat"; font-weight: 700; font-size: 50px; color: var(--ink); }
+.save em { font-family: "Noto Color Emoji"; font-style: normal; font-size: 40px; }
 .handle { position: absolute; bottom: 30px; right: 60px; font-family: "Geist Mono"; font-weight: 600; font-size: 24px; color: var(--ink); opacity: .7; }
 </style>
 </head>
@@ -38,7 +41,7 @@ body { font-family: "Geist", sans-serif; color: var(--blue); }
     <span class="script">hey, founder...</span>
     <span class="heavy" style="margin-top:14px">Stop<br>scrolling.</span>
   </div>
-  <div class="m" data-pose="stop" data-face="stern" data-left="110" data-h="660"></div>
+  <div class="m" data-pose="stop" data-face="stern" data-left="90" data-h="640"></div>
 </section>
 
 <!-- 2 -->
@@ -47,7 +50,7 @@ body { font-family: "Geist", sans-serif; color: var(--blue); }
     <span class="script">okay, but...</span>
     <span class="heavy" style="margin-top:14px">please don’t<br>swipe.</span>
   </div>
-  <div class="m" data-pose="plead" data-face="plead" data-center="540" data-h="590"></div>
+  <div class="m" data-pose="plead" data-face="plead" data-center="540" data-h="580"></div>
 </section>
 
 <!-- 3 -->
@@ -56,7 +59,7 @@ body { font-family: "Geist", sans-serif; color: var(--blue); }
     <span class="script">still swiping?</span>
     <span class="heavy" style="margin-top:14px">Persistent.<br>Very <i>founder</i><br>of you.</span>
   </div>
-  <div class="m" data-pose="sit" data-face="wow" data-right="100" data-h="520"></div>
+  <div class="m" data-pose="sit" data-face="wow" data-right="90" data-h="500"></div>
 </section>
 
 <!-- 4 -->
@@ -65,7 +68,19 @@ body { font-family: "Geist", sans-serif; color: var(--blue); }
     <span class="script">alright, last thing</span>
     <span class="heavy" style="margin-top:14px; font-size:88px">Whatever you do, don’t read the <i>caption...</i></span>
   </div>
-  <div class="m" data-pose="walk" data-face="cheeky" data-right="90" data-h="620"></div>
+  <div class="m" data-pose="walk" data-face="cheeky" data-right="70" data-h="600"></div>
+</section>
+
+<!-- 5: CTA -->
+<section class="slide">
+  <div class="txt" style="top:200px; left:80px; width:920px">
+    <span class="script">okay, you made it. here’s the deal:</span>
+    <span class="heavy" style="margin-top:18px; font-size:118px">Prototype fast.<br>Spend <i>less.</i></span>
+  </div>
+  <div class="txt" style="top:640px; left:84px; width:520px; font-size:40px; font-weight:600; line-height:1.25; color:var(--ink)">Idea to working prototype, the same day.</div>
+  <div class="cta" style="top:830px; left:80px">Link in bio →</div>
+  <div class="save" style="top:980px; left:90px; width:440px; line-height:1.05"><em>📌</em> save this for<br>your next idea</div>
+  <div class="m" data-pose="cheer" data-face="happy" data-right="40" data-h="560"></div>
 </section>
 
 <script src="mascot.js"></script>

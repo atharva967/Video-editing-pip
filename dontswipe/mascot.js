@@ -1,62 +1,66 @@
-// "Blocky", a Buildify mascot built from the logo's three stacked blocks.
-// mascot({ pose, face }) -> SVG string. viewBox 0 0 420 520, feet on y=500.
+// Buildify mascot: a toy building block with rubber-hose arms and legs.
+// mascot({ pose, face }) -> SVG string. viewBox 0 0 440 540, feet on y=520.
 (function () {
   const O = "#121113", W = 7;
-  const B1 = "#3B7EFF", B2 = "#5B9AFF", B3 = "#8BB8FF", NAVY = "#1E2A4A";
-  const limb = (d) => `<path d="${d}" fill="none" stroke="${O}" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/><path d="${d}" fill="none" stroke="${B1}" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>`;
-  const leg = (d) => `<path d="${d}" fill="none" stroke="${O}" stroke-width="32" stroke-linecap="round"/><path d="${d}" fill="none" stroke="${NAVY}" stroke-width="18" stroke-linecap="round"/>`;
-  const hand = (x, y, r = 20) => `<circle cx="${x}" cy="${y}" r="${r}" fill="#fff" stroke="${O}" stroke-width="${W}"/>`;
-  const shoe = (x, y, flip = 1) => `<path d="M${x - 26 * flip} ${y} q0 -24 ${30 * flip} -24 q${24 * flip} 0 ${30 * flip} 24 z" fill="#fff" stroke="${O}" stroke-width="${W}" stroke-linejoin="round"/>`;
-  const finger = (x, y, h) => `<rect x="${x - 9}" y="${y - h}" width="18" height="${h + 14}" rx="9" fill="#fff" stroke="${O}" stroke-width="${W - 1}"/>`;
-  const palm = (x, y) => `<g transform="translate(${x} ${y}) rotate(-6)">${finger(-21, -26, 34)}${finger(-6, -30, 42)}${finger(9, -28, 40)}${finger(24, -22, 32)}<rect x="-34" y="-30" width="70" height="66" rx="26" fill="#fff" stroke="${O}" stroke-width="${W}"/><rect x="-46" y="-6" width="26" height="16" rx="8" transform="rotate(-35 -34 2)" fill="#fff" stroke="${O}" stroke-width="${W - 1}"/></g>`;
-  const point = (x, y, ang) => `<g transform="translate(${x} ${y}) rotate(${ang})"><rect x="6" y="-8" width="52" height="20" rx="10" fill="#fff" stroke="${O}" stroke-width="${W - 1}"/>${hand(0, 0, 24)}</g>`;
+  const FRONT = "#3B7EFF", TOP = "#9CC2FF", SIDE = "#2457D6", SOLE = "#3B7EFF";
 
-  // head stack (logo blocks), body block
-  const body = (dy = 0) => `
-    <rect x="236" y="${54 + dy}" width="96" height="72" rx="20" fill="${B3}" stroke="${O}" stroke-width="${W}"/>
-    <rect x="168" y="${102 + dy}" width="150" height="84" rx="24" fill="${B2}" stroke="${O}" stroke-width="${W}"/>
-    <rect x="80" y="${164 + dy}" width="260" height="236" rx="46" fill="${B1}" stroke="${O}" stroke-width="${W}"/>
-    <path d="M104 ${190 + dy} q-6 40 -2 80" stroke="rgba(255,255,255,.35)" stroke-width="10" fill="none" stroke-linecap="round"/>`;
+  const line = (d, w = 13) => `<path d="${d}" fill="none" stroke="${O}" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round"/>`;
+  const glove = (x, y, r = 24) =>
+    `<circle cx="${x}" cy="${y}" r="${r}" fill="#fff" stroke="${O}" stroke-width="${W}"/>` +
+    `<path d="M${x - r * .45} ${y - r * .15} q${r * .2} ${r * .35} ${r * .5} ${r * .3}" fill="none" stroke="${O}" stroke-width="4" stroke-linecap="round"/>`;
+  const sneaker = (x, y, dir = 1) =>
+    `<g transform="translate(${x} ${y}) scale(${dir} 1)"><path d="M-30 0 q-4 -30 22 -34 q20 -2 30 12 q22 6 26 22 z" fill="#fff" stroke="${O}" stroke-width="${W}" stroke-linejoin="round"/>` +
+    `<rect x="-34" y="-4" width="86" height="12" rx="6" fill="${SOLE}" stroke="${O}" stroke-width="${W - 1}"/>` +
+    `<path d="M2 -24 l8 8 M10 -28 l8 8" stroke="${O}" stroke-width="4" stroke-linecap="round"/></g>`;
+  const palm = (x, y, rot = -8) => {
+    const f = (fx, fy, h) => `<rect x="${fx - 10}" y="${fy - h}" width="20" height="${h + 16}" rx="10" fill="#fff" stroke="${O}" stroke-width="${W - 1}"/>`;
+    return `<g transform="translate(${x} ${y}) rotate(${rot})">${f(-22, -22, 30)}${f(-7, -26, 38)}${f(8, -25, 36)}${f(23, -19, 28)}` +
+      `<rect x="-34" y="-28" width="70" height="64" rx="28" fill="#fff" stroke="${O}" stroke-width="${W}"/>` +
+      `<rect x="-52" y="-4" width="30" height="20" rx="10" transform="rotate(-30 -36 6)" fill="#fff" stroke="${O}" stroke-width="${W - 1}"/></g>`;
+  };
+  const pointer = (x, y, ang) => `<g transform="translate(${x} ${y}) rotate(${ang})"><rect x="8" y="-11" width="50" height="22" rx="11" fill="#fff" stroke="${O}" stroke-width="${W - 1}"/>${glove(0, 0, 25)}</g>`;
 
-  const eye = (cx, cy, px, py, lid = 0) =>
-    `<ellipse cx="${cx}" cy="${cy}" rx="27" ry="31" fill="#fff" stroke="${O}" stroke-width="${W - 1}"/>` +
-    `<circle cx="${cx + px}" cy="${cy + py}" r="13" fill="${O}"/><circle cx="${cx + px + 5}" cy="${cy + py - 5}" r="4.5" fill="#fff"/>` +
-    (lid ? `<path d="M${cx - 29} ${cy - 4} q29 ${-lid} 58 0 v-30 h-58 z" fill="${B1}" stroke="${O}" stroke-width="${W - 1}" stroke-linejoin="round"/>` : "");
-  const faces = {
-    stern: (dy) => eye(165, 262 + dy, 0, 3) + eye(255, 262 + dy, 0, 3) +
-      `<path d="M136 ${222 + dy} l52 12 M284 ${222 + dy} l-52 12" stroke="${O}" stroke-width="9" stroke-linecap="round"/>` +
-      `<path d="M182 ${336 + dy} h56" stroke="${O}" stroke-width="8" stroke-linecap="round"/>`,
-    plead: (dy) => eye(165, 262 + dy, 3, -7) + eye(255, 262 + dy, -3, -7) +
-      `<circle cx="158" cy="${256 + dy}" r="6" fill="#fff"/><circle cx="248" cy="${256 + dy}" r="6" fill="#fff"/>` +
-      `<path d="M140 ${224 + dy} q22 -16 46 -2 M280 ${224 + dy} q-22 -16 -46 -2" stroke="${O}" stroke-width="8" fill="none" stroke-linecap="round"/>` +
-      `<path d="M188 ${340 + dy} q11 -12 22 0 q11 12 22 0" stroke="${O}" stroke-width="7" fill="none" stroke-linecap="round"/>` +
-      `<ellipse cx="128" cy="${310 + dy}" rx="16" ry="9" fill="#FFB3C6"/><ellipse cx="292" cy="${310 + dy}" rx="16" ry="9" fill="#FFB3C6"/>`,
-    wow: (dy) => eye(165, 258 + dy, -4, 0) + eye(255, 258 + dy, -4, 0) +
-      `<path d="M140 ${212 + dy} q24 -18 48 -4 M232 ${208 + dy} q24 -14 48 4" stroke="${O}" stroke-width="8" fill="none" stroke-linecap="round"/>` +
-      `<ellipse cx="210" cy="${336 + dy}" rx="17" ry="21" fill="${O}"/><ellipse cx="210" cy="${343 + dy}" rx="9" ry="8" fill="#FF7A93"/>`,
-    cheeky: (dy) => eye(165, 262 + dy, 9, 2, 14) +
-      `<path d="M228 ${262 + dy} q27 -18 54 0" stroke="${O}" stroke-width="8" fill="none" stroke-linecap="round"/>` +
-      `<path d="M140 ${222 + dy} q24 -8 48 4 M232 ${226 + dy} q24 -16 48 -6" stroke="${O}" stroke-width="8" fill="none" stroke-linecap="round"/>` +
-      `<path d="M178 ${330 + dy} q36 26 66 -8" stroke="${O}" stroke-width="8" fill="none" stroke-linecap="round"/>` +
-      `<ellipse cx="292" cy="${308 + dy}" rx="16" ry="9" fill="#FFB3C6"/>`,
+  // the block: front face + top + side, front corners rounded
+  const block = (dx = 0, dy = 0) => {
+    const x = 110 + dx, y = 200 + dy, s = 210, d = 42;
+    return `<g>
+      <path d="M${x + 20} ${y} L${x + d + 20} ${y - d} L${x + s + d} ${y - d} L${x + s} ${y} Z" fill="${TOP}" stroke="${O}" stroke-width="${W}" stroke-linejoin="round"/>
+      <path d="M${x + s} ${y} L${x + s + d} ${y - d} L${x + s + d} ${y + s - d - 16} L${x + s} ${y + s - 4} Z" fill="${SIDE}" stroke="${O}" stroke-width="${W}" stroke-linejoin="round"/>
+      <rect x="${x}" y="${y}" width="${s}" height="${s}" rx="34" fill="${FRONT}" stroke="${O}" stroke-width="${W}"/>
+      <path d="M${x + 22} ${y + 34} q-4 36 0 70" stroke="rgba(255,255,255,.4)" stroke-width="10" fill="none" stroke-linecap="round"/>
+    </g>`;
   };
 
+  // faces are drawn relative to the block's front centre (cx, cy)
+  const eyes = (cx, cy, h = 24, look = [0, 0]) =>
+    [-36, 36].map((o) => `<ellipse cx="${cx + o}" cy="${cy}" rx="15" ry="${h}" fill="${O}"/><circle cx="${cx + o + 4 + look[0]}" cy="${cy - h * .4 + look[1]}" r="6" fill="#fff"/>`).join("");
+  const blush = (cx, cy) => `<ellipse cx="${cx - 66}" cy="${cy + 30}" rx="17" ry="10" fill="#FF9DB5"/><ellipse cx="${cx + 66}" cy="${cy + 30}" rx="17" ry="10" fill="#FF9DB5"/>`;
+  const faces = {
+    stern: (cx, cy) => eyes(cx, cy, 20) + line(`M${cx - 60} ${cy - 40} l38 10 M${cx + 60} ${cy - 40} l-38 10`, 9) + line(`M${cx - 20} ${cy + 48} h40`, 8),
+    plead: (cx, cy) => eyes(cx, cy, 27, [0, 2]) + `<circle cx="${cx - 40}" cy="${cy + 8}" r="4" fill="#fff"/><circle cx="${cx + 32}" cy="${cy + 8}" r="4" fill="#fff"/>` +
+      line(`M${cx - 58} ${cy - 40} q16 -14 34 -4 M${cx + 58} ${cy - 40} q-16 -14 -34 -4`, 8) + line(`M${cx - 18} ${cy + 50} q9 -10 18 0 q9 10 18 0`, 7) + blush(cx, cy),
+    wow: (cx, cy) => eyes(cx, cy, 25) + line(`M${cx - 58} ${cy - 46} q18 -14 36 -4 M${cx + 22} ${cy - 50} q18 -10 36 4`, 8) +
+      `<ellipse cx="${cx}" cy="${cy + 52}" rx="15" ry="19" fill="${O}"/><ellipse cx="${cx}" cy="${cy + 58}" rx="8" ry="7" fill="#FF7A93"/>`,
+    cheeky: (cx, cy) => `<ellipse cx="${cx - 36}" cy="${cy}" rx="15" ry="22" fill="${O}"/><circle cx="${cx - 31}" cy="${cy - 9}" r="6" fill="#fff"/>` +
+      line(`M${cx + 20} ${cy + 2} q16 -14 32 0`, 8) + line(`M${cx - 30} ${cy + 40} q32 26 62 -6`, 8) + blush(cx, cy),
+    happy: (cx, cy) => line(`M${cx - 52} ${cy + 4} q16 -22 32 0 M${cx + 20} ${cy + 4} q16 -22 32 0`, 8) +
+      `<path d="M${cx - 32} ${cy + 30} q32 44 64 0 z" fill="${O}" stroke="${O}" stroke-width="6" stroke-linejoin="round"/><path d="M${cx - 14} ${cy + 46} q14 12 28 0" fill="#FF7A93"/>` + blush(cx, cy),
+  };
+
+  // block front centre at (215, 305) when undisplaced
   const poses = {
-    // right hand up in a "stop" palm, left arm relaxed
-    stop: (f) => leg("M170 400 L162 474") + leg("M250 400 L258 474") + shoe(158, 500) + shoe(262, 500) +
-      limb("M86 290 Q50 330 58 380") + hand(58, 386) +
-      body() + limb("M334 280 Q380 250 378 180") + palm(378, 168) + faces[f](0),
-    // hands clasped under the face, pleading
-    plead: (f) => leg("M170 400 L166 474") + leg("M250 400 L254 474") + shoe(162, 500) + shoe(258, 500) +
-      body() + faces[f](0) + limb("M88 300 Q120 372 192 376") + limb("M332 300 Q300 372 228 376") + hand(196, 378, 22) + hand(226, 378, 22),
-    // sitting on the ground, legs out front, one hand on cheek
-    sit: (f) => leg("M150 452 Q120 486 80 488") + leg("M268 452 Q300 486 340 488") + shoe(72, 500, -1) + shoe(348, 500) +
-      body(60) + limb("M86 360 Q50 410 74 452") + hand(76, 456) + faces[f](60) + limb("M334 360 Q366 420 300 400") + hand(292, 398),
-    // walking off to the right, glancing back, pointing down (at the caption)
-    walk: (f) => leg("M175 400 Q150 440 120 470") + leg("M250 400 Q268 444 290 480") + shoe(118, 494, -1) + shoe(296, 500) +
-      limb("M86 290 Q56 320 66 362") + hand(68, 368) + body() + faces[f](0) + limb("M334 300 Q378 340 372 402") + point(372, 410, 80),
+    stop: (f) => line("M175 410 L168 482") + line("M255 410 L262 482") + sneaker(160, 516, -1) + sneaker(270, 516) +
+      line("M112 330 Q70 360 78 410") + glove(78, 414) + line("M352 290 Q400 260 396 200") + block() + palm(398, 182) + faces[f](215, 300),
+    plead: (f) => line("M178 410 L172 482") + line("M252 410 L258 482") + sneaker(164, 516, -1) + sneaker(266, 516) +
+      block() + faces[f](215, 290) + line("M112 340 Q140 392 192 392") + line("M330 340 Q296 392 244 392") + glove(198, 392, 24) + glove(236, 392, 24),
+    sit: (f) => block(0, 70) + line("M170 482 Q140 500 104 504") + line("M262 482 Q296 500 330 504") + sneaker(90, 520, -1) + sneaker(346, 520) +
+      line("M112 410 Q78 450 92 486") + glove(94, 490) + faces[f](215, 368) + line("M330 420 Q370 380 352 330") + glove(350, 326),
+    walk: (f) => line("M180 410 Q160 450 128 480") + line("M252 410 Q270 452 296 486") + sneaker(124, 512, -1) + sneaker(300, 518) +
+      line("M112 330 Q80 360 90 404") + glove(92, 410) + block() + faces[f](215, 300) + line("M352 320 Q404 360 394 420") + pointer(394, 432, 82),
+    cheer: (f) => line("M175 410 L166 482") + line("M255 410 L264 482") + sneaker(158, 516, -1) + sneaker(272, 516) +
+      line("M112 290 Q70 250 66 180") + glove(66, 172) + line("M352 270 Q398 220 392 160") + glove(392, 152) + block() + faces[f](215, 300),
   };
 
   window.mascot = ({ pose = "stop", face = "stern" } = {}) =>
-    `<svg class="mascot" viewBox="0 0 420 520" xmlns="http://www.w3.org/2000/svg" stroke-linejoin="round">${poses[pose](face)}</svg>`;
+    `<svg class="mascot" viewBox="0 0 440 540" xmlns="http://www.w3.org/2000/svg" stroke-linejoin="round">${poses[pose](face)}</svg>`;
 })();
