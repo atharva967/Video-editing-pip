@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Buildify dont-swipe carousel</title>
+<!-- 1080x1350. Built by build.py (inlines peeps/*.svg); render one slide with ?s=1..4. -->
+<style>
+@font-face { font-family: "Geist"; src: url(fonts/Geist.woff2) format("woff2"); font-weight: 400 900; }
+@font-face { font-family: "Geist Mono"; src: url(fonts/GeistMono.woff2) format("woff2"); font-weight: 400 700; }
+@font-face { font-family: "Caveat"; src: url(fonts/Caveat-700.woff2) format("woff2"); font-weight: 700; }
+:root { --blue: #2F6BEB; --blue2: #3B7EFF; --ink: #121113; --ground: 1240px; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1080px; height: 1350px; overflow: hidden; background: #FFFFFF; }
+body { font-family: "Geist", sans-serif; color: var(--blue); }
+.slide { position: absolute; inset: 0; display: none; background: #FFFFFF; overflow: hidden; }
+.slide.on { display: block; }
+
+.brand { position: absolute; top: 56px; left: 60px; display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 34px; letter-spacing: -.02em; color: var(--ink); }
+.brand svg { width: 44px; height: 40px; }
+.tr { position: absolute; top: 64px; right: 60px; font-family: "Geist Mono"; font-weight: 500; font-size: 30px; color: var(--blue); }
+
+.txt { position: absolute; }
+.script { display: block; font-family: "Caveat"; font-weight: 700; font-size: 76px; line-height: 1; color: var(--blue2); }
+.heavy { display: block; font-weight: 900; font-size: 112px; line-height: .95; letter-spacing: -.045em; }
+.heavy i { font-family: "Caveat"; font-style: normal; font-weight: 700; letter-spacing: 0; font-size: .82em; color: var(--blue2); }
+
+.ground { position: absolute; left: 0; right: 0; top: var(--ground); height: 140px; }
+.peep { position: absolute; overflow: visible; }
+.shadow { position: absolute; height: 26px; border-radius: 50%; background: rgba(18,17,19,.10); filter: blur(3px); }
+.handle { position: absolute; bottom: 30px; right: 60px; font-family: "Geist Mono"; font-weight: 600; font-size: 24px; color: var(--ink); opacity: .7; }
+</style>
+</head>
+<body>
+
+<!-- 1 -->
+<section class="slide">
+  <div class="txt" style="top:300px; left:420px; width:600px">
+    <span class="script">hey, founder...</span>
+    <span class="heavy" style="margin-top:14px">Stop<br>scrolling.</span>
+  </div>
+  {{peep:founder-resting:left=90:h=880}}
+</section>
+
+<!-- 2 -->
+<section class="slide">
+  <div class="txt" style="top:190px; left:0; right:0; text-align:center">
+    <span class="script">okay, but...</span>
+    <span class="heavy" style="margin-top:14px">please don’t<br>swipe.</span>
+  </div>
+  {{peep:founder-crossarm:center=540:h=660}}
+</section>
+
+<!-- 3 -->
+<section class="slide">
+  <div class="txt" style="top:250px; left:80px; width:900px">
+    <span class="script">still swiping?</span>
+    <span class="heavy" style="margin-top:14px">Persistent.<br>Very <i>founder</i><br>of you.</span>
+  </div>
+  {{peep:founder-sitting:right=90:h=640}}
+</section>
+
+<!-- 4 -->
+<section class="slide" data-tr="caption ↓">
+  <div class="txt" style="top:220px; left:70px; width:600px">
+    <span class="script">alright, last thing</span>
+    <span class="heavy" style="margin-top:14px; font-size:88px">Whatever you do, don’t read the <i>caption...</i></span>
+  </div>
+  {{peep:founder-walking:right=70:h=860}}
+</section>
+
+<script>
+  const s = +(new URLSearchParams(location.search).get("s") || 1);
+  const logo = `<svg viewBox="0 0 20 18"><g fill="none" stroke-width="1.6"><rect x="0.8" y="8.8" width="10.4" height="8.4" rx="2" stroke="#3B7EFF" fill="rgba(59,126,255,.12)"/><rect x="4.8" y="5.8" width="10.4" height="8.4" rx="2" stroke="#5B9AFF" fill="rgba(91,154,255,.08)"/><rect x="8.8" y="2.8" width="10.4" height="8.4" rx="2" stroke="#8BB8FF" fill="rgba(139,184,255,.05)"/></g></svg>`;
+  // hand-drawn ground: a wobbly line plus a few pebbles and grass ticks
+  const ground = (seed) => {
+    let r = seed; const rnd = () => ((r = (r * 9301 + 49297) % 233280) / 233280);
+    let d = "M0 18"; for (let x = 0; x <= 1080; x += 40) d += ` Q${x + 20} ${14 + rnd() * 10} ${x + 40} ${16 + rnd() * 6}`;
+    let bits = "";
+    for (let i = 0; i < 26; i++) { const x = rnd() * 1080, y = 34 + rnd() * 70, w = 4 + rnd() * 9;
+      bits += i % 3 ? `<ellipse cx="${x}" cy="${y}" rx="${w}" ry="${w * .55}" fill="none" stroke="#B9BEC8" stroke-width="2"/>` : `<path d="M${x} ${y} l3 -12 M${x + 6} ${y} l-2 -10" stroke="#9AA3B2" stroke-width="2" stroke-linecap="round"/>`; }
+    return `<svg class="ground" viewBox="0 0 1080 140" preserveAspectRatio="none"><rect y="18" width="1080" height="122" fill="#F2F4F8"/><path d="${d}" fill="none" stroke="#C9CED8" stroke-width="3" stroke-linecap="round"/>${bits}</svg>`;
+  };
+  document.querySelectorAll(".slide").forEach((el, i) => {
+    el.insertAdjacentHTML("afterbegin", ground(7 + i * 13));
+    el.insertAdjacentHTML("beforeend", `<div class="brand">${logo}buildify</div><div class="handle">@buildify</div>` + (el.dataset.tr ? `<div class="tr">${el.dataset.tr}</div>` : ""));
+    if (i === s - 1) el.classList.add("on");
+  });
+  // tight-fit each inline peep to its drawn bounds, then stand it on the ground line
+  const G = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--ground")) + 22;
+  document.querySelectorAll(".slide.on svg.peep").forEach((svg) => {
+    const b = svg.getBBox();
+    svg.setAttribute("viewBox", `${b.x} ${b.y} ${b.width} ${b.height}`);
+    const h = +svg.dataset.h, w = h * b.width / b.height;
+    svg.style.height = h + "px"; svg.style.width = w + "px"; svg.style.top = (G - h) + "px";
+    let left = svg.dataset.left != null ? +svg.dataset.left : svg.dataset.right != null ? 1080 - +svg.dataset.right - w : +svg.dataset.center - w / 2;
+    svg.style.left = left + "px";
+    svg.insertAdjacentHTML("afterend", `<div class="shadow" style="left:${left - w * .05}px; width:${w * 1.1}px; top:${G - 16}px"></div>`);
+  });
+</script>
+</body>
+</html>
