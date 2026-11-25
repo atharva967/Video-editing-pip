@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  :root { --ink:#0D0D0F; --paper:#F4F1EA; --acc:#FFD21F; --red:#FF4D3D; --mute:#8B8B93; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:#222; font-family:Inter, sans-serif; }
+  .s { width:1080px; height:1350px; position:relative; overflow:hidden; padding:96px 88px; display:flex; flex-direction:column; }
+  .dark { background:var(--ink); color:#fff; }
+  .light { background:var(--paper); color:var(--ink); }
+  .tag { font-family:'JetBrains Mono', monospace; font-weight:700; font-size:30px; letter-spacing:4px; text-transform:uppercase; }
+  .count { position:absolute; top:96px; right:88px; font-family:'JetBrains Mono', monospace; font-size:28px; font-weight:600; opacity:.55; }
+  h1 { font-weight:900; letter-spacing:-6px; line-height:.92; }
+  .big { font-size:200px; }
+  .mid { font-size:132px; }
+  p { font-weight:600; font-size:52px; line-height:1.22; letter-spacing:-1px; }
+  .hl { background:var(--acc); color:var(--ink); padding:0 14px; border-radius:10px; box-decoration-break:clone; -webkit-box-decoration-break:clone; }
+  .strike { position:relative; }
+  .strike::after { content:""; position:absolute; left:-6px; right:-6px; top:52%; height:12px; background:var(--red); transform:rotate(-3deg); border-radius:6px; }
+  .foot { margin-top:auto; display:flex; justify-content:space-between; align-items:flex-end; }
+  .brand { font-weight:900; font-size:40px; letter-spacing:-1px; display:flex; align-items:center; gap:14px; }
+  .mark { width:46px; height:46px; border-radius:12px; background:var(--acc); display:grid; place-items:center; color:var(--ink); font-size:30px; font-weight:900; }
+  .swipe { font-family:'JetBrains Mono', monospace; font-size:28px; font-weight:700; letter-spacing:3px; display:flex; align-items:center; gap:16px; }
+  .arrow { font-family:Inter; font-size:72px; font-weight:900; line-height:1; }
+  .tape { position:absolute; background:var(--red); color:#fff; font-family:'JetBrains Mono', monospace; font-weight:800; font-size:34px; letter-spacing:6px; white-space:nowrap; padding:18px 0; width:1500px; text-align:center; }
+  .note { font-family:'JetBrains Mono', monospace; font-size:30px; font-weight:600; color:var(--mute); letter-spacing:1px; }
+  .flow { display:flex; align-items:center; gap:26px; font-weight:900; font-size:76px; letter-spacing:-3px; }
+  .chip { border:5px solid var(--ink); border-radius:24px; padding:16px 30px; }
+  .chip.on { background:var(--acc); }
+  .x { display:flex; flex-direction:column; gap:22px; margin-top:56px; }
+  .x div { font-weight:700; font-size:50px; letter-spacing:-1px; display:flex; gap:22px; align-items:center; }
+  .x b { color:var(--red); font-weight:900; font-size:56px; width:44px; }
+</style>
+</head>
+<body>
+
+<!-- 1: pattern interrupt -->
+<section class="s dark" id="s1">
+  <div class="tape" style="top:250px; left:-200px; transform:rotate(-7deg);">DO NOT SWIPE · DO NOT SWIPE · DO NOT SWIPE · DO NOT SWIPE · DO NOT SWIPE</div>
+  <div class="count">1/4</div>
+  <div style="margin-top:330px">
+    <div class="tag" style="color:var(--acc)">Founders only</div>
+    <h1 class="big" style="margin-top:36px">Don't<br>swipe.</h1>
+    <p style="margin-top:56px; color:#D8D8DE">This post is <span class="hl">not for you</span> if your idea is still living in a pitch deck.</p>
+  </div>
+  <div class="foot">
+    <div class="brand"><div class="mark">B</div>Buildify</div>
+    <div class="note">seriously. stay here.</div>
+  </div>
+</section>
+
+<!-- 2: curiosity loop -->
+<section class="s light" id="s2">
+  <div class="count">2/4</div>
+  <div class="tag" style="color:var(--red)">You swiped anyway</div>
+  <h1 class="big" style="margin-top:44px; font-size:170px">Still<br>here?</h1>
+  <p style="margin-top:56px">Then let me guess. You're still <span class="strike">building</span> <span class="hl">"planning"</span>.</p>
+  <div class="x" style="margin-top:80px">
+    <div><b>×</b>Months of dev before a single user</div>
+    <div><b>×</b>Lakhs spent on a "quick demo"</div>
+    <div><b>×</b>Waiting for it to be perfect</div>
+  </div>
+  <div class="foot">
+    <div class="brand"><div class="mark">B</div>Buildify</div>
+    <div class="note">ok. don't swipe again.</div>
+  </div>
+</section>
+
+<!-- 3: last warning -->
+<section class="s dark" id="s3">
+  <div class="tape" style="bottom:70px; left:-220px; transform:rotate(-4deg); background:var(--acc); color:var(--ink);">LAST WARNING · LAST WARNING · LAST WARNING · LAST WARNING · LAST WARNING</div>
+  <div class="count">3/4</div>
+  <div class="tag" style="color:var(--acc)">Last warning</div>
+  <h1 class="mid" style="margin-top:44px">The next slide might make you <span style="color:var(--acc)">build</span> this week.</h1>
+  <p style="margin-top:56px; color:#D8D8DE">Not next quarter. Not "after funding." This week.</p>
+  <div class="foot" style="margin-bottom:170px">
+    <div class="brand"><div class="mark">B</div>Buildify</div>
+    <div class="note">you've been warned.</div>
+  </div>
+</section>
+
+<!-- 4: payoff + CTA -->
+<section class="s light" id="s4">
+  <div class="count">4/4</div>
+  <div class="tag" style="color:var(--red)">Fine. You win.</div>
+  <h1 class="mid" style="margin-top:44px">Build it today.</h1>
+  <div class="flow" style="margin-top:72px">
+    <div class="chip">Idea</div><div class="arrow">→</div><div class="chip on">Prototype</div>
+  </div>
+  <p style="margin-top:28px; font-size:44px; color:#55555C">the same day.</p>
+  <p style="margin-top:60px">Good enough to <span class="hl">show</span>.<br>Cheap enough to <span class="hl">throw away</span>.</p>
+  <div class="foot">
+    <div>
+      <div class="brand" style="font-size:52px"><div class="mark" style="width:58px;height:58px;font-size:38px">B</div>Buildify</div>
+      <div class="note" style="margin-top:18px; color:#55555C">Link in bio</div>
+    </div>
+    <div class="swipe" style="flex-direction:column; align-items:flex-end; gap:8px">
+      <span>5 MISTAKES FOUNDERS MAKE</span>
+      <span style="color:var(--red)">READ THE CAPTION ↓</span>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
