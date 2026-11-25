@@ -27,11 +27,13 @@ body:not(.wiki) .hand.r.k-rock { transform: translateY(-36%) scaleX(-1); }
 .claim.l { left: 40px; bottom: calc(1350px - var(--hand-y) + 210px); }
 .claim.r { right: 40px; top: calc(var(--hand-y) + 210px); }
 
-.credit { position: absolute; bottom: 20px; left: 0; right: 0; text-align: center; font-family: "Geist Mono"; font-size: 13px; color: rgba(255,255,255,.45); z-index: 3; }
-.handle { position: absolute; bottom: 52px; right: 60px; font-family: "Geist Mono"; font-weight: 500; font-size: 26px; color: rgba(255,255,255,.9); z-index: 3; }
+.credit { position: absolute; bottom: 16px; left: 0; right: 0; text-align: center; font-family: "Geist Mono"; font-size: 13px; color: rgba(255,255,255,.45); z-index: 3; }
+.handle { position: absolute; bottom: 50px; left: 0; right: 0; text-align: center; font-family: "Geist Mono"; font-weight: 600; font-size: 28px; letter-spacing: .02em; color: #fff; z-index: 3; }
+.brand { position: absolute; top: 56px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 14px; background: #fff; color: #121113; padding: 14px 30px 14px 22px; border-radius: 60px; font-weight: 800; font-size: 36px; letter-spacing: -.02em; box-shadow: 0 12px 30px rgba(5,15,50,.28); z-index: 4; }
+.brand svg { width: 48px; height: 43px; }
 
 /* cover */
-.cover-title { position: absolute; top: 150px; left: 0; right: 0; text-align: center; font-weight: 900; font-size: 104px; line-height: .95; letter-spacing: -.04em; text-transform: uppercase; text-shadow: 0 4px 18px rgba(5,15,50,.3); z-index: 3; }
+.cover-title { position: absolute; top: 190px; left: 0; right: 0; text-align: center; font-weight: 900; font-size: 104px; line-height: .95; letter-spacing: -.04em; text-transform: uppercase; text-shadow: 0 4px 18px rgba(5,15,50,.3); z-index: 3; }
 .play { position: absolute; top: 960px; left: 50%; transform: translateX(-50%); background: #fff; color: #1A4FD0; font-weight: 800; font-size: 46px; padding: 22px 46px; border-radius: 60px; box-shadow: 0 18px 40px rgba(5,15,50,.3); z-index: 3; white-space: nowrap; }
 
 /* pop-up window */
@@ -74,7 +76,6 @@ body:not(.wiki) .hand.r.k-rock { transform: translateY(-36%) scaleX(-1); }
     </div>
   </div>
   <svg class="cursor" viewBox="0 0 24 24"><path d="M4 2 L20 13 L12.5 14.2 L16.5 22 L13.4 23.4 L9.5 15.6 L4 20 Z" fill="#fff" stroke="#111" stroke-width="1.4" stroke-linejoin="round"/></svg>
-  <div class="handle">@buildify</div>
 </section>
 
 <script>
@@ -91,6 +92,7 @@ body:not(.wiki) .hand.r.k-rock { transform: translateY(-36%) scaleX(-1); }
         (wiki ? `<div class="credit">Hand photos: Fluff / Sertion, CC BY-SA 3.0, Wikimedia Commons</div>` : ""));
     }
     if (d.cl) el.insertAdjacentHTML("beforeend", `<div class="claim l">${d.cl}</div><div class="claim r">${d.cr}</div>`);
+    el.insertAdjacentHTML("beforeend", `<div class="brand"><svg viewBox="0 0 20 18"><g fill="none" stroke-width="1.6"><rect x="0.8" y="8.8" width="10.4" height="8.4" rx="2" stroke="#3B7EFF" fill="rgba(59,126,255,.12)"/><rect x="4.8" y="5.8" width="10.4" height="8.4" rx="2" stroke="#5B9AFF" fill="rgba(91,154,255,.08)"/><rect x="8.8" y="2.8" width="10.4" height="8.4" rx="2" stroke="#8BB8FF" fill="rgba(139,184,255,.05)"/></g></svg>buildify</div><div class="handle">@buildify</div>`);
     if (i === s - 1) el.classList.add("on");
     if (wiki) document.body.classList.add("wiki");
   });
