@@ -1,0 +1,200 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<!-- Final Buildify carousel: white page, orange Poppins + handwritten script, original drawn illustrations (inline SVG). -->
+<style>
+  @font-face { font-family:Pop; src:url(fonts/Poppins-ExtraBold.ttf); font-weight:800; }
+  @font-face { font-family:Pop; src:url(fonts/Poppins-Bold.ttf); font-weight:700; }
+  @font-face { font-family:Script; src:url(fonts/DancingScript.ttf); }
+  @font-face { font-family:Hand; src:url(fonts/Caveat.ttf); }
+  @font-face { font-family:Type; src:url(fonts/CourierPrime-Regular.ttf); }
+  :root { --or:#EE6A24; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:#ddd; }
+  .s { width:1080px; height:1350px; position:relative; overflow:hidden; background:#fff; color:var(--or); font-family:Pop; }
+  .t { position:absolute; line-height:.95; }
+  .b { font-weight:800; letter-spacing:-2px; }
+  .sc { font-family:Script; font-weight:600; letter-spacing:0; }
+  svg { position:absolute; overflow:visible; }
+  .wm { position:absolute; right:60px; bottom:44px; font:800 30px Pop; color:#2B2B2B; opacity:.8; letter-spacing:-.5px; }
+  .wm span { color:var(--or); }
+</style>
+</head>
+<body>
+
+<!-- defs shared by all slides -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <pattern id="hatch" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(40)">
+      <line x1="0" y1="0" x2="0" y2="14" stroke="#2B2B2B" stroke-width="2" opacity=".16"/>
+    </pattern>
+    <pattern id="hatchO" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(-35)">
+      <line x1="0" y1="0" x2="0" y2="12" stroke="#B2470F" stroke-width="2.4" opacity=".35"/>
+    </pattern>
+    <filter id="rough" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4"/>
+      <feDisplacementMap in="SourceGraphic" scale="3.2"/>
+    </filter>
+  </defs>
+</svg>
+
+<!-- 1 -->
+<section class="s" id="s1">
+  <div class="t b" style="left:360px; top:330px; font-size:190px;">Don't</div>
+  <div class="t b" style="left:560px; top:510px; font-size:120px;">Swipe</div>
+
+  <svg viewBox="0 0 1080 1350" width="1080" height="1350" style="left:0;top:0" filter="url(#rough)">
+    <g stroke="#2B2B2B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+      <ellipse cx="360" cy="1255" rx="250" ry="26" fill="#F1E7DA" stroke="none"/>
+      <!-- phone -->
+      <g transform="rotate(-9 360 960)">
+        <rect x="200" y="690" width="320" height="560" rx="44" fill="#2B2B2B"/>
+        <rect x="220" y="735" width="280" height="470" rx="22" fill="#FFF6EE" stroke-width="3"/>
+        <rect x="320" y="708" width="80" height="12" rx="6" fill="#555" stroke="none"/>
+        <!-- mini slide on screen -->
+        <rect x="244" y="770" width="232" height="300" rx="14" fill="#fff" stroke-width="3"/>
+        <text x="360" y="880" text-anchor="middle" font-family="Pop" font-weight="800" font-size="46" fill="#EE6A24" stroke="none">Don't</text>
+        <text x="360" y="930" text-anchor="middle" font-family="Pop" font-weight="800" font-size="34" fill="#EE6A24" stroke="none">Swipe</text>
+        <circle cx="330" cy="1100" r="7" fill="#EE6A24" stroke="none"/><circle cx="352" cy="1100" r="7" fill="#ddd" stroke="none"/><circle cx="374" cy="1100" r="7" fill="#ddd" stroke="none"/><circle cx="396" cy="1100" r="7" fill="#ddd" stroke="none"/>
+        <!-- swipe arrow -->
+        <path d="M290 1150 H450 M420 1128 L452 1150 L420 1172" fill="none" stroke="#9A928A" stroke-width="7"/>
+      </g>
+      <!-- finger reaching from the right -->
+      <path d="M640 1010 C600 1000 560 1004 520 1012 C500 1016 496 1044 518 1048 L600 1046 C610 1062 640 1076 690 1080 L760 1084 L760 1000 C720 996 680 1010 640 1010 Z" fill="#E7B48A"/>
+      <path d="M520 1012 C506 1014 500 1030 506 1040" fill="none" stroke-width="4"/>
+      <path d="M600 1046 C620 1040 640 1040 655 1044" fill="none" stroke-width="3.5" opacity=".6"/>
+      <path d="M700 1000 L760 1000 L760 1090 L700 1090" fill="#EE6A24"/>
+      <rect x="700" y="1000" width="60" height="90" fill="url(#hatchO)" stroke="none"/>
+      <!-- stop sign -->
+      <g transform="translate(560 830)">
+        <circle r="78" fill="#fff" stroke="#EE6A24" stroke-width="16"/>
+        <line x1="-52" y1="52" x2="52" y2="-52" stroke="#EE6A24" stroke-width="16"/>
+      </g>
+      <!-- motion marks -->
+      <path d="M790 1020 l40 -8 M792 1050 l46 0 M790 1080 l40 8" fill="none" stroke="#2B2B2B" stroke-width="4" opacity=".7"/>
+    </g>
+  </svg>
+  <div class="t" style="left:640px; top:1150px; font:600 46px Hand; color:#2B2B2B; transform:rotate(-4deg)">nope. not this one.</div>
+</section>
+
+<!-- 2 -->
+<section class="s" id="s2">
+  <div class="t b" style="left:0; right:0; top:300px; text-align:center; font-size:118px;">Seriously, don't...</div>
+  <svg viewBox="0 0 1080 1350" width="1080" height="1350" style="left:0;top:0" filter="url(#rough)">
+    <g stroke="#2B2B2B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+      <ellipse cx="540" cy="1250" rx="360" ry="28" fill="#F1E7DA" stroke="none"/>
+      <!-- stack of plans -->
+      <rect x="290" y="1110" width="470" height="120" rx="10" fill="#E9B98C"/>
+      <rect x="290" y="1110" width="470" height="120" rx="10" fill="url(#hatch)"/>
+      <text x="525" y="1188" text-anchor="middle" font-family="Type" font-size="38" fill="#2B2B2B" stroke="none">PITCH DECK v19</text>
+      <rect x="320" y="990" width="430" height="120" rx="10" fill="#EE6A24" transform="rotate(-3 535 1050)"/>
+      <rect x="320" y="990" width="430" height="120" rx="10" fill="url(#hatchO)" transform="rotate(-3 535 1050)"/>
+      <text x="535" y="1066" text-anchor="middle" font-family="Type" font-size="38" fill="#fff" stroke="none" transform="rotate(-3 535 1050)">BUSINESS PLAN</text>
+      <rect x="300" y="880" width="450" height="110" rx="10" fill="#FFF6EE" transform="rotate(2 525 935)"/>
+      <text x="525" y="950" text-anchor="middle" font-family="Type" font-size="36" fill="#2B2B2B" stroke="none" transform="rotate(2 525 935)">final_FINAL_v3.pdf</text>
+      <rect x="330" y="770" width="390" height="110" rx="10" fill="#CFC8C0" transform="rotate(-2 525 825)"/>
+      <rect x="330" y="770" width="390" height="110" rx="10" fill="url(#hatch)" transform="rotate(-2 525 825)"/>
+      <text x="525" y="840" text-anchor="middle" font-family="Type" font-size="36" fill="#2B2B2B" stroke="none" transform="rotate(-2 525 825)">ROADMAP 2027</text>
+      <!-- cobweb on the top corner -->
+      <g fill="none" stroke="#2B2B2B" stroke-width="2.4" opacity=".75">
+        <path d="M700 760 L620 760 M700 760 L700 840 M700 760 L635 805 M700 760 L660 830"/>
+        <path d="M680 760 Q675 772 700 778 M660 760 Q650 785 700 795 M640 760 Q625 800 700 815"/>
+      </g>
+      <!-- dust specks -->
+      <g fill="#9A928A" stroke="none" opacity=".8">
+        <circle cx="400" cy="740" r="4"/><circle cx="460" cy="710" r="3"/><circle cx="560" cy="730" r="5"/><circle cx="610" cy="700" r="3"/><circle cx="380" cy="690" r="3"/>
+      </g>
+      <!-- calendar -->
+      <g transform="translate(820 900) rotate(6)">
+        <rect x="-90" y="-100" width="180" height="200" rx="14" fill="#fff"/>
+        <rect x="-90" y="-100" width="180" height="54" rx="14" fill="#EE6A24"/>
+        <text x="0" y="-62" text-anchor="middle" font-family="Pop" font-weight="800" font-size="30" fill="#fff" stroke="none">MONTH</text>
+        <text x="0" y="50" text-anchor="middle" font-family="Pop" font-weight="800" font-size="88" fill="#2B2B2B" stroke="none">9</text>
+      </g>
+      <!-- cold chai -->
+      <g transform="translate(220 1120)">
+        <path d="M-50 -90 L50 -90 L40 40 L-40 40 Z" fill="#FFF6EE" opacity=".9"/>
+        <path d="M-46 -40 L46 -40 L40 40 L-40 40 Z" fill="#C98A55"/>
+        <path d="M-46 -40 L46 -40 L40 40 L-40 40 Z" fill="url(#hatch)"/>
+      </g>
+    </g>
+  </svg>
+  <div class="t" style="left:90px; top:800px; font:600 46px Hand; color:#2B2B2B; transform:rotate(-6deg)">still planning...</div>
+  <div class="t" style="left:790px; top:1030px; font:600 40px Hand; color:#2B2B2B; transform:rotate(5deg); line-height:1.05">month 9 of<br>"almost ready"</div>
+</section>
+
+<!-- 3 -->
+<section class="s" id="s3">
+  <div class="t sc" style="left:130px; top:300px; font-size:110px;">Why are you</div>
+  <div class="t b" style="left:120px; top:410px; font-size:200px;">Swiping?</div>
+  <svg viewBox="0 0 1080 1350" width="1080" height="1350" style="left:0;top:0" filter="url(#rough)">
+    <g stroke="#2B2B2B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+      <!-- desk -->
+      <rect x="120" y="1150" width="900" height="34" rx="8" fill="#E9B98C"/>
+      <rect x="120" y="1150" width="900" height="34" rx="8" fill="url(#hatch)"/>
+      <line x1="180" y1="1184" x2="180" y2="1330"/><line x1="960" y1="1184" x2="960" y2="1330"/>
+      <!-- laptop -->
+      <path d="M300 1150 L860 1150 L900 1176 L260 1176 Z" fill="#CFC8C0"/>
+      <rect x="330" y="760" width="500" height="390" rx="22" fill="#2B2B2B"/>
+      <rect x="352" y="782" width="456" height="340" rx="10" fill="#fff" stroke-width="3"/>
+      <!-- app on screen -->
+      <rect x="352" y="782" width="456" height="56" rx="10" fill="#EE6A24" stroke="none"/>
+      <circle cx="378" cy="810" r="8" fill="#fff" stroke="none"/><circle cx="402" cy="810" r="8" fill="#fff" stroke="none" opacity=".7"/>
+      <rect x="376" y="858" width="196" height="120" rx="12" fill="#FFF0E4" stroke-width="3"/>
+      <rect x="588" y="858" width="196" height="120" rx="12" fill="#FFF0E4" stroke-width="3"/>
+      <rect x="396" y="880" width="110" height="14" rx="7" fill="#EE6A24" stroke="none"/>
+      <rect x="396" y="906" width="150" height="10" rx="5" fill="#CFC8C0" stroke="none"/><rect x="396" y="926" width="120" height="10" rx="5" fill="#CFC8C0" stroke="none"/>
+      <rect x="608" y="880" width="90" height="14" rx="7" fill="#EE6A24" stroke="none"/>
+      <rect x="608" y="906" width="150" height="10" rx="5" fill="#CFC8C0" stroke="none"/><rect x="608" y="926" width="110" height="10" rx="5" fill="#CFC8C0" stroke="none"/>
+      <rect x="376" y="998" width="408" height="26" rx="13" fill="#F1E7DA" stroke-width="3"/>
+      <rect x="376" y="998" width="408" height="26" rx="13" fill="#EE6A24" stroke-width="3"/>
+      <text x="580" y="1084" text-anchor="middle" font-family="Pop" font-weight="800" font-size="34" fill="#2B2B2B" stroke="none">Prototype ready ✓</text>
+      <!-- chai glass with steam -->
+      <g transform="translate(940 1060)">
+        <path d="M-46 -80 L46 -80 L38 88 L-38 88 Z" fill="#FFF6EE"/>
+        <path d="M-42 -40 L42 -40 L38 88 L-38 88 Z" fill="#C98A55"/>
+        <path d="M-42 -40 L42 -40 L38 88 L-38 88 Z" fill="url(#hatch)"/>
+        <path d="M-14 -100 C-34 -130 6 -150 -14 -186 M16 -96 C-4 -130 36 -150 16 -190" fill="none" stroke="#9A928A" stroke-width="4"/>
+      </g>
+      <!-- sticky note -->
+      <g transform="translate(195 1000) rotate(-8)">
+        <rect x="-105" y="-95" width="210" height="190" fill="#FFD9A8"/>
+        <rect x="-105" y="-95" width="210" height="190" fill="url(#hatchO)" opacity=".5"/>
+      </g>
+    </g>
+  </svg>
+  <div class="t" style="left:112px; top:935px; font:700 44px Hand; color:#2B2B2B; transform:rotate(-8deg); line-height:1.05">Day 1:<br>idea → live</div>
+</section>
+
+<!-- 4 -->
+<section class="s" id="s4">
+  <div class="t" style="right:44px; top:34px; font:400 46px Type; letter-spacing:1px;">Check caption</div>
+  <div class="t sc" style="left:100px; top:300px; font-size:100px;">Alright, now</div>
+  <div class="t b" style="left:100px; top:410px; font-size:96px;">Don't look at</div>
+  <div class="t b" style="left:100px; top:515px; font-size:96px;">the top <span class="sc" style="font-size:104px; font-weight:500; letter-spacing:0">right side...</span></div>
+  <svg viewBox="0 0 1080 1350" width="1080" height="1350" style="left:0;top:0" filter="url(#rough)">
+    <g stroke="#2B2B2B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+      <!-- dashed flight path from bottom-left up to the corner -->
+      <path d="M380 980 C600 1010 900 1070 990 880 C1060 720 1045 540 1005 380" fill="none" stroke="#EE6A24" stroke-width="7" stroke-dasharray="4 22"/>
+      <!-- paper plane near the corner -->
+      <g transform="translate(985 300) rotate(30)">
+        <path d="M0 -80 L56 70 L0 40 L-56 70 Z" fill="#fff"/>
+        <path d="M0 -80 L0 40" fill="none"/>
+        <path d="M0 -80 L56 70 L0 40 Z" fill="#FFE7D4"/>
+      </g>
+      <!-- small bulb -->
+      <g transform="translate(300 1050)">
+        <circle r="70" fill="#FFE7D4"/>
+        <path d="M-26 64 L26 64 L22 104 L-22 104 Z" fill="#CFC8C0"/>
+        <path d="M-22 40 L-11 6 L0 40 L11 6 L22 40" fill="none" stroke="#EE6A24" stroke-width="6"/>
+        <path d="M-110 -40 l-30 -14 M-100 -100 l-24 -26 M0 -120 l0 -34 M100 -100 l24 -26" fill="none" stroke="#EE6A24" stroke-width="6"/>
+      </g>
+    </g>
+  </svg>
+  <div class="t" style="left:610px; top:1120px; font:700 52px Hand; color:#2B2B2B; transform:rotate(-6deg)">ok fine, look ↑</div>
+  <div class="wm">build<span>ify</span></div>
+</section>
+
+</body>
+</html>
