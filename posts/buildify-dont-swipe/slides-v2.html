@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<!-- Style matched to the reference carousel: white page, orange Poppins + handwritten script, ink-and-watercolour characters.
+     Drop illustrations in art/s1.png ... art/s4.png (transparent or white background). Missing art shows a labelled placeholder. -->
+<style>
+  @font-face { font-family:Pop; src:url(fonts/Poppins-ExtraBold.ttf); font-weight:800; }
+  @font-face { font-family:Pop; src:url(fonts/Poppins-Bold.ttf); font-weight:700; }
+  @font-face { font-family:Script; src:url(fonts/DancingScript.ttf); }
+  :root { --or:#EE6A24; --ink:#2B2B2B; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:#ddd; }
+  .s { width:1080px; height:1350px; position:relative; overflow:hidden; background:#fff; color:var(--or); font-family:Pop; }
+  .t { position:absolute; line-height:.95; }
+  .b { font-weight:800; letter-spacing:-2px; }
+  .sc { font-family:Script; font-weight:600; letter-spacing:0; }
+  .art { position:absolute; }
+  .art img { width:100%; height:100%; object-fit:contain; object-position:bottom; display:block; }
+  .ph { width:100%; height:100%; border:4px dashed #E3B79F; border-radius:28px; display:flex; align-items:center; justify-content:center; text-align:center; padding:40px; font:600 30px/1.3 Inter, sans-serif; color:#C9875F; background:#FFF8F3; }
+  .ground { position:absolute; left:0; right:0; bottom:0; height:46px; background:linear-gradient(180deg, transparent, #F1E7DA 60%); }
+  .wm { position:absolute; right:60px; bottom:44px; font:800 30px Pop; color:var(--ink); opacity:.75; letter-spacing:-.5px; }
+  .wm span { color:var(--or); }
+</style>
+</head>
+<body>
+
+<section class="s" id="s1">
+  <div class="t b" style="left:360px; top:380px; font-size:190px;">Don't</div>
+  <div class="t b" style="left:560px; top:560px; font-size:120px;">Swipe</div>
+  <div class="art" style="left:110px; bottom:40px; width:540px; height:640px;" data-art="s1" data-label="S1: founder looking up, bottom-left"></div>
+</section>
+
+<section class="s" id="s2">
+  <div class="t b" style="left:0; right:0; top:330px; text-align:center; font-size:118px;">Seriously, don't...</div>
+  <div class="art" style="left:200px; bottom:60px; width:720px; height:780px;" data-art="s2" data-label="S2: founder + dog, centre"></div>
+  <div class="ground"></div>
+</section>
+
+<section class="s" id="s3">
+  <div class="t sc" style="left:130px; top:340px; font-size:110px;">Why are you</div>
+  <div class="t b" style="left:120px; top:450px; font-size:200px;">Swiping?</div>
+  <div class="art" style="left:220px; right:-40px; bottom:70px; height:640px;" data-art="s3" data-label="S3: founder sits with laptop beside an orange auto-rickshaw, right"></div>
+</section>
+
+<section class="s" id="s4">
+  <div class="t" style="right:44px; top:34px; font:600 44px 'JetBrains Mono', monospace; letter-spacing:1px;">Check caption</div>
+  <div class="t sc" style="left:100px; top:300px; font-size:100px;">Alright, now</div>
+  <div class="t b" style="left:100px; top:410px; font-size:96px;">Don't look at</div>
+  <div class="t b" style="left:100px; top:515px; font-size:96px;">the top <span class="sc" style="font-size:104px; font-weight:500; letter-spacing:0">right side...</span></div>
+  <div class="art" style="left:280px; bottom:0; width:640px; height:720px;" data-art="s4" data-label="S4: confident founder in orange blazer + sunglasses, long shadow"></div>
+  <div class="wm">build<span>ify</span></div>
+</section>
+
+<script>
+  for (const el of document.querySelectorAll('[data-art]')) {
+    const img = new Image();
+    img.onload = () => el.appendChild(img);
+    img.onerror = () => { el.innerHTML = `<div class="ph">${el.dataset.label}</div>`; };
+    img.src = `art/${el.dataset.art}.png`;
+  }
+</script>
+</body>
+</html>
