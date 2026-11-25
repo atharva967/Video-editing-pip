@@ -17,6 +17,10 @@ body { font-family: "Geist", sans-serif; color: var(--ink); }
 
 .hand { position: absolute; top: var(--hand-y); transform: translateY(-50%); filter: drop-shadow(0 16px 18px rgba(5,15,50,.32)); z-index: 2; }
 .hand.l { left: 0; }
+body:not(.wiki) .hand.k-rock { width: 430px; transform: translateY(-36%); }
+body:not(.wiki) .hand.k-paper { width: 470px; }
+body:not(.wiki) .hand.k-scissors { width: 470px; }
+body:not(.wiki) .hand.r.k-rock { transform: translateY(-36%) scaleX(-1); }
 .hand.r { right: 0; transform: translateY(-50%) scaleX(-1); }
 
 .claim { position: absolute; width: 480px; text-align: center; font-weight: 800; font-size: 46px; line-height: 1.08; letter-spacing: -.02em; text-transform: uppercase; text-shadow: 0 2px 10px rgba(5,15,50,.25); z-index: 3; }
@@ -74,16 +78,21 @@ body { font-family: "Geist", sans-serif; color: var(--ink); }
 </section>
 
 <script>
-  const s = +(new URLSearchParams(location.search).get("s") || 1);
+  const q = new URLSearchParams(location.search);
+  const s = +(q.get("s") || 1);
+  // ?hands=wiki -> free CC BY-SA photos (credited); default -> reference post's hands (mockup, not cleared to post)
+  const wiki = q.get("hands") === "wiki";
+  const src = (k) => (wiki ? `hands/h-${k}.png` : `refhands/${k}.png`);
   document.querySelectorAll(".slide").forEach((el, i) => {
     const d = el.dataset;
     if (d.l) {
       el.insertAdjacentHTML("beforeend",
-        `<img class="hand l" src="hands/h-${d.l}.png" alt="${d.l}"><img class="hand r" src="hands/h-${d.r}.png" alt="${d.r}">` +
-        `<div class="credit">Hand photos: Fluff / Sertion, CC BY-SA 3.0, Wikimedia Commons</div>`);
+        `<img class="hand l k-${d.l}" src="${src(d.l)}" alt="${d.l}"><img class="hand r k-${d.r}" src="${src(d.r)}" alt="${d.r}">` +
+        (wiki ? `<div class="credit">Hand photos: Fluff / Sertion, CC BY-SA 3.0, Wikimedia Commons</div>` : ""));
     }
     if (d.cl) el.insertAdjacentHTML("beforeend", `<div class="claim l">${d.cl}</div><div class="claim r">${d.cr}</div>`);
     if (i === s - 1) el.classList.add("on");
+    if (wiki) document.body.classList.add("wiki");
   });
 </script>
 </body>
