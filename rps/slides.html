@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Buildify RPS carousel</title>
+<!-- 1080x1350 Instagram carousel. Render one slide with ?s=1..5 (rps/build.sh). -->
+<style>
+@font-face { font-family: "Geist"; src: url(fonts/Geist.woff2) format("woff2"); font-weight: 400 900; }
+@font-face { font-family: "Geist Mono"; src: url(fonts/GeistMono.woff2) format("woff2"); font-weight: 400 700; }
+:root { --bg: #0D0C10; --panel: #15141A; --blue: #3B7EFF; --blue2: #5B9AFF; --blue3: #8BB8FF; --ink: #F2F4F8; --muted: #8A93A3; --line: #26252C; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1080px; height: 1350px; background: var(--bg); overflow: hidden; }
+body { font-family: "Geist", sans-serif; color: var(--ink); }
+.slide { position: absolute; inset: 0; display: none; overflow: hidden; }
+.slide.on { display: block; }
+.grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px); background-size: 54px 54px; }
+.glow { position: absolute; border-radius: 50%; pointer-events: none; }
+.top { position: absolute; top: 56px; left: 64px; right: 64px; display: flex; justify-content: space-between; align-items: center; font-family: "Geist Mono"; font-size: 22px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.brand { display: flex; align-items: center; gap: 14px; color: var(--ink); font-family: "Geist"; font-weight: 700; letter-spacing: 0; text-transform: none; font-size: 30px; }
+.brand svg { width: 42px; height: 38px; }
+.foot { position: absolute; bottom: 52px; left: 64px; right: 64px; display: flex; justify-content: space-between; font-family: "Geist Mono"; font-size: 22px; color: var(--muted); letter-spacing: .08em; }
+.vs { position: absolute; left: 50%; top: 858px; transform: translate(-50%, -50%); font-family: "Geist Mono"; font-weight: 700; font-size: 34px; color: var(--muted); background: var(--bg); border: 2px solid var(--line); border-radius: 50%; width: 92px; height: 92px; display: flex; align-items: center; justify-content: center; z-index: 3; }
+.side { position: absolute; top: 260px; width: 500px; bottom: 150px; display: flex; flex-direction: column; align-items: center; }
+.side.l { left: 30px; } .side.r { right: 30px; }
+.claim { height: 330px; display: flex; align-items: flex-end; justify-content: center; text-align: center; padding: 0 18px; }
+.claim span { font-weight: 800; font-size: 50px; line-height: 1.05; letter-spacing: -.02em; text-transform: uppercase; }
+.lose .claim span { color: var(--muted); text-decoration: line-through; text-decoration-color: rgba(239,68,68,.85); text-decoration-thickness: 5px; }
+.win .claim span { color: var(--ink); }
+.hand { margin-top: 58px; width: 420px; height: 420px; border-radius: 48px; display: flex; align-items: center; justify-content: center; font-family: "Noto Color Emoji"; font-size: 250px; line-height: 1; position: relative; }
+.lose .hand { background: var(--panel); border: 2px solid var(--line); filter: grayscale(.85) brightness(.75); }
+.win .hand { background: radial-gradient(circle at 50% 40%, rgba(59,126,255,.35), rgba(59,126,255,.08) 70%), var(--panel); border: 3px solid var(--blue); box-shadow: 0 0 80px rgba(59,126,255,.45); }
+.flip { display: inline-block; transform: scaleX(-1); }
+.tag { position: absolute; top: -26px; left: 50%; transform: translateX(-50%); font-family: "Geist Mono"; font-weight: 700; font-size: 24px; letter-spacing: .16em; padding: 10px 22px; border-radius: 30px; white-space: nowrap; }
+.win .tag { background: var(--blue); color: #fff; }
+.lose .tag { background: var(--line); color: var(--muted); }
+.move { margin-top: 22px; font-family: "Geist Mono"; font-size: 24px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
+.win .move { color: var(--blue3); }
+.round-lbl { position: absolute; top: 200px; left: 0; right: 0; text-align: center; font-family: "Geist Mono"; font-weight: 700; font-size: 26px; letter-spacing: .3em; color: var(--blue3); }
+.round-lbl b { display: block; margin-top: 14px; font-family: "Geist"; font-weight: 800; font-size: 40px; letter-spacing: -.01em; color: var(--ink); }
+/* cover */
+.cover-title { position: absolute; top: 230px; left: 64px; right: 64px; font-weight: 900; font-size: 118px; line-height: .95; letter-spacing: -.04em; text-transform: uppercase; }
+.cover-title em { font-style: normal; color: var(--blue2); }
+.cover-hands { position: absolute; top: 650px; left: 0; right: 0; display: flex; justify-content: center; gap: 60px; }
+.cover-hands .hand { margin: 0; width: 380px; height: 380px; font-size: 220px; background: var(--panel); border: 2px solid var(--line); }
+.play { position: absolute; top: 1110px; left: 64px; display: inline-flex; align-items: center; gap: 18px; background: var(--blue); color: #fff; font-weight: 800; font-size: 44px; padding: 22px 40px; border-radius: 60px; box-shadow: 0 20px 60px rgba(59,126,255,.45); }
+/* pop-up window */
+.win-dialog { position: absolute; left: 90px; right: 90px; top: 300px; height: 760px; background: #F4F5F8; border-radius: 22px; box-shadow: 0 50px 120px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.1); overflow: hidden; color: #121318; }
+.titlebar { height: 64px; background: #E3E6EC; display: flex; align-items: center; padding: 0 24px; gap: 12px; border-bottom: 1px solid #D3D7DF; }
+.titlebar i { width: 18px; height: 18px; border-radius: 50%; display: block; }
+.titlebar b { margin: 0 auto; transform: translateX(-30px); font-family: "Geist Mono"; font-weight: 500; font-size: 22px; color: #5B6170; }
+.dlg-body { padding: 70px 60px 0; text-align: center; }
+.dlg-body h2 { font-weight: 900; font-size: 74px; line-height: 1; letter-spacing: -.03em; text-transform: uppercase; }
+.dlg-body h2 em { font-style: normal; color: var(--blue); }
+.dlg-body p { margin-top: 26px; font-size: 32px; color: #5B6170; font-weight: 500; }
+.folder { margin: 54px auto 0; width: 220px; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.folder svg { width: 200px; height: 160px; filter: drop-shadow(0 16px 30px rgba(59,126,255,.35)); }
+.folder span { font-family: "Geist Mono"; font-size: 28px; font-weight: 600; background: rgba(59,126,255,.14); color: #1D4FCC; padding: 6px 18px; border-radius: 10px; }
+.cursor { position: absolute; left: 610px; top: 905px; width: 54px; z-index: 5; filter: drop-shadow(0 6px 10px rgba(0,0,0,.4)); }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="logo" viewBox="0 0 20 18"><g fill="none" stroke-width="1.5"><rect x="0.75" y="8.75" width="10.5" height="8.5" rx="2" stroke="#3B7EFF" fill="rgba(59,126,255,0.1)"/><rect x="4.75" y="5.75" width="10.5" height="8.5" rx="2" stroke="#5B9AFF" fill="rgba(91,154,255,0.07)"/><rect x="8.75" y="2.75" width="10.5" height="8.5" rx="2" stroke="#8BB8FF" fill="rgba(139,184,255,0.04)"/></g></symbol>
+  </defs>
+</svg>
+
+<template id="chrome">
+  <div class="grid"></div>
+  <div class="glow" style="width:900px;height:900px;left:-300px;top:-380px;background:radial-gradient(circle, rgba(59,126,255,.28), transparent 62%)"></div>
+  <div class="glow" style="width:900px;height:900px;right:-360px;bottom:-420px;background:radial-gradient(circle, rgba(109,75,255,.22), transparent 62%)"></div>
+  <div class="top"><div class="brand"><svg><use href="#logo"/></svg>buildify</div><span class="pg"></span></div>
+  <div class="foot"><span>@buildify</span><span class="hint"></span></div>
+</template>
+
+<!-- 1 cover -->
+<section class="slide" data-pg="01 / 05" data-hint="swipe →">
+  <div class="cover-title">Think you<br>know <em>prototyping?</em></div>
+  <div class="cover-hands"><div class="hand">✊</div><div class="hand"><span class="flip">✌️</span></div></div>
+  <div class="play">Let’s play →</div>
+</section>
+
+<!-- 2..4 rounds (filled by script) -->
+<section class="slide round" data-pg="02 / 05" data-n="1" data-t="Speed" data-hint="swipe →" data-l="✊|Rock|A prototype takes 3 months of dev" data-r="✋|Paper|A prototype takes one afternoon"></section>
+<section class="slide round" data-pg="03 / 05" data-n="2" data-t="Money" data-hint="swipe →" data-l="✋|Paper|Build first, validate later" data-r="✌️|Scissors|Validate before you spend lakhs"></section>
+<section class="slide round" data-pg="04 / 05" data-n="3" data-t="Funding" data-hint="swipe →" data-l="✌️|Scissors|We just need a better pitch deck" data-r="✊|Rock|Investors want to see it working"></section>
+
+<!-- 5 pop-up -->
+<section class="slide" data-pg="05 / 05" data-hint="link in bio">
+  <div class="win-dialog">
+    <div class="titlebar"><i style="background:#FF5F57"></i><i style="background:#FEBC2E"></i><i style="background:#28C840"></i><b>buildify.sh</b></div>
+    <div class="dlg-body">
+      <h2>Good ideas need <em>building.</em><br>Not just pitching!</h2>
+      <p>Prototype fast. Spend less.</p>
+      <div class="folder">
+        <svg viewBox="0 0 200 160"><path d="M10 30 Q10 16 24 16 H78 L96 34 H176 Q190 34 190 48 V140 Q190 150 180 150 H20 Q10 150 10 140 Z" fill="#5B9AFF"/><path d="M10 56 Q10 46 22 46 H178 Q190 46 190 58 V140 Q190 150 180 150 H20 Q10 150 10 140 Z" fill="#3B7EFF"/><g transform="translate(70 70) scale(3)" opacity=".95"><rect x="0.75" y="8.75" width="10.5" height="8.5" rx="2" fill="none" stroke="#fff" stroke-width="1.2"/><rect x="4.75" y="5.75" width="10.5" height="8.5" rx="2" fill="none" stroke="#fff" stroke-width="1.2" opacity=".8"/><rect x="8.75" y="2.75" width="10.5" height="8.5" rx="2" fill="none" stroke="#fff" stroke-width="1.2" opacity=".6"/></g></svg>
+        <span>buildify</span>
+      </div>
+    </div>
+  </div>
+  <svg class="cursor" viewBox="0 0 24 24"><path d="M4 2 L20 13 L12.5 14.2 L16.5 22 L13.4 23.4 L9.5 15.6 L4 20 Z" fill="#fff" stroke="#111" stroke-width="1.4" stroke-linejoin="round"/></svg>
+</section>
+
+<script>
+  const s = +(new URLSearchParams(location.search).get("s") || 1);
+  const tpl = document.getElementById("chrome").innerHTML;
+  document.querySelectorAll(".round").forEach((el) => {
+    const side = (spec, cls, win) => {
+      const [emoji, move, claim] = spec.split("|");
+      const h = cls === "r" ? `<span class="flip">${emoji}</span>` : emoji;
+      return `<div class="side ${cls} ${win ? "win" : "lose"}"><div class="claim"><span>${claim}</span></div><div class="hand"><div class="tag">${win ? "WINS" : "LOSES"}</div>${h}</div><div class="move">${move}</div></div>`;
+    };
+    el.innerHTML = `<div class="round-lbl">ROUND ${el.dataset.n}<b>${el.dataset.t}</b></div>` + side(el.dataset.l, "l", false) + `<div class="vs">VS</div>` + side(el.dataset.r, "r", true);
+  });
+  document.querySelectorAll(".slide").forEach((el, i) => {
+    el.insertAdjacentHTML("afterbegin", tpl);
+    el.querySelector(".pg").textContent = el.dataset.pg;
+    el.querySelector(".hint").textContent = el.dataset.hint;
+    if (i === s - 1) el.classList.add("on");
+  });
+</script>
+</body>
+</html>
